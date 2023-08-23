@@ -3,8 +3,8 @@
 
 site_name: 玉子的饼藏
 
-repo_url: https://github.com/huaxv-code/huaxv-site
-repo_name: 花续情愫缘 / huaxv-site
+repo_url: https://github.com/huaxvcode/huaxvsite/tree/master
+repo_name: 花续情愫缘 / huaxvsite
 
 markdown_extensions:
   - pymdownx.highlight:
