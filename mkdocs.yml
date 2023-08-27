@@ -280,6 +280,8 @@ nav:
     - ssh 连接 github: Linux/ssh 连接 github.md
     - window 使用 ssh 连接 linux: Linux/window 使用 ssh 连接 linux.md
     
+  - CSS 笔记:
+    - 标签选择器: CSS 笔记/标签选择器.md
     
   - 每日英语:
     - 2023.6.30: 每日英语/2023.6.30.md
