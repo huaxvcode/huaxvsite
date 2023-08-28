@@ -1,14 +1,14 @@
-# [jQuery 鼠标「悬停正上方」时]()
+# [jQuery 鼠标「离开正上方」时]()
 
 ```html
 <script>
-    $().mouseenter(
+    $().mouseleave(
         
     );
 </script>
 ```
 
-鼠标漂浮在正上方后触发效果.
+鼠标离开选中的元素正上方时触发该事件.
 
 ---
 
@@ -27,14 +27,16 @@
     
     <script>
         document.onselectstart = function(){return false;}
-        var go = 0;
+
         $(function() {
+            $("p").css({"color":"black", "font-size":"30px"});
             
             $("p").mouseenter(function(){
-                go ++;
-                if (go & 1) $("p").css({"color": "red"});
-                else $("p").css({"color": "black"});
-            })
+                $("p").css({"color": "red"});
+            });
+            $("p").mouseleave(function(){
+                $("p").css({"color": "black"});
+            });
         });
     </script>
 <!-- =========================================== -->
