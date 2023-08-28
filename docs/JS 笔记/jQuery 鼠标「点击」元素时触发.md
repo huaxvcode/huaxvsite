@@ -1,4 +1,4 @@
-# [jQuery 鼠标点击元素时触发]()
+# [jQuery 鼠标「点击」元素时触发]()
 
 ```html
 <script>
