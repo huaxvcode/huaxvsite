@@ -292,6 +292,9 @@ nav:
     
   - JS 笔记:
     - jQuery 导入: JS 笔记/jQuery 导入.md
+    - jQuery 基本语法: JS 笔记/jQuery 基本语法.md
+    - jQuery 鼠标点击元素时触发: JS 笔记/jQuery 鼠标点击元素时触发.md
+    - jQuery 鼠标双击元素时触发: JS 笔记/jQuery 鼠标双击元素时触发.md
     
   - 每日英语:
     - 2023.6.30: 每日英语/2023.6.30.md
