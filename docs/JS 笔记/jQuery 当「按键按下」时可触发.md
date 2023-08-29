@@ -1,4 +1,4 @@
-# [jQuery 按键按下可触发]()
+# [jQuery 当「按键按下」时可触发]()
 
 ```html
 <script>
