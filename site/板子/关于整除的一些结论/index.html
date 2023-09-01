@@ -898,6 +898,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ax-by-bmod-m" class="md-nav__link">
+    求 \((ax + by) \bmod m\) 的最小值
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ax-by-c-bmod-m" class="md-nav__link">
+    求 \((ax + by + c) \bmod m\) 的最小值
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3055,6 +3069,29 @@
 <a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="p">}</span>
 </code></pre></div>
+<hr />
+<h2 id="ax-by-bmod-m">求 <span class="arithmatex">\((ax + by) \bmod m\)</span> 的最小值</h2>
+<p>答案是：<span class="arithmatex">\(0\)</span></p>
+<p>证明过程如下：</p>
+<blockquote>
+<p><span class="arithmatex">\((ax + by) \bmod m\)</span></p>
+<p>等价于：<span class="arithmatex">\((ax + by + tm) \bmod m\)</span></p>
+<p>而 <span class="arithmatex">\((ax + by + tm) = k * \gcd(a, b, m)\)</span></p>
+<p>要让 <span class="arithmatex">\(k * \gcd(a, b, m)\)</span> 最小，只需要让 <span class="arithmatex">\(k = 0\)</span> 即可</p>
+</blockquote>
+<hr />
+<h2 id="ax-by-c-bmod-m">求 <span class="arithmatex">\((ax + by + c) \bmod m\)</span> 的最小值</h2>
+<p>答案：<span class="arithmatex">\(c \bmod \gcd(a, b, m)\)</span></p>
+<p>证明过程如下：</p>
+<blockquote>
+<p><span class="arithmatex">\((ax + by + c) \bmod m\)</span></p>
+<p>等价于：<span class="arithmatex">\((ax + by + c + tm) \bmod m\)</span></p>
+<p><span class="arithmatex">\(k * \gcd(a, b, m) + c\)</span> 最小</p>
+<p>所以令：<span class="arithmatex">\(k = c / \gcd(a, b, m)\)</span></p>
+<p><span class="arithmatex">\(k\)</span> 是否是真的可以让取模后的值最小呢？</p>
+<p>假设 <span class="arithmatex">\(k\)</span> 并不是答案，那么再加上 <span class="arithmatex">\(K\)</span> 个 <span class="arithmatex">\(\gcd(a, b, m)\)</span> 后的式子 <span class="arithmatex">\(k * \gcd(a, b, m) + K * \gcd(a, b, m) + c\)</span> 才是答案</p>
+<p>由于 <span class="arithmatex">\(\gcd(a, b, m) | m\)</span> 所以无论再继续加多少个 <span class="arithmatex">\(\gcd(a, b, m)\)</span> 都只会是一个以 <span class="arithmatex">\(k * \gcd(a, b, m) + c\)</span> 为首项，<span class="arithmatex">\(\gcd(a, b, m)\)</span> 为公差的循环节</p>
+</blockquote>
 <hr />
 <h1 id="ax-by-cz-d">关于方程 <span class="arithmatex">\(ax + by + cz = d\)</span> 的特解：</h1>
 <ol>
