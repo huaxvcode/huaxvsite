@@ -832,9 +832,68 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          关于整除的一些结论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         关于整除的一些结论
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    最大公约数：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    最小公倍数：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    关于整数解：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    扩展欧几里得：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ax-by-c" class="md-nav__link">
+    求方程 \(ax + by = c\) 的通解：
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2894,12 +2953,12 @@
 <li><span class="arithmatex">\((a, b) * [a, b] = ab\)</span></li>
 </ol>
 <hr />
-<p>最大公约数：</p>
+<h2 id="_2">最大公约数：</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
 </code></pre></div>
-<p>最小公倍数：</p>
+<h2 id="_3">最小公倍数：</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 </code></pre></div>
 <p>如果需要求 <span class="arithmatex">\({a_1, a_2, a_3, \cdots, a_n}\)</span> 的最大公约数：</p>
@@ -2916,7 +2975,7 @@
 <li>如果 <span class="arithmatex">\(a\)</span>，<span class="arithmatex">\(b\)</span> 都是偶数，那么 <span class="arithmatex">\((a, b) = 2(a/2, b/2)\)</span></li>
 </ol>
 <hr />
-<p>关于整数解：</p>
+<h2 id="_4">关于整数解：</h2>
 <ol>
 <li>若 <span class="arithmatex">\((a, b) | sum\)</span>，则必定存在 <span class="arithmatex">\(ax + by = sum\)</span>，且 <span class="arithmatex">\(x\)</span>、<span class="arithmatex">\(y\)</span> 都是整数（<em>存在整数解</em>）</li>
 <li>对于方程 <span class="arithmatex">\(ax + by = c\)</span>，如果 <span class="arithmatex">\((a, b) | c\)</span> 则存在整数解，否则一定没有！</li>
@@ -2924,7 +2983,7 @@
 <li>对于方程 <span class="arithmatex">\(ax + by + cz = d\)</span>，则 <span class="arithmatex">\((a, b, c) | (ax + by + cz)\)</span>，即 <span class="arithmatex">\((a, b, c) | d\)</span></li>
 </ol>
 <hr />
-<p>扩展欧几里得：</p>
+<h2 id="_5">扩展欧几里得：</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">exgcd</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">longl</span><span class="w"> </span><span class="n">ong</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">exgcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
@@ -2932,6 +2991,27 @@
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
 </code></pre></div>
+<hr />
+<h2 id="ax-by-c">求方程 <span class="arithmatex">\(ax + by = c\)</span> 的通解：</h2>
+<p>先求出 <span class="arithmatex">\(ax + by = (a, b)\)</span> 的一对解 <span class="arithmatex">\(\{x, y\}\)</span></p>
+<p>则特解：<span class="arithmatex">\(\{\frac{c}{(a, b)} * x, \frac{c}{(a,b)} * y\}\)</span></p>
+<p>通解为：<span class="arithmatex">\(\{\frac{c}{(a, b)} * x + \frac{b}{(a, b)} * N, \frac{c}{(a,b)} * y - \frac{a}{(a, b)} * N\}\)</span></p>
+<p>证明如下：</p>
+<blockquote>
+<p><span class="arithmatex">\(\frac{c}{(a, b)} (ax + by) = c\)</span></p>
+<p><span class="arithmatex">\(\frac{c}{(a, b)} \{a(x + k_1), b(y + k_2) = c\}\)</span></p>
+<p><span class="arithmatex">\(\frac{c}{(a, b)} (ax + by) + \frac{c}{(a, b)} (ak_1 + bk_2) = c\)</span>，且 <span class="arithmatex">\(ak_1 + bk_2 = 0\)</span></p>
+<p>所以：<span class="arithmatex">\(ak_1 = -bk_2 = -[a, b] * N = -\frac{ab}{(a, b)} * N\)</span></p>
+<p>所以：<span class="arithmatex">\(k_1 = - \frac{b}{(a, b)} * N\)</span>, <span class="arithmatex">\(k_2 = \frac{a}{(a, b)} * N\)</span></p>
+</blockquote>
+<hr />
+<h1 id="ax-by-cz-d">关于方程 <span class="arithmatex">\(ax + by + cz = d\)</span> 的特解：</h1>
+<ol>
+<li>首先 <span class="arithmatex">\((a, b, c) | d\)</span> 必定成立</li>
+<li>先求出 <span class="arithmatex">\(ax + by = (a, b)\)</span> 的一对特解记为 <span class="arithmatex">\(x_1, y_1\)</span></li>
+<li>再求出 <span class="arithmatex">\((a, b)t + cz = ((a, b), c)\)</span> 的一对特解，记为 <span class="arithmatex">\(t_1, z_1\)</span></li>
+<li>则 <span class="arithmatex">\(ax + by + cz = (a, b, c)\)</span> 的特解为：<span class="arithmatex">\((x_1t_1, y_1t_1, z_1)\)</span></li>
+</ol>
 
 
 
