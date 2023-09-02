@@ -3081,7 +3081,7 @@
 </blockquote>
 <hr />
 <h2 id="ax-by-c-bmod-m">求 <span class="arithmatex">\((ax + by + c) \bmod m\)</span> 的最小值</h2>
-<p>答案：<span class="arithmatex">\(c \bmod \gcd(a, b, m)\)</span></p>
+<p>答案：<span class="arithmatex">\(\min\{c \bmod \gcd(a, b, m), c \bmod \gcd(a, b, m) - \gcd(a, b, m)\}\)</span></p>
 <p>证明过程如下：</p>
 <blockquote>
 <p><span class="arithmatex">\((ax + by + c) \bmod m\)</span></p>
@@ -3091,6 +3091,9 @@
 <p><span class="arithmatex">\(k\)</span> 是否是真的可以让取模后的值最小呢？</p>
 <p>假设 <span class="arithmatex">\(k\)</span> 并不是答案，那么再加上 <span class="arithmatex">\(K\)</span> 个 <span class="arithmatex">\(\gcd(a, b, m)\)</span> 后的式子 <span class="arithmatex">\(k * \gcd(a, b, m) + K * \gcd(a, b, m) + c\)</span> 才是答案</p>
 <p>由于 <span class="arithmatex">\(\gcd(a, b, m) | m\)</span> 所以无论再继续加多少个 <span class="arithmatex">\(\gcd(a, b, m)\)</span> 都只会是一个以 <span class="arithmatex">\(k * \gcd(a, b, m) + c\)</span> 为首项，<span class="arithmatex">\(\gcd(a, b, m)\)</span> 为公差的循环节</p>
+<p>还可以讨论一下为什么不是 <span class="arithmatex">\(m - \gcd(a, b, m) + k * \gcd(a, b, m) + c\)</span> 最小</p>
+<p>因为 <span class="arithmatex">\(k * \gcd(a, b, m) + c &lt; \gcd(a, b, m)\)</span></p>
+<p>而 <span class="arithmatex">\(\gcd(a, b, m) | m\)</span>，所以 <span class="arithmatex">\(m = k\gcd(a, b, m), k \geq 1\)</span> 所以：<span class="arithmatex">\(m - \gcd(a, b, m) + k * \gcd(a, b, m) + c \geq (k - 1) * \gcd(a, b, m)\)</span> 对于 <span class="arithmatex">\(k &gt; 1\)</span> 的情况都成立，但是如果 <span class="arithmatex">\(k = 1\)</span> 呢？还是有可能的哦</p>
 </blockquote>
 <hr />
 <h1 id="ax-by-cz-d">关于方程 <span class="arithmatex">\(ax + by + cz = d\)</span> 的特解：</h1>
