@@ -3087,7 +3087,7 @@
 <p><span class="arithmatex">\((ax + by + c) \bmod m\)</span></p>
 <p>等价于：<span class="arithmatex">\((ax + by + c + tm) \bmod m\)</span></p>
 <p><span class="arithmatex">\(k * \gcd(a, b, m) + c\)</span> 最小</p>
-<p>所以令：<span class="arithmatex">\(k = c / \gcd(a, b, m)\)</span></p>
+<p>所以令：<span class="arithmatex">\(k = -c / \gcd(a, b, m)\)</span></p>
 <p><span class="arithmatex">\(k\)</span> 是否是真的可以让取模后的值最小呢？</p>
 <p>假设 <span class="arithmatex">\(k\)</span> 并不是答案，那么再加上 <span class="arithmatex">\(K\)</span> 个 <span class="arithmatex">\(\gcd(a, b, m)\)</span> 后的式子 <span class="arithmatex">\(k * \gcd(a, b, m) + K * \gcd(a, b, m) + c\)</span> 才是答案</p>
 <p>由于 <span class="arithmatex">\(\gcd(a, b, m) | m\)</span> 所以无论再继续加多少个 <span class="arithmatex">\(\gcd(a, b, m)\)</span> 都只会是一个以 <span class="arithmatex">\(k * \gcd(a, b, m) + c\)</span> 为首项，<span class="arithmatex">\(\gcd(a, b, m)\)</span> 为公差的循环节</p>
