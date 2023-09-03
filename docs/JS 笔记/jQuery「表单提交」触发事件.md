@@ -1,4 +1,4 @@
-# [jQuery 「表单提交」触发事件]()
+# [jQuery「表单提交」触发事件]()
 
 ```html
 <script>
