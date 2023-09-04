@@ -900,35 +900,35 @@
       
         <li class="md-nav__item">
   <a href="#ax-by-c" class="md-nav__link">
-    求方程 \(ax + by = c\) 的通解：
+    求方程 ax + by = c 的通解：
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#ax-by-c_1" class="md-nav__link">
-    求一组 \(ax + by = c\) 的正整数解：
+    求一组 ax + by = c 的正整数解：
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ax-by-bmod-m" class="md-nav__link">
-    求 \((ax + by) \bmod m\) 的最小值
+  <a href="#ax-by-mod-m" class="md-nav__link">
+    求 (ax + by) mod m 的最小值
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ax-by-c-bmod-m" class="md-nav__link">
-    求 \((ax + by + c) \bmod m\) 的最小值
+  <a href="#ax-by-c-mod-m" class="md-nav__link">
+    求 (ax + by + c) mod m 的最小值
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#ax-by-cz-d" class="md-nav__link">
-    关于方程 \(ax + by + cz = d\) 的特解：
+    关于方程 ax + by + cz = d 的特解：
   </a>
   
 </li>
@@ -1005,7 +1005,7 @@
         
           <li class="md-nav__item">
   <a href="#exgcd" class="md-nav__link">
-    \(exgcd\) 求逆元：
+    exgcd 求逆元：
   </a>
   
 </li>
@@ -3214,7 +3214,7 @@
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="ax-by-c">求方程 <span class="arithmatex">\(ax + by = c\)</span> 的通解：</h2>
+<h2 id="ax-by-c">求方程 ax + by = c 的通解：</h2>
 <p>先求出 <span class="arithmatex">\(ax + by = (a, b)\)</span> 的一对解 <span class="arithmatex">\(\{x, y\}\)</span></p>
 <p>则特解：<span class="arithmatex">\(\{\frac{c}{(a, b)} * x, \frac{c}{(a,b)} * y\}\)</span></p>
 <p>通解为：<span class="arithmatex">\(\{\frac{c}{(a, b)} * x + \frac{b}{(a, b)} * N, \frac{c}{(a,b)} * y - \frac{a}{(a, b)} * N\}\)</span></p>
@@ -3227,7 +3227,7 @@
 <p>所以：<span class="arithmatex">\(k_1 = - \frac{b}{(a, b)} * N\)</span>, <span class="arithmatex">\(k_2 = \frac{a}{(a, b)} * N\)</span></p>
 </blockquote>
 <hr />
-<h2 id="ax-by-c_1">求一组 <span class="arithmatex">\(ax + by = c\)</span> 的正整数解：</h2>
+<h2 id="ax-by-c_1">求一组 ax + by = c 的正整数解：</h2>
 <p>如果求出 <span class="arithmatex">\(ax + by = d\)</span> 的一组解为 <span class="arithmatex">\(x_0, y_0\)</span>，则原方程的特解为：<span class="arithmatex">\(\frac{c}{d} * x_0, \frac{c}{d} * y_0\)</span></p>
 <p>先让 <span class="arithmatex">\(x_0\)</span> 变成最小非负整数解：<span class="arithmatex">\(\frac{c}{d} * x_0 + \frac{b}{d} * N\)</span> 转变为问题：<span class="arithmatex">\(\frac{c}{d} * x_0\)</span> 需要加上或者减去多少个 <span class="arithmatex">\(\frac{b}{d}\)</span> 才会变成非负数，先求出 <span class="arithmatex">\(\frac{c}{d} * x_0\)</span> 取模 <span class="arithmatex">\(\frac{b}{d}\)</span> 的余数，如果余数是负数，则需要再加上一个 <span class="arithmatex">\(\frac{b}{d}\)</span> 这样就可以编程最小非负整数解！</p>
 <p>如果 <span class="arithmatex">\(x_0\)</span> 已经变成最小非负整数解了，那么 <span class="arithmatex">\(y_0\)</span> 如果还是负数的话，就需要减去多一个 <span class="arithmatex">\(-\frac{a}{d}\)</span>，那么平行项 <span class="arithmatex">\(x_0\)</span> 就需要减掉一个 <span class="arithmatex">\(\frac{b}{d}\)</span> 会变成负数，所以肯定不可能成立！</p>
@@ -3271,7 +3271,7 @@
 <a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="ax-by-bmod-m">求 <span class="arithmatex">\((ax + by) \bmod m\)</span> 的最小值</h2>
+<h2 id="ax-by-mod-m">求 (ax + by) mod m 的最小值</h2>
 <p>答案是：<span class="arithmatex">\(0\)</span></p>
 <p>证明过程如下：</p>
 <blockquote>
@@ -3281,7 +3281,7 @@
 <p>要让 <span class="arithmatex">\(k * \gcd(a, b, m)\)</span> 最小，只需要让 <span class="arithmatex">\(k = 0\)</span> 即可</p>
 </blockquote>
 <hr />
-<h2 id="ax-by-c-bmod-m">求 <span class="arithmatex">\((ax + by + c) \bmod m\)</span> 的最小值</h2>
+<h2 id="ax-by-c-mod-m">求 (ax + by + c) mod m 的最小值</h2>
 <p>答案：<span class="arithmatex">\(\min\{c \bmod \gcd(a, b, m), c \bmod \gcd(a, b, m) - \gcd(a, b, m)\}\)</span></p>
 <p>证明过程如下：</p>
 <blockquote>
@@ -3297,7 +3297,7 @@
 <p>而 <span class="arithmatex">\(\gcd(a, b, m) | m\)</span>，所以 <span class="arithmatex">\(m = k\gcd(a, b, m), k \geq 1\)</span> 所以：<span class="arithmatex">\(m - \gcd(a, b, m) + k * \gcd(a, b, m) + c \geq (k - 1) * \gcd(a, b, m)\)</span> 对于 <span class="arithmatex">\(k &gt; 1\)</span> 的情况都成立，但是如果 <span class="arithmatex">\(k = 1\)</span> 呢？还是有可能的哦</p>
 </blockquote>
 <hr />
-<h2 id="ax-by-cz-d">关于方程 <span class="arithmatex">\(ax + by + cz = d\)</span> 的特解：</h2>
+<h2 id="ax-by-cz-d">关于方程 ax + by + cz = d 的特解：</h2>
 <ol>
 <li>首先 <span class="arithmatex">\((a, b, c) | d\)</span> 必定成立</li>
 <li>先求出 <span class="arithmatex">\(ax + by = (a, b)\)</span> 的一对特解记为 <span class="arithmatex">\(x_1, y_1\)</span></li>
@@ -3480,7 +3480,7 @@
 <a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 <a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="exgcd"><span class="arithmatex">\(exgcd\)</span> 求逆元：</h3>
+<h3 id="exgcd">exgcd 求逆元：</h3>
 <blockquote>
 <p><span class="arithmatex">\(ax \equiv 1(\bmod \ b)\)</span></p>
 <p><span class="arithmatex">\(ax + by \equiv 1\)</span></p>
