@@ -1,5 +1,7 @@
 # [E. Identical Parity](https://codeforces.com/gym/104076/problem/E)
 
+暴力打表发现的规律
+
 ```cpp
 #include <bits/stdc++.h>
 #define long long long
@@ -43,3 +45,4 @@ int main() {
 }
 
 ```
+
