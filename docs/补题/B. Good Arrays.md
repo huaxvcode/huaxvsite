@@ -1,4 +1,4 @@
-# [M. Mighty Rock Tower](https://codeforces.com/problemset/problem/1866/M)
+# [B. Good Arrays](https://codeforces.com/problemset/problem/1866/M)
 
 ```cpp
 #include <bits/stdc++.h>
