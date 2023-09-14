@@ -3439,6 +3439,9 @@
 <p>情况 2：</p>
 <p><a class="glightbox" href="../img/manacher%E6%83%85%E5%86%B5%E4%BA%8C.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/manacher%E6%83%85%E5%86%B5%E4%BA%8C.png" /></a></p>
 <p>如果 <span class="arithmatex">\(i\)</span> 关于 <span class="arithmatex">\(c\)</span> 的对称点 <span class="arithmatex">\(i^\prime\)</span> 的回文子串存在某部分使得 <span class="arithmatex">\(E^\prime \sim E\)</span> 装不下了（超出了左边界），则镜像对称之后的 <span class="arithmatex">\(i\)</span>，只有 <span class="arithmatex">\(i \sim E\)</span> 这部分是关于 <span class="arithmatex">\(i\)</span> 对称的回文子串是可以确定的，是否还会更长，只可以用暴力中心扩展他的长度。</p>
+<p>情况 3：</p>
+<p><a class="glightbox" href="../img/manacher%E6%83%85%E5%86%B5%E4%B8%89.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/manacher%E6%83%85%E5%86%B5%E4%B8%89.png" /></a></p>
+<p>如果 <span class="arithmatex">\(i\)</span> 超出了 <span class="arithmatex">\(c\)</span> 的回文子串的右边界（<span class="arithmatex">\(i\)</span> 超出了 <span class="arithmatex">\(E\)</span>），则只能对 <span class="arithmatex">\(i\)</span> 暴力中心扩展他的长度，并将 <span class="arithmatex">\(c\)</span> 更新为 <span class="arithmatex">\(i\)</span>，<span class="arithmatex">\(E\)</span> 更新为 <span class="arithmatex">\(i\)</span> 回文串的右边界（为什么需要更新，只有更新后，<span class="arithmatex">\(E\)</span> 才能更加的靠右，只有更加的靠右才能更多的节省推导某些节点的回文串的长度）</p>
 <hr />
 <p>时间复杂度：<span class="arithmatex">\(O(n)\)</span></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">lrq</span><span class="w"> </span><span class="p">{</span>
