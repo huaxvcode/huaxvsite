@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>数论的一些知识.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86"><a href="">数论的一些知识</a></h1>
+<ul>
+<li><a href="#%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86">数论的一些知识</a>
+<ul>
+<li><a href="#%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%AF%86">一些常识</a></li>
+<li><a href="#%E5%8F%96%E6%A8%A1%E7%84%B6%E5%90%8E%E5%AF%B9%E7%BA%A6%E6%95%B0%E5%8F%96%E6%A8%A1%E6%88%96%E8%80%85%E7%9B%B4%E6%8E%A5%E5%AF%B9%E7%BA%A6%E6%95%B0%E5%8F%96%E6%A8%A1%E6%95%88%E6%9E%9C%E4%B8%80%E6%A0%B7">取模然后对约数取模，或者直接对约数取模，效果一样</a></li>
+<li><a href="#%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0">最大公约数：</a></li>
+<li><a href="#%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0">最小公倍数：</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E6%95%B4%E6%95%B0%E8%A7%A3">关于整数解：</a></li>
+<li><a href="#%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97">扩展欧几里得：</a></li>
+<li><a href="#%E6%B1%82%E6%96%B9%E7%A8%8B-ax--by--c-%E7%9A%84%E9%80%9A%E8%A7%A3">求方程 ax + by = c 的通解：</a></li>
+<li><a href="#%E6%B1%82%E4%B8%80%E7%BB%84-ax--by--c-%E7%9A%84%E6%AD%A3%E6%95%B4%E6%95%B0%E8%A7%A3">求一组 ax + by = c 的正整数解：</a></li>
+<li><a href="#%E6%B1%82-ax-mod-m-%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC">求 ax mod m 的最小值</a></li>
+<li><a href="#%E6%B1%82-ax--by-mod-m-%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC">求 (ax + by) mod m 的最小值</a></li>
+<li><a href="#%E6%B1%82-ax--by--c-mod-m-%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC">求 (ax + by + c) mod m 的最小值</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E6%96%B9%E7%A8%8B-ax--by--cz--d-%E7%9A%84%E7%89%B9%E8%A7%A3">关于方程 ax + by + cz = d 的特解：</a></li>
+<li><a href="#%E5%90%8C%E4%BD%99%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%A7%E8%B4%A8">同余的一些性质</a></li>
+<li><a href="#%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86">容斥原理</a></li>
+<li><a href="#%E7%BB%84%E5%90%88%E6%95%B0">组合数</a>
+<ul>
+<li><a href="#%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88">排列组合</a></li>
+<li><a href="#%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0">求组合数</a></li>
+</ul>
+</li>
+<li><a href="#%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0">欧拉函数</a></li>
+<li><a href="#%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86">欧拉定理</a></li>
+<li><a href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95">高精度加法</a></li>
+<li><a href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95">高精度减法</a></li>
+<li><a href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95">高精度乘法</a></li>
+<li><a href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E4%BB%A5%E5%8D%95%E7%B2%BE%E5%BA%A6">高精度除以单精度</a></li>
+<li><a href="#%E9%80%86%E5%85%83">逆元</a>
+<ul>
+<li><a href="#%E5%BF%AB%E9%80%9F%E5%B9%82%E6%B1%82%E9%80%86%E5%85%83">快速幂求逆元：</a></li>
+<li><a href="#exgcd-%E6%B1%82%E9%80%86%E5%85%83">exgcd 求逆元：</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%86%E5%85%83%E9%80%92%E6%8E%A8%E5%BC%8F">逆元递推式：</a></li>
+<li><a href="#%E5%80%9F%E5%8A%A9%E5%89%8D%E7%BC%80%E4%B9%98%E6%B3%95%E6%B1%82%E9%80%86%E5%85%83">借助前缀乘法求逆元</a></li>
+<li><a href="#%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0">生成随机数</a></li>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86">中国剩余定理</a></li>
+<li><a href="#%E7%AD%9B%E8%B4%A8%E6%95%B0">筛质数</a>
+<ul>
+<li><a href="#%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95">欧拉筛法</a></li>
+<li><a href="#%E5%9F%83%E5%BC%8F%E7%AD%9B%E6%B3%95">埃式筛法</a></li>
+</ul>
+</li>
+<li><a href="#miller-rabin-%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0">miller-rabin 判断素数</a></li>
+<li><a href="#%E6%95%B4%E6%95%B0%E5%88%86%E5%9D%97">整数分块</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E5%B9%82">快速幂</a></li>
+<li><a href="#%E6%A8%A1%E4%B9%98">模乘</a></li>
+<li><a href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97">高精度整数运算</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%AF%86">一些常识</h2>
+<ol>
+<li>$a | c$、$b | c$，且 $(a, b) = 1$ 则 $ab | c$</li>
+<li>$a | bc$ 且 $(a, b) = 1$，则 $a | c$</li>
+<li>$p | ab$ 则 $p | a$ 或 $p | b$，前提是 $p$ 是质数</li>
+</ol>
+<hr>
+<ol>
+<li>若 $d | a$ 且 $d | b$ 则 $d$ 是 $a$、$b$ 的「公约数」，最大公约数记为 $d = (a, b)$</li>
+<li>若 $a | d$ 且 $b | d$ 则 $d$ 是 $a$、$b$ 的「公倍数」，最小公倍数记为 $d = [a, b]$</li>
+<li>$(a, b) * [a, b] = ab$</li>
+</ol>
+<hr>
+<h2 id="%E5%8F%96%E6%A8%A1%E7%84%B6%E5%90%8E%E5%AF%B9%E7%BA%A6%E6%95%B0%E5%8F%96%E6%A8%A1%E6%88%96%E8%80%85%E7%9B%B4%E6%8E%A5%E5%AF%B9%E7%BA%A6%E6%95%B0%E5%8F%96%E6%A8%A1%E6%95%88%E6%9E%9C%E4%B8%80%E6%A0%B7">取模然后对约数取模，或者直接对约数取模，效果一样</h2>
+<blockquote>
+<p>$d | m$，判断 $x \bmod m \bmod d = x \bmod d$</p>
+<p>令 $t = x \bmod m \bmod d$，则 $x = k_1m + k_2d + t$</p>
+<p>所以 $x \bmod d = t$</p>
+</blockquote>
+<hr>
+<h2 id="%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0">最大公约数：</h2>
+<pre class="hljs"><code><div><span class="hljs-function">ll <span class="hljs-title">gcd</span><span class="hljs-params">(ll x, ll y)</span> </span>{
+    <span class="hljs-keyword">return</span> y == <span class="hljs-number">0</span> ? x : gcd(y, x % y);
+}
+</div></code></pre>
+<h2 id="%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0">最小公倍数：</h2>
+<pre class="hljs"><code><div>ll lcm = a / gcd(a, b) * b;
+</div></code></pre>
+<p>如果需要求 ${a_1, a_2, a_3, \cdots, a_n}$ 的最大公约数：</p>
+<pre class="hljs"><code><div>d = a1
+ls = [a1, a2, a3, ..., an]
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> ls:
+    d = gcd(d, i)
+</div></code></pre>
+<p>这段代码的时间复杂度是：$n + log(a_{max})$</p>
+<hr>
+<ol>
+<li>如果 $a$ 和 $b$ 都是奇数，那么 $(a, b) = (a - b, b)$</li>
+<li>如果 $a$ 是偶数，$b$ 是奇数，那么 $(a, b) = (a / 2, b)$</li>
+<li>如果 $a$，$b$ 都是偶数，那么 $(a, b) = 2(a/2, b/2)$</li>
+</ol>
+<hr>
+<h2 id="%E5%85%B3%E4%BA%8E%E6%95%B4%E6%95%B0%E8%A7%A3">关于整数解：</h2>
+<ol>
+<li>若 $(a, b) | sum$，则必定存在 $ax + by = sum$，且 $x$、$y$ 都是整数（<em>存在整数解</em>）</li>
+<li>对于方程 $ax + by = c$，如果 $(a, b) | c$ 则存在整数解，否则一定没有！</li>
+<li>因为 $(a, b) | (ax + by)$，所以 $(a, b) | c$</li>
+<li>对于方程 $ax + by + cz = d$，则 $(a, b, c) | (ax + by + cz)$，即 $(a, b, c) | d$</li>
+</ol>
+<hr>
+<h2 id="%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97">扩展欧几里得：</h2>
+<pre class="hljs"><code><div><span class="hljs-function">ll <span class="hljs-title">exgcd</span><span class="hljs-params">(ll a, ll b, ll &amp;x, ll &amp;y)</span> </span>{
+    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) { x = <span class="hljs-number">1</span>; y = <span class="hljs-number">0</span>; <span class="hljs-keyword">return</span> a; }
+    ll d = exgcd(b, a % b, y, x);
+    y -= a / b * x;
+    <span class="hljs-keyword">return</span> d;
+}
+</div></code></pre>
+<hr>
+<h2 id="%E6%B1%82%E6%96%B9%E7%A8%8B-ax--by--c-%E7%9A%84%E9%80%9A%E8%A7%A3">求方程 ax + by = c 的通解：</h2>
+<p>先求出 $ax + by = (a, b)$ 的一对解 ${x, y}$</p>
+<p>则特解：${\frac{c}{(a, b)} * x, \frac{c}{(a,b)} * y}$</p>
+<p>通解为：${\frac{c}{(a, b)} * x + \frac{b}{(a, b)} * N, \frac{c}{(a,b)} * y - \frac{a}{(a, b)} * N}$</p>
+<p>证明如下：</p>
+<blockquote>
+<p>$\frac{c}{(a, b)} (ax + by) = c$</p>
+<p>$\frac{c}{(a, b)} {a(x + k_1), b(y + k_2) = c}$</p>
+<p>$\frac{c}{(a, b)} (ax + by) + \frac{c}{(a, b)} (ak_1 + bk_2) = c$，且 $ak_1 + bk_2 = 0$</p>
+<p>所以：$ak_1 = -bk_2 = -[a, b] * N = -\frac{ab}{(a, b)} * N$</p>
+<p>所以：$k_1 = - \frac{b}{(a, b)} * N$, $k_2 = \frac{a}{(a, b)} * N$</p>
+</blockquote>
+<hr>
+<h2 id="%E6%B1%82%E4%B8%80%E7%BB%84-ax--by--c-%E7%9A%84%E6%AD%A3%E6%95%B4%E6%95%B0%E8%A7%A3">求一组 ax + by = c 的正整数解：</h2>
+<p>如果求出 $ax + by = d$ 的一组解为 $x_0, y_0$，则原方程的特解为：$\frac{c}{d} * x_0, \frac{c}{d} * y_0$</p>
+<p>先让 $x_0$ 变成最小非负整数解：$\frac{c}{d} * x_0 + \frac{b}{d} * N$ 转变为问题：$\frac{c}{d} * x_0$ 需要加上或者减去多少个 $\frac{b}{d}$ 才会变成非负数，先求出 $\frac{c}{d} * x_0$ 取模 $\frac{b}{d}$ 的余数，如果余数是负数，则需要再加上一个 $\frac{b}{d}$ 这样就可以编程最小非负整数解！</p>
+<p>如果 $x_0$ 已经变成最小非负整数解了，那么 $y_0$ 如果还是负数的话，就需要减去多一个 $-\frac{a}{d}$，那么平行项 $x_0$ 就需要减掉一个 $\frac{b}{d}$ 会变成负数，所以肯定不可能成立！</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+
+<span class="hljs-function">ll <span class="hljs-title">exgcd</span><span class="hljs-params">(ll a, ll b, ll &amp;x, ll &amp;y)</span> </span>{
+    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) { x = <span class="hljs-number">1</span>; y = <span class="hljs-number">0</span>; <span class="hljs-keyword">return</span> a; }
+    ll d = exgcd(b, a % b, y, x);
+    y -= a / b * x;
+    <span class="hljs-keyword">return</span> d;
+}
+
+ll a, b, c;
+ll x, y;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+    ll d = exgcd(a, b, x, y);
+    <span class="hljs-keyword">if</span> (c % d) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-number">-1</span> &lt;&lt; <span class="hljs-string">'\n'</span>; <span class="hljs-keyword">return</span>;
+    }
+    {
+        a /= d; b /= d; c /= d;
+        __int128 x1 = x; x1 *= c;
+        __int128 y1 = y; y1 *= c;
+        __int128 x2 = (x1 % b + b) % b;
+        __int128 y2 = y1 - (x2 - x1) / b * a;
+        <span class="hljs-keyword">if</span> (y2 &lt; <span class="hljs-number">0</span>) {
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-number">-1</span> &lt;&lt; <span class="hljs-string">'\n'</span>; <span class="hljs-keyword">return</span>;
+        }
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; (ll)x2 &lt;&lt; <span class="hljs-string">' '</span> &lt;&lt; (ll)y2 &lt;&lt; <span class="hljs-string">'\n'</span>;
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::ios::sync_with_stdio(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>); <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>.tie(<span class="hljs-number">0</span>);
+    ll t; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; t; <span class="hljs-keyword">while</span> (t --)
+    solve();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+</div></code></pre>
+<hr>
+<h2 id="%E6%B1%82-ax-mod-m-%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC">求 ax mod m 的最小值</h2>
+<blockquote>
+<p>$ax (\bmod \ m)$</p>
+<p>$ax + my (\bmod \ m)$</p>
+<p>$t \times \gcd(a, m) (\bmod \ m)$</p>
+</blockquote>
+<h2 id="%E6%B1%82-ax--by-mod-m-%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC">求 (ax + by) mod m 的最小值</h2>
+<p>答案是：$0$</p>
+<p>证明过程如下：</p>
+<blockquote>
+<p>$(ax + by) \bmod m$</p>
+<p>等价于：$(ax + by + tm) \bmod m$</p>
+<p>而 $(ax + by + tm) = k * \gcd(a, b, m)$</p>
+<p>要让 $k * \gcd(a, b, m)$ 最小，只需要让 $k = 0$ 即可</p>
+</blockquote>
+<hr>
+<h2 id="%E6%B1%82-ax--by--c-mod-m-%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC">求 (ax + by + c) mod m 的最小值</h2>
+<p>答案：$\min{c \bmod \gcd(a, b, m), c \bmod \gcd(a, b, m) - \gcd(a, b, m)}$</p>
+<p>证明过程如下：</p>
+<blockquote>
+<p>$(ax + by + c) \bmod m$</p>
+<p>等价于：$(ax + by + c + tm) \bmod m$</p>
+<p>$k * \gcd(a, b, m) + c$ 最小</p>
+<p>所以令：$k = -c / \gcd(a, b, m)$</p>
+<p>$k$ 是否是真的可以让取模后的值最小呢？</p>
+<p>假设 $k$ 并不是答案，那么再加上 $K$ 个 $\gcd(a, b, m)$ 后的式子 $k * \gcd(a, b, m) + K * \gcd(a, b, m) + c$ 才是答案</p>
+<p>由于 $\gcd(a, b, m) | m$ 所以无论再继续加多少个 $\gcd(a, b, m)$ 都只会是一个以 $k * \gcd(a, b, m) + c$ 为首项，$\gcd(a, b, m)$ 为公差的循环节</p>
+<p>还可以讨论一下为什么不是 $m - \gcd(a, b, m) + k * \gcd(a, b, m) + c$ 最小</p>
+<p>因为 $k * \gcd(a, b, m) + c &lt; \gcd(a, b, m)$</p>
+<p>而 $\gcd(a, b, m) | m$，所以 $m = k\gcd(a, b, m), k \geq 1$ 所以：$m - \gcd(a, b, m) + k * \gcd(a, b, m) + c \geq (k - 1) * \gcd(a, b, m)$ 对于 $k &gt; 1$ 的情况都成立，但是如果 $k = 1$ 呢？还是有可能的哦</p>
+</blockquote>
+<hr>
+<h2 id="%E5%85%B3%E4%BA%8E%E6%96%B9%E7%A8%8B-ax--by--cz--d-%E7%9A%84%E7%89%B9%E8%A7%A3">关于方程 ax + by + cz = d 的特解：</h2>
+<ol>
+<li>首先 $(a, b, c) | d$ 必定成立</li>
+<li>先求出 $ax + by = (a, b)$ 的一对特解记为 $x_1, y_1$</li>
+<li>再求出 $(a, b)t + cz = ((a, b), c)$ 的一对特解，记为 $t_1, z_1$</li>
+<li>则 $ax + by + cz = (a, b, c)$ 的特解为：$(x_1t_1, y_1t_1, z_1)$</li>
+</ol>
+<h2 id="%E5%90%8C%E4%BD%99%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%A7%E8%B4%A8">同余的一些性质</h2>
+<p>若 $a \equiv b (\bmod \ m)$ 且 $a \equiv b (\bmod \ n)$ 成立，则 $a \equiv b (\bmod \ [m, n])$</p>
+<blockquote>
+<p>$m | a - b, n | a - b$ 所以 $[m, n] | a - b$</p>
+</blockquote>
+<p>若 $(k, m) = d$，且 $ka \equiv ka\prime (\bmod \ m)$ 则 $a \equiv a\prime (\bmod \frac{m}{d})$</p>
+<blockquote>
+<p>$m | k(a - a\prime)$</p>
+<p>$\frac{m}{d} | \frac{k}{d}(a - a\prime)$</p>
+<p>因为 $d$ 是 $m$ 和 $k$ 的最大公约数，所以 $\frac{m}{d}$ 与 $\frac{k}{d}$ 互质</p>
+<p>所以就只可能：$\frac{m}{d} | a - a\prime$</p>
+</blockquote>
+<p>如何求线性同余方程：$ax \equiv b (\bmod \ m)$</p>
+<blockquote>
+<p>$ax + my = b$</p>
+<p>用 $exgcd$ 求出一个特解</p>
+</blockquote>
+<h2 id="%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86">容斥原理</h2>
+<p>假设有 $n$ 个集合：$S_1$，$S_2$，···，$S_n$，求：$S_1 \cup S_2 \cup \cdots \cup S_n$</p>
+<p>答案：1个集合的组合 - 2个集合的组合 + 3个集合的组合 - 4个集合的组合 ··· ···</p>
+<p>题目：给定一个整数 $n$ 和 $m$ 个整数，求 $1 \sim n$ 中能被这 $m$ 个整数的某一个整除的个数有多少个？</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span>
+
+<span class="hljs-keyword">const</span> ll N = <span class="hljs-number">1e2</span>;
+ll n, m;
+ll a[N];
+ll res;
+
+<span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">lcm</span><span class="hljs-params">(ll x, ll y)</span> </span>{
+    <span class="hljs-keyword">return</span> x / <span class="hljs-built_in">std</span>::__gcd(x, y) * y;
+}
+
+<span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; <span class="hljs-title">get</span><span class="hljs-params">(ll x)</span> </span>{
+    ll i = <span class="hljs-number">1</span>, j = <span class="hljs-number">0</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; res;
+    <span class="hljs-keyword">while</span> (i &lt;= x) {
+        <span class="hljs-keyword">if</span> (x &amp; i) res.push_back(a[j + <span class="hljs-number">1</span>]);
+        i &lt;&lt;= <span class="hljs-number">1</span>; j += <span class="hljs-number">1</span>;
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; n &gt;&gt; m;
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">1</span>; i &lt;= m; i ++) <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; a[i];
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">1</span>; i &lt; (<span class="hljs-number">1</span> &lt;&lt; m); i ++) {
+        <span class="hljs-keyword">auto</span> vt = get(i);
+        ll mo = (vt.size() &amp; <span class="hljs-number">1</span>) ? <span class="hljs-number">1</span> : <span class="hljs-number">-1</span>;
+        ll t = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x : vt) {
+            t = lcm(t, x);
+            <span class="hljs-keyword">if</span> (t &gt; n) <span class="hljs-keyword">break</span>;
+        }
+        <span class="hljs-keyword">if</span> (t &gt; n) <span class="hljs-keyword">continue</span>;
+        res += mo * n / t;
+    }
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="hljs-string">'\n'</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::ios::sync_with_stdio(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>); <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>.tie(<span class="hljs-number">0</span>);
+    
+    solve();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<h2 id="%E7%BB%84%E5%90%88%E6%95%B0">组合数</h2>
+<h3 id="%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88">排列组合</h3>
+<p>用二进制表示组合排列：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">0</span>; i &lt; (<span class="hljs-number">1</span> &lt;&lt; n); i ++)
+</div></code></pre>
+<p>用 <code>dfs</code> 求组合排列</p>
+<hr>
+<h3 id="%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0">求组合数</h3>
+<p>$C(a, b) = \frac{a!}{b!(a - b)!} = C(a - 1, b) + C(a - 1, b - 1)$ 杨辉三角的推导方法推出下面一项</p>
+<hr>
+<p>如果需要求的组合数很大，并且需要对一个质数 $p$ 取模，可以用卢卡斯定理求：</p>
+<blockquote>
+<p>$C(a, b) = C(a \bmod p, b \bmod p) * C(a / p, b / p)$ 递归求下一项</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span>
+
+<span class="hljs-keyword">const</span> ll N = <span class="hljs-number">1e5</span> + <span class="hljs-number">100</span>;
+ll fac[N]; <span class="hljs-comment">// 阶乘</span>
+ll a, b, p;
+
+<span class="hljs-function">ll <span class="hljs-title">exgcd</span><span class="hljs-params">(ll a, ll b, ll&amp; x, ll&amp; y)</span> </span>{
+    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) { x = <span class="hljs-number">1</span>; y = <span class="hljs-number">0</span>; <span class="hljs-keyword">return</span> a; }
+    ll d = exgcd(b, a % b, y, x);
+    y -= a / b * x;
+    <span class="hljs-keyword">return</span> d;
+}
+
+<span class="hljs-function">ll <span class="hljs-title">C</span><span class="hljs-params">(ll a, ll b, ll mod)</span> </span>{
+    <span class="hljs-keyword">if</span> (a &lt; b) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    ll p = fac[a], q = fac[b] * fac[a - b] % mod;
+    ll d, x, y; d = exgcd(q, mod, x, y);
+    <span class="hljs-keyword">return</span> (p * x % mod + mod) % mod;
+}
+
+<span class="hljs-function">ll <span class="hljs-title">lucas</span><span class="hljs-params">(ll a, ll b, ll mod)</span> </span>{
+    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> C(a % mod, b % mod, mod) * lucas(a / mod, b / mod, mod) % mod;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>{
+    fac[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; p;
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">1</span>; i &lt; N; i ++) fac[i] = fac[i - <span class="hljs-number">1</span>] * i % p;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; lucas(a, b, p) &lt;&lt; <span class="hljs-string">'\n'</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::ios::sync_with_stdio(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>); <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>.tie(<span class="hljs-number">0</span>);
+    ll t; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; t; <span class="hljs-keyword">while</span> (t --)
+    solve();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<h2 id="%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0">欧拉函数</h2>
+<p>求 $1 \sim n$ 范围内与 $n$ 互质的个数：</p>
+<p>$n = p_1^{a_1}p_2^{a_2} \cdots p_k^{a_k}$</p>
+<p>则答案为：$n * \frac{p_1 - 1}{p_1} * \frac{p_2 - 1}{p_2} * \frac{p_3 - 1}{p_3} * \cdots * \frac{p_k - 1}{p_k}$</p>
+<p>该式子也称为欧拉函数！</p>
+<p>时间复杂的：$O(\sqrt{n})$</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// 欧拉函数</span>
+<span class="hljs-comment">// 求与 n 互质的元素个数</span>
+<span class="hljs-function">ll <span class="hljs-title">phi</span><span class="hljs-params">(ll n)</span> </span>{
+    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    ll ans = n;
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">2</span>; i * i &lt;= n; i ++) {
+        <span class="hljs-keyword">if</span> (n % i == <span class="hljs-number">0</span>) {
+            ans = ans / i * (i - <span class="hljs-number">1</span>);
+            <span class="hljs-keyword">while</span> (n % i == <span class="hljs-number">0</span>) n /= i;
+        }
+    }
+    <span class="hljs-keyword">if</span> (n &gt; <span class="hljs-number">1</span>) ans = ans / n * (n - <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">return</span> ans;
+} 
+</div></code></pre>
+<h2 id="%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86">欧拉定理</h2>
+<p>欧拉函数 $phi(m)$ 等于比 $m$ 小的互质的个数；</p>
+<p>令 $1 \sim m$ 范围内与 $m$ 互质的个数为 $phi(m)$ (欧拉函数)，若 $\gcd(a, m) \equiv 1$ 则 $a ^ {phi(m)} \equiv 1 (\bmod \ m)$</p>
+<p>特殊情况下，若 $m$ 是质数，则 $phi(m) = m - 1$，所以有：$a^{m - 1} \equiv 1 (\bmod \ m)$</p>
+<hr>
+<p>若 $a$ 和 $m$ 互质，则：</p>
+<blockquote>
+<p>$a ^ b \equiv a ^ {b \bmod phi(m)} (\bmod \ m)$</p>
+</blockquote>
+<p>如果 $a$ 和 $m$ 互质或者不互质，都有：</p>
+<blockquote>
+<p>若 $b &gt; phi(m)$:</p>
+<blockquote>
+<p>$a ^ b \equiv a ^ {b \bmod phi(m) + phi(m)}$</p>
+</blockquote>
+<p>若 $b \leq phi(m)$，直接用快速幂求解</p>
+</blockquote>
+<hr>
+<p>遇到扩展欧拉定理的题很有可能需要用到高精度:</p>
+<h2 id="%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95">高精度加法</h2>
+<p>正整数相加</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; a, <span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; b)</span> <span class="hljs-keyword">const</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; res;
+    ll n = a.size(), m = b.size();
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">0</span>, t = <span class="hljs-number">0</span>; i &lt; n || i &lt; m || t; i ++) {
+        <span class="hljs-keyword">if</span> (i &lt; n) t += a[i];
+        <span class="hljs-keyword">if</span> (i &lt; m) t += b[i];
+        res.push_back(t % mod);
+        t /= mod;
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<h2 id="%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95">高精度减法</h2>
+<p>大 - 小</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; <span class="hljs-title">sub</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; a, <span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; b)</span> <span class="hljs-keyword">const</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; res;
+    ll n = a.size(), m = b.size();
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">0</span>, t = <span class="hljs-number">0</span>; i &lt; n; i ++) {
+        t += a[i];
+        ll t_ = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">if</span> (i &lt; m) t -= b[i];
+        <span class="hljs-keyword">if</span> (t &lt; <span class="hljs-number">0</span>) {
+            t += mod;
+            t_ = <span class="hljs-number">-1</span>;
+        }
+        res.push_back(t);
+        t = t_;
+    }
+    <span class="hljs-keyword">if</span> (res.back() == <span class="hljs-number">0</span>) {
+        ll t = n - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">while</span> (t &gt;= <span class="hljs-number">0</span> &amp;&amp; res[t] == <span class="hljs-number">0</span>) t --;
+        <span class="hljs-keyword">if</span> (t &lt; <span class="hljs-number">0</span>) res = {<span class="hljs-number">0</span>};
+        <span class="hljs-keyword">else</span> res.erase(res.begin() + t + <span class="hljs-number">1</span>, res.end());
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<h2 id="%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95">高精度乘法</h2>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; <span class="hljs-title">mul</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; a, <span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; b)</span> <span class="hljs-keyword">const</span> </span>{
+    ll n = a.size(), m = b.size();
+    <span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; <span class="hljs-title">res</span><span class="hljs-params">(n + m + <span class="hljs-number">10</span>, <span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">0</span>; i &lt; n; i ++) {
+        <span class="hljs-keyword">for</span> (ll j = <span class="hljs-number">0</span>; j &lt; m; j ++) {
+            res[i + j] += a[i] * b[j];
+        }
+        <span class="hljs-keyword">for</span> (ll _ = i, t = <span class="hljs-number">0</span>; _ &lt; i + m || t; _ ++) {
+            t += res[_];
+            res[_] = t % mod;
+            t /= mod;
+        }
+    }
+    <span class="hljs-keyword">if</span> (res.back() == <span class="hljs-number">0</span>) {
+        ll t = res.size() - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">while</span> (t &gt;= <span class="hljs-number">0</span> &amp;&amp; res[t] == <span class="hljs-number">0</span>) t --;
+        <span class="hljs-keyword">if</span> (t &lt; <span class="hljs-number">0</span>) res = {<span class="hljs-number">0</span>};
+        <span class="hljs-keyword">else</span> res.erase(res.begin() + t + <span class="hljs-number">1</span>, res.end());
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<h2 id="%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E4%BB%A5%E5%8D%95%E7%B2%BE%E5%BA%A6">高精度除以单精度</h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// 高精度除法</span>
+<span class="hljs-function">ll <span class="hljs-title">div</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; a, ll b, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; c)</span> </span>{
+    ll t = <span class="hljs-number">0</span>;
+    ll n = a.size();
+    <span class="hljs-keyword">for</span> (ll i = n - <span class="hljs-number">1</span>; ~i; i --) {
+        t = t * <span class="hljs-number">10</span> + a[i];
+        c.push_back(t / b);
+        t %= b;
+    }
+    c = <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;(c.rbegin(), c.rend());
+    <span class="hljs-keyword">while</span> (c.size() &gt; <span class="hljs-number">1</span> &amp;&amp; c.back() == <span class="hljs-number">0</span>) c.pop_back();
+    <span class="hljs-keyword">return</span> t;
+}
+</div></code></pre>
+<h2 id="%E9%80%86%E5%85%83">逆元</h2>
+<h3 id="%E5%BF%AB%E9%80%9F%E5%B9%82%E6%B1%82%E9%80%86%E5%85%83">快速幂求逆元：</h3>
+<pre class="hljs"><code><div><span class="hljs-function">ll <span class="hljs-title">qpow</span><span class="hljs-params">(ll a, ll b, ll mod)</span> </span>{
+    a = (a % mod + mod) % mod;
+    ll ans = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span> (b) {
+        <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>) ans = ans * a % mod;
+        a = a * a % mod;
+        b &gt;&gt;= <span class="hljs-number">1</span>;
+    }
+    <span class="hljs-keyword">return</span> ans;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">ny</span><span class="hljs-params">(ll a, ll b, ll&amp; res)</span> </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">std</span>::gcd(a, b) != <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    res = qpow(a, b - <span class="hljs-number">2</span>, b);
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</div></code></pre>
+<h3 id="exgcd-%E6%B1%82%E9%80%86%E5%85%83">exgcd 求逆元：</h3>
+<blockquote>
+<p>$ax \equiv 1(\bmod \ b)$</p>
+<p>$ax + by \equiv 1$</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="hljs-function">ll <span class="hljs-title">exgcd</span><span class="hljs-params">(ll a, ll b, ll&amp; x, ll&amp; y)</span> </span>{
+    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) { x = <span class="hljs-number">1</span>; y = <span class="hljs-number">0</span>; <span class="hljs-keyword">return</span> a; }
+    ll d = exgcd(b, a % b, y, x); 
+    y -= a / b * x;
+    <span class="hljs-keyword">return</span> d;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">ny</span><span class="hljs-params">(ll a, ll b, ll&amp; res)</span> </span>{
+    ll d, x, y;
+    d = exgcd(a, b, x, y);
+    <span class="hljs-keyword">if</span> (d != <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    res = (x % b + b) % b;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</div></code></pre>
+<h2 id="%E9%80%86%E5%85%83%E9%80%92%E6%8E%A8%E5%BC%8F">逆元递推式：</h2>
+<p>令 $f(i)$ 代表 $i$ 在 $\bmod \ p$ 的逆元，则：</p>
+<blockquote>
+<p>$f(i) = (p - p / i) * f(p \bmod i) \bmod p$</p>
+<p>注意 $p / i$ 为取整除</p>
+</blockquote>
+<p>可以快速求 $1 \sim n$ 的逆元，时间复杂度：$O(n)$</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span>
+
+<span class="hljs-keyword">const</span> ll N = <span class="hljs-number">1e7</span> + <span class="hljs-number">10</span>;
+ll n, m;
+ll inv[N];
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; m &gt;&gt; n;
+    inv[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">2</span>; i &lt;= n; i ++) {
+        inv[i] = (m - m / i) * inv[m % i] % m;
+    }
+    
+    ll res = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">1</span>; i &lt;= n; i ++) res ^= inv[i];
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="hljs-string">'\n'</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::ios::sync_with_stdio(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>); <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>.tie(<span class="hljs-number">0</span>);
+    
+    solve();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<h2 id="%E5%80%9F%E5%8A%A9%E5%89%8D%E7%BC%80%E4%B9%98%E6%B3%95%E6%B1%82%E9%80%86%E5%85%83">借助前缀乘法求逆元</h2>
+<p>给定一个集合 $a_1, a_2, a_3, \cdots a_n$ 求每一个元素的逆元：</p>
+<blockquote>
+<p>令 $s_i = a_1 * a_2 * \cdots a_i$ 前缀乘法</p>
+<p>求出 $s_1, s_2, s_3, \cdots, s_n$</p>
+<p>先求出 $s_n$ 的逆元为 $t_n$，则 $t_n = \frac{1}{a_1} * \frac{1}{a_2} * \frac{1}{a_3} * \cdots * \frac{1}{a_n}$</p>
+<p>所以 $\frac{1}{a_n} = t_n * s_{n - 1}$，$t_{n - 1} = t_n * a_n$</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span>
+
+<span class="hljs-keyword">unsigned</span> A, B, C;
+<span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-title">rng61</span><span class="hljs-params">()</span> </span>{
+    A ^= A &lt;&lt; <span class="hljs-number">16</span>;
+    A ^= A &gt;&gt; <span class="hljs-number">5</span>;
+    A ^= A &lt;&lt; <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">unsigned</span> t = A;
+    A = B;
+    B = C;
+    C ^= t ^ A;
+    <span class="hljs-keyword">return</span> C;
+}
+
+<span class="hljs-keyword">const</span> ll N = <span class="hljs-number">1e7</span> + <span class="hljs-number">10</span>;
+ll mod, n;
+ll a[N], s[N], inv[N];
+
+<span class="hljs-function">ll <span class="hljs-title">exgcd</span><span class="hljs-params">(ll a, ll b, ll&amp; x, ll&amp; y)</span> </span>{
+    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) { x = <span class="hljs-number">1</span>; y = <span class="hljs-number">0</span>; <span class="hljs-keyword">return</span> a; }
+    ll d = exgcd(b, a % b, y, x);
+    y -= a / b * x;
+    <span class="hljs-keyword">return</span> d;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">ny</span><span class="hljs-params">(ll a, ll mod, ll&amp; res)</span> </span>{
+    ll d, x, y;
+    d = exgcd(a, mod, x, y);
+    <span class="hljs-keyword">if</span> (d != <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    res = (x % mod + mod) % mod; <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>{
+    s[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">1</span>; i &lt;= n; i ++) {
+        s[i] = s[i - <span class="hljs-number">1</span>] * a[i] % mod;
+    }
+    ll t; ny(s[n], mod, t);
+    <span class="hljs-keyword">for</span> (ll i = n; i; i --) {
+        inv[i] = t * s[i - <span class="hljs-number">1</span>] % mod;
+        t = t * a[i] % mod;
+    }
+    
+    ll res = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">1</span>; i &lt;= n; i ++) res ^= inv[i];
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="hljs-string">'\n'</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::ios::sync_with_stdio(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>); <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>.tie(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; mod &gt;&gt; n &gt;&gt; A &gt;&gt; B &gt;&gt; C;
+    ll cnt = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">1</span>; i &lt;= n; i ++) {
+        ll t = rng61() % mod;
+        <span class="hljs-keyword">if</span> (t == <span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span>;
+        a[++ cnt] = t;
+    }
+    n = cnt;
+    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-number">0</span> &lt;&lt; <span class="hljs-string">'\n'</span>; <span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);
+    }
+    solve();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<h2 id="%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0">生成随机数</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">unsigned</span> ll r64 = time(<span class="hljs-number">0</span>);
+<span class="hljs-function"><span class="hljs-keyword">unsigned</span> ll <span class="hljs-title">rint</span><span class="hljs-params">()</span> </span>{
+    r64 ^= r64 &gt;&gt; <span class="hljs-number">12</span>;
+    r64 ^= r64 &lt;&lt; <span class="hljs-number">25</span>;
+    r64 ^= r64 &gt;&gt; <span class="hljs-number">27</span>;
+    <span class="hljs-keyword">return</span> r64;
+}
+</div></code></pre>
+<hr>
+<pre class="hljs"><code><div><span class="hljs-keyword">unsigned</span> r32 = time(<span class="hljs-number">0</span>);
+<span class="hljs-function"><span class="hljs-keyword">unsigned</span> <span class="hljs-title">rint</span><span class="hljs-params">()</span> </span>{
+    r32 ^= r32 &lt;&lt; <span class="hljs-number">13</span>;
+    r32 ^= r32 &gt;&gt; <span class="hljs-number">17</span>;
+    r32 ^= r32 &lt;&lt; <span class="hljs-number">5</span>;
+    <span class="hljs-keyword">return</span> r32;
+}
+</div></code></pre>
+<hr>
+<pre class="hljs"><code><div><span class="hljs-function">ll <span class="hljs-title">rnum</span><span class="hljs-params">(ll n)</span> </span>{
+    <span class="hljs-keyword">return</span> rll() % n + <span class="hljs-number">1</span>;
+}
+</div></code></pre>
+<h2 id="%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86">中国剩余定理</h2>
+<p>若 $m_1, m_2, \cdots, m_n$ 两两互质，则同余方程：</p>
+<blockquote>
+<p>$x = a_1 (\bmod \ m_1)$
+$x = a_2 (\bmod \ m_2)$
+$\cdots \ \cdots$
+$x = a_n (\bmod \ m_n)$</p>
+</blockquote>
+<p>有唯一解，且 $\bmod \ M$ 的解唯一，$M = m_1 * m_2 * \cdots m_n$</p>
+<p>令 $M_i = \frac{M}{m_i}$，$M_i^{-1}$ 为模 $m_i$ 的逆元</p>
+<p>则解为：</p>
+<blockquote>
+<p>$x \equiv (a_1M_1M_1^{-1} + a_2M_2M_2^{-1} + \cdots + a_nM_nM_n^{-1}) \bmod M$</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span>
+
+<span class="hljs-keyword">const</span> ll N = <span class="hljs-number">1e3</span>;
+ll n;
+ll a[N], m[N], M[N];
+
+<span class="hljs-function">ll <span class="hljs-title">exgcd</span><span class="hljs-params">(ll a, ll b, ll&amp; x, ll&amp; y)</span> </span>{
+    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) { x = <span class="hljs-number">1</span>; y = <span class="hljs-number">0</span>; <span class="hljs-keyword">return</span> a; }
+    ll d = exgcd(b, a % b, y, x);
+    y -= a / b * x;
+    <span class="hljs-keyword">return</span> d;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; n;
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">1</span>; i &lt;= n; i ++) <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; m[i] &gt;&gt; a[i];
+    
+    ll a1 = a[<span class="hljs-number">1</span>], m1 = m[<span class="hljs-number">1</span>];
+    ll ans = a1;
+    
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">2</span>; i &lt;= n; i ++) {
+        ll a2 = a[i], m2 = m[i];
+        ll a = m1, b = m2, c = ((a2 - a1) % m2 + m2) % m2;
+        ll d, x, y;
+        d = exgcd(a, b, x, y);
+        <span class="hljs-keyword">if</span> (c % d) {
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-number">-1</span> &lt;&lt; <span class="hljs-string">'\n'</span>;
+            <span class="hljs-keyword">return</span>;
+        }
+        <span class="hljs-comment">// 求出 x 的最小特解</span>
+        x = ((c / d * x) % (b / d) + (b / d)) % (b / d);
+        ans = a1 + x * m1;
+        m1 = m2 / d * m1;
+        ans = (ans % m1 + m1) % m1;
+        a1 = ans;
+    }
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="hljs-string">'\n'</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::ios::sync_with_stdio(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>); <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>.tie(<span class="hljs-number">0</span>);
+    
+    solve();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<h2 id="%E7%AD%9B%E8%B4%A8%E6%95%B0">筛质数</h2>
+<h3 id="%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95">欧拉筛法</h3>
+<p>时间复杂的：$O(n)$</p>
+<pre class="hljs"><code><div>ll vi[N], ps[N], cnt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">get_prime</span><span class="hljs-params">(ll n)</span> </span>{
+    <span class="hljs-comment">// 欧拉筛法</span>
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">2</span>; i &lt;= n; i ++) {
+        <span class="hljs-keyword">if</span> (vi[i] == <span class="hljs-number">0</span>) ps[++ cnt] = i;
+        <span class="hljs-keyword">for</span> (ll j = <span class="hljs-number">1</span>; ps[j] * i &lt;= n; j ++) {
+            vi[ps[j] * i] = <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">if</span> (i % ps[j] == <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;
+        }
+    }
+}
+</div></code></pre>
+<h3 id="%E5%9F%83%E5%BC%8F%E7%AD%9B%E6%B3%95">埃式筛法</h3>
+<p>时间复杂的：$O(n\log(\log(n)))$ 很接近常数</p>
+<pre class="hljs"><code><div>ll vi[N], ps[N], cnt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">get_prime</span><span class="hljs-params">(ll n)</span> </span>{
+    <span class="hljs-comment">// 埃式筛法</span>
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">2</span>; i * i &lt;= n; i ++) {
+        <span class="hljs-keyword">if</span> (vi[i] == <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">for</span> (ll j = i * i; j &lt;= n; j += i) 
+                vi[j] = <span class="hljs-number">1</span>;
+        }
+    }
+    <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">2</span>; i &lt;= n; i ++) {
+        <span class="hljs-keyword">if</span> (vi[i]) <span class="hljs-keyword">continue</span>;
+        ps[++ cnt] = i;
+    }
+}
+</div></code></pre>
+<h2 id="miller-rabin-%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0"><a href="https://zhuanlan.zhihu.com/p/349360074">miller-rabin 判断素数</a></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">// ll qmul(ll a, ll b, ll mod) {</span>
+<span class="hljs-comment">//     a = (a % mod + mod) % mod;</span>
+<span class="hljs-comment">//     ll ans = 0;</span>
+<span class="hljs-comment">//     while (b) {</span>
+<span class="hljs-comment">//         if (b &amp; 1) ans = (ans + a) % mod;</span>
+<span class="hljs-comment">//         a = (a + a) % mod;</span>
+<span class="hljs-comment">//         b &gt;&gt;= 1;</span>
+<span class="hljs-comment">//     }</span>
+<span class="hljs-comment">//     return ans;</span>
+<span class="hljs-comment">// }</span>
+
+<span class="hljs-comment">// ll qmul(ll x, ll y, ll m) {</span>
+<span class="hljs-comment">//     x %= m; y %= m;</span>
+<span class="hljs-comment">//     ll d = ((ll double)x * y / m);</span>
+<span class="hljs-comment">//     d = x * y - d * m;</span>
+<span class="hljs-comment">//     if (d &gt;= m) d -= m;</span>
+<span class="hljs-comment">//     if (d &lt; 0) d += m;</span>
+<span class="hljs-comment">//     return d;</span>
+<span class="hljs-comment">// } // 32 位内可以试着用</span>
+<span class="hljs-function">ll <span class="hljs-title">qmul</span><span class="hljs-params">(__int128 a, __int128 b, __int128 mod)</span> </span>{
+    <span class="hljs-keyword">return</span> a % mod * (b % mod) % mod;
+}
+<span class="hljs-function">ll <span class="hljs-title">qpow</span><span class="hljs-params">(ll a,ll n,ll mod)</span> </span>{ <span class="hljs-comment">//快速幂</span>
+    ll res=<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span>(n) {
+        <span class="hljs-keyword">if</span>(n&amp;<span class="hljs-number">1</span>) res=qmul(res,a,mod);
+        a=qmul(a,a,mod);
+        n&gt;&gt;=<span class="hljs-number">1</span>;
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">MRtest</span><span class="hljs-params">(ll n)</span> </span>{ <span class="hljs-comment">//Miller Rabin Test</span>
+    <span class="hljs-keyword">if</span>(n&lt;<span class="hljs-number">3</span>||n%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> n==<span class="hljs-number">2</span>;<span class="hljs-comment">//特判</span>
+    ll u=n<span class="hljs-number">-1</span>,t=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(u%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>) u/=<span class="hljs-number">2</span>,++t;
+    ll ud[]={<span class="hljs-number">2</span>,<span class="hljs-number">325</span>,<span class="hljs-number">9375</span>,<span class="hljs-number">28178</span>,<span class="hljs-number">450775</span>,<span class="hljs-number">9780504</span>,<span class="hljs-number">1795265022</span>};
+    <span class="hljs-keyword">for</span>(ll a:ud) {
+        ll v=qpow(a,u,n);
+        <span class="hljs-keyword">if</span>(v==<span class="hljs-number">1</span>||v==n<span class="hljs-number">-1</span>||v==<span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span>;
+        <span class="hljs-keyword">for</span>(ll j=<span class="hljs-number">1</span>;j&lt;=t;j++) {
+            v=qmul(v,v,n);
+            <span class="hljs-keyword">if</span>(v==n<span class="hljs-number">-1</span>&amp;&amp;j!=t){v=<span class="hljs-number">1</span>;<span class="hljs-keyword">break</span>;}<span class="hljs-comment">//出现一个n-1，后面都是1，直接跳出</span>
+            <span class="hljs-keyword">if</span>(v==<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//这里代表前面没有出现n-1这个解，二次检验失败</span>
+        }
+        <span class="hljs-keyword">if</span>(v!=<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//Fermat检验</span>
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+</div></code></pre>
+<h2 id="%E6%95%B4%E6%95%B0%E5%88%86%E5%9D%97">整数分块</h2>
+<p>给定一个正整数 $n$，求集合 ${\frac{n}{1}, \frac{n}{2}, \frac{n}{3}, \cdots, \frac{n}{n}}$ 的元素个数和集合</p>
+<blockquote>
+<p>差不多只有 $2\sqrt{n}$ 种不同的取值</p>
+</blockquote>
+<p>每一块的跳跃代码：</p>
+<p>时间复杂度：$O(\sqrt{n})$</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; n; <span class="hljs-comment">// 降序</span>
+<span class="hljs-keyword">for</span> (ll l = <span class="hljs-number">1</span>; l &lt;= n; l ++) {
+    ll d = n / l, r = n / d;
+    <span class="hljs-comment">// [l, r] = n / l</span>
+    l = r;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; d &lt;&lt; <span class="hljs-string">' '</span>;
+}
+</div></code></pre>
+<hr>
+<p>求 $\sum{f(i)}{\frac{n}{i}}$ 可以用整数分块，切分成很多小块 $[l, r]$ 并且对于 $i \in [l, r]$，$\frac{n}{i}$ 的值都相同，所以可以用 $\frac{n}{i}\sum{f(i)}$ 来求，一般会求 $f(i)$ 的前缀和！</p>
+<hr>
+<p>在 <code>int</code> 范围内：</p>
+<p>$\frac{n}{1} + \frac{n}{2} + \frac{n}{3} + \cdots + \frac{n}{n} &lt; 32 * n$</p>
+<p>有时候分析时间复杂度的时候会用到，比 $n\log(n)$ 要小一点！</p>
+<h2 id="%E5%BF%AB%E9%80%9F%E5%B9%82">快速幂</h2>
+<pre class="hljs"><code><div><span class="hljs-function">ll <span class="hljs-title">qpow</span><span class="hljs-params">(ll a, ll b, ll mod)</span> </span>{
+    a = (a % mod + mod) % mod;
+    ll ans = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span> (b) {
+        <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>) ans = ans * a % mod;
+        a = a * a % mod;
+        b &gt;&gt;= <span class="hljs-number">1</span>;
+    }
+    <span class="hljs-keyword">return</span> ans;
+}
+</div></code></pre>
+<h2 id="%E6%A8%A1%E4%B9%98">模乘</h2>
+<pre class="hljs"><code><div><span class="hljs-function">ll <span class="hljs-title">qmul</span><span class="hljs-params">(ll x, ll y, ll m)</span> </span>{
+    x %= m; y %= m;
+    ll d = ((ll <span class="hljs-keyword">double</span>)x * y / m);
+    d = x * y - d * m;
+    <span class="hljs-keyword">if</span> (d &gt;= m) d -= m;
+    <span class="hljs-keyword">if</span> (d &lt; <span class="hljs-number">0</span>) d += m;
+    <span class="hljs-keyword">return</span> d;
+} <span class="hljs-comment">// 32 位内可以试着用</span>
+</div></code></pre>
+<hr>
+<pre class="hljs"><code><div><span class="hljs-function">ll <span class="hljs-title">qmul</span><span class="hljs-params">(ll a, ll b, ll mod)</span> </span>{
+    a = (a % mod + mod) % mod;
+    ll ans = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span> (b) {
+        <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>) ans = (ans + a) % mod;
+        a = (a + a) % mod;
+        b &gt;&gt;= <span class="hljs-number">1</span>;
+    }
+    <span class="hljs-keyword">return</span> ans;
+}
+</div></code></pre>
+<h2 id="%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97">高精度整数运算</h2>
+<p>不推荐使用，建议改用 $java$ 语言，如果 $java$ 超时，就只能用下面这个了，特殊地：</p>
+<p>乘法运算时间复杂的：$O(n^2)$</p>
+<p>除法运算时间复杂的：$O(n ^ 2\log(10^n))$ 很慢很慢！</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">big</span> {</span>
+    <span class="hljs-comment">// 压位高精度</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">static</span> ll mod = <span class="hljs-number">10000000</span>;
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">static</span> ll len = <span class="hljs-number">7</span>;
+    ll type;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; v;
+    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">zero</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> v.size() == <span class="hljs-number">1</span> &amp;&amp; v[<span class="hljs-number">0</span>] == <span class="hljs-number">0</span>; }
+    big(ll x = <span class="hljs-number">0</span>) {
+        type = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">if</span> (x == <span class="hljs-number">0</span>) {
+            type = <span class="hljs-number">0</span>; v.push_back(<span class="hljs-number">0</span>); <span class="hljs-keyword">return</span>;
+        }
+        <span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">0</span>) { type = <span class="hljs-number">-1</span>; x *= <span class="hljs-number">-1</span>; }
+        <span class="hljs-keyword">while</span> (x) {
+            v.push_back(x % mod); x /= mod;
+        }
+    }
+    big(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> s) {
+        type = <span class="hljs-number">1</span>;
+        ll n = s.size();
+        <span class="hljs-keyword">if</span> (s[<span class="hljs-number">0</span>] == <span class="hljs-string">'-'</span>) {
+            type = <span class="hljs-number">-1</span>;
+            s = <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(s.begin() + <span class="hljs-number">1</span>, s.end());
+            n = s.size();
+        }
+        <span class="hljs-keyword">if</span> (s.size() == <span class="hljs-number">1</span> &amp;&amp; s[<span class="hljs-number">0</span>] == <span class="hljs-string">'0'</span>) type = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (ll i = n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i -= len) {
+            ll l = i - len + <span class="hljs-number">1</span>, r = i;
+            <span class="hljs-keyword">if</span> (l &lt; <span class="hljs-number">0</span>) l = <span class="hljs-number">0</span>;
+            ll res = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">while</span> (l &lt;= r) {
+                res = res * <span class="hljs-number">10</span> + s[l] - <span class="hljs-string">'0'</span>;
+                l ++;
+            }
+            v.push_back(res);
+        }
+    }
+    big(<span class="hljs-keyword">const</span> big&amp; num) {
+        v = num.v;
+        type = num.type;
+    }
+    big&amp; <span class="hljs-keyword">operator</span>=(<span class="hljs-keyword">const</span> big&amp; num) {
+        v = num.v;
+        type = num.type;
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(big&amp; num)</span> </span>{
+        v.swap(num.v);
+        <span class="hljs-built_in">std</span>::swap(type, num.type);
+    }
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">clear</span><span class="hljs-params">()</span> </span>{ v.clear(); }
+    <span class="hljs-function">ll <span class="hljs-title">size</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> v.size(); }
+    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&lt;(<span class="hljs-keyword">const</span> big&amp; num) <span class="hljs-keyword">const</span> {
+        <span class="hljs-keyword">if</span> (type &lt; num.type) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        <span class="hljs-keyword">if</span> (type &gt; num.type) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        <span class="hljs-keyword">if</span> (v.size() != num.v.size()) <span class="hljs-keyword">return</span> (type == <span class="hljs-number">1</span>) ? (v.size() &lt; num.v.size()) : (v.size() &gt; num.v.size());
+        ll n = v.size();
+        <span class="hljs-keyword">for</span> (ll i = n - <span class="hljs-number">1</span>; ~i; i --) {
+            <span class="hljs-keyword">if</span> (v[i] != num.v[i]) <span class="hljs-keyword">return</span> (type == <span class="hljs-number">1</span>) ? (v[i] &lt; num.v[i]) : (v[i] &gt; num.v[i]);
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&gt;(<span class="hljs-keyword">const</span> big&amp; num) <span class="hljs-keyword">const</span> {
+        <span class="hljs-keyword">return</span> num &lt; *<span class="hljs-keyword">this</span>;
+    }
+    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>==(<span class="hljs-keyword">const</span> big&amp; num) <span class="hljs-keyword">const</span> {
+        <span class="hljs-keyword">return</span> (*<span class="hljs-keyword">this</span> &lt; num) == <span class="hljs-literal">false</span> &amp;&amp; (num &lt; *<span class="hljs-keyword">this</span>) == <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&lt;=(<span class="hljs-keyword">const</span> big&amp; num) <span class="hljs-keyword">const</span> {
+        <span class="hljs-keyword">return</span> !(*<span class="hljs-keyword">this</span> &gt; num);
+    }
+    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&gt;=(<span class="hljs-keyword">const</span> big&amp; num) <span class="hljs-keyword">const</span> {
+        <span class="hljs-keyword">return</span> !(*<span class="hljs-keyword">this</span> &lt; num);
+    }
+    <span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> <span class="hljs-title">to_str</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> res;
+        <span class="hljs-keyword">if</span> (type == <span class="hljs-number">-1</span>) res = <span class="hljs-string">'-'</span>;
+        <span class="hljs-keyword">auto</span> f = [&amp;](ll x) -&gt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> {
+            <span class="hljs-keyword">if</span> (x == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-string">"0"</span>;
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> s;
+            <span class="hljs-keyword">while</span> (x) {
+                s += x % <span class="hljs-number">10</span> + <span class="hljs-string">'0'</span>; x /= <span class="hljs-number">10</span>;
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(s.rbegin(), s.rend());
+        };
+        res += f(v.back());
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i = v.rbegin() + <span class="hljs-number">1</span>; i != v.rend(); i ++) {
+            <span class="hljs-keyword">auto</span> t = f(*i);
+            ll _ = len - t.size();
+            <span class="hljs-keyword">while</span> (_ --) res += <span class="hljs-string">"0"</span>;
+            res += t;
+        }
+        <span class="hljs-keyword">return</span> res;
+    }
+    <span class="hljs-keyword">friend</span>
+    <span class="hljs-built_in">std</span>::ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(<span class="hljs-built_in">std</span>::ostream&amp; out, <span class="hljs-keyword">const</span> big&amp; num) {
+        out &lt;&lt; num.to_str();
+        <span class="hljs-keyword">return</span> out;
+    }
+    <span class="hljs-keyword">friend</span>
+    <span class="hljs-built_in">std</span>::istream&amp; <span class="hljs-keyword">operator</span>&gt;&gt;(<span class="hljs-built_in">std</span>::istream&amp; on, big&amp; num) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> s; on &gt;&gt; s; num = s;
+        <span class="hljs-keyword">return</span> on;
+    }
+    <span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; a, <span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; b)</span> <span class="hljs-keyword">const</span> </span>{
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; res;
+        ll n = a.size(), m = b.size();
+        <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">0</span>, t = <span class="hljs-number">0</span>; i &lt; n || i &lt; m || t; i ++) {
+            <span class="hljs-keyword">if</span> (i &lt; n) t += a[i];
+            <span class="hljs-keyword">if</span> (i &lt; m) t += b[i];
+            res.push_back(t % mod);
+            t /= mod;
+        }
+        <span class="hljs-keyword">return</span> res;
+    }
+    <span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; <span class="hljs-title">sub</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; a, <span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; b)</span> <span class="hljs-keyword">const</span> </span>{
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; res;
+        ll n = a.size(), m = b.size();
+        <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">0</span>, t = <span class="hljs-number">0</span>; i &lt; n; i ++) {
+            t += a[i];
+            ll t_ = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">if</span> (i &lt; m) t -= b[i];
+            <span class="hljs-keyword">if</span> (t &lt; <span class="hljs-number">0</span>) {
+                t += mod;
+                t_ = <span class="hljs-number">-1</span>;
+            }
+            res.push_back(t);
+            t = t_;
+        }
+        <span class="hljs-keyword">if</span> (res.back() == <span class="hljs-number">0</span>) {
+            ll t = n - <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">while</span> (t &gt;= <span class="hljs-number">0</span> &amp;&amp; res[t] == <span class="hljs-number">0</span>) t --;
+            <span class="hljs-keyword">if</span> (t &lt; <span class="hljs-number">0</span>) res = {<span class="hljs-number">0</span>};
+            <span class="hljs-keyword">else</span> res.erase(res.begin() + t + <span class="hljs-number">1</span>, res.end());
+        }
+        <span class="hljs-keyword">return</span> res;
+    }
+    <span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; <span class="hljs-title">mul</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; a, <span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; b)</span> <span class="hljs-keyword">const</span> </span>{
+        ll n = a.size(), m = b.size();
+        <span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; <span class="hljs-title">res</span><span class="hljs-params">(n + m + <span class="hljs-number">10</span>, <span class="hljs-number">0</span>)</span></span>;
+        <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">0</span>; i &lt; n; i ++) {
+            <span class="hljs-keyword">for</span> (ll j = <span class="hljs-number">0</span>; j &lt; m; j ++) {
+                res[i + j] += a[i] * b[j];
+            }
+            <span class="hljs-keyword">for</span> (ll _ = i, t = <span class="hljs-number">0</span>; _ &lt; i + m || t; _ ++) {
+                t += res[_];
+                res[_] = t % mod;
+                t /= mod;
+            }
+        }
+        <span class="hljs-keyword">if</span> (res.back() == <span class="hljs-number">0</span>) {
+            ll t = res.size() - <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">while</span> (t &gt;= <span class="hljs-number">0</span> &amp;&amp; res[t] == <span class="hljs-number">0</span>) t --;
+            <span class="hljs-keyword">if</span> (t &lt; <span class="hljs-number">0</span>) res = {<span class="hljs-number">0</span>};
+            <span class="hljs-keyword">else</span> res.erase(res.begin() + t + <span class="hljs-number">1</span>, res.end());
+        }
+        <span class="hljs-keyword">return</span> res;
+    }
+    <span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; <span class="hljs-title">div</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; a, ll b)</span> <span class="hljs-keyword">const</span> </span>{
+        <span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; <span class="hljs-title">res</span><span class="hljs-params">(a.size())</span></span>;
+        ll n = a.size();
+        ll t = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (ll i = n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i --) {
+            t *= mod; t += a[i];
+            res[i] = t / b; t %= b;
+        }
+        ll _ = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">0</span>; i &lt; n; i ++) {
+            _ += res[i];
+            res[i] = _ % mod;
+            _ /= mod;
+        }
+        <span class="hljs-keyword">while</span> (res.size() &amp;&amp; res.back() == <span class="hljs-number">0</span>) res.pop_back();
+        <span class="hljs-keyword">if</span> (res.size() == <span class="hljs-number">0</span>) res = {<span class="hljs-number">0</span>};
+        <span class="hljs-keyword">return</span> res;
+    }
+    <span class="hljs-function">ll <span class="hljs-title">bmod</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; a, ll b)</span> <span class="hljs-keyword">const</span> </span>{
+        <span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt; <span class="hljs-title">res</span><span class="hljs-params">(a.size())</span></span>;
+        ll n = a.size();
+        ll t = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (ll i = n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i --) {
+            t *= <span class="hljs-number">10</span>; t += a[i];
+            res[i] = t / b; t %= b;
+        }
+        <span class="hljs-keyword">return</span> t;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; a, <span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ll&gt;&amp; b)</span> <span class="hljs-keyword">const</span> </span>{
+        ll n = a.size(), m = b.size();
+        <span class="hljs-keyword">if</span> (n != m) <span class="hljs-keyword">return</span> n &lt; m;
+        <span class="hljs-keyword">for</span> (ll i = n - <span class="hljs-number">1</span>; ~i; i --) {
+            <span class="hljs-keyword">if</span> (a[i] != b[i]) <span class="hljs-keyword">return</span> a[i] &lt; b[i];
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    big <span class="hljs-keyword">operator</span>+(<span class="hljs-keyword">const</span> big&amp; num) <span class="hljs-keyword">const</span> {
+        big res;
+        <span class="hljs-keyword">if</span> (type == <span class="hljs-number">-1</span> &amp;&amp; num.type == <span class="hljs-number">-1</span>) {
+            res.v = add(v, num.v);
+            res.type = <span class="hljs-number">-1</span>;
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (type == <span class="hljs-number">-1</span>) {
+            <span class="hljs-keyword">if</span> (cmp(v, num.v)) {
+                res.type = <span class="hljs-number">1</span>;
+                res.v = sub(num.v, v);
+                <span class="hljs-keyword">if</span> (res.zero()) res.type = <span class="hljs-number">0</span>;
+            }
+            <span class="hljs-keyword">else</span> {
+                res.type = <span class="hljs-number">-1</span>;
+                res.v = sub(v, num.v);
+                <span class="hljs-keyword">if</span> (res.zero()) res.type = <span class="hljs-number">0</span>;
+            }
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (num.type == <span class="hljs-number">-1</span>) {
+            <span class="hljs-keyword">if</span> (cmp(v, num.v)) {
+                res.type = <span class="hljs-number">-1</span>;
+                res.v = sub(num.v, v);
+                <span class="hljs-keyword">if</span> (res.zero()) res.type = <span class="hljs-number">0</span>;
+            }
+            <span class="hljs-keyword">else</span> {
+                res.type = <span class="hljs-number">1</span>;
+                res.v = sub(v, num.v);
+                <span class="hljs-keyword">if</span> (res.zero()) res.type = <span class="hljs-number">0</span>;
+            }
+        }
+        <span class="hljs-keyword">else</span> {
+            res.type = <span class="hljs-number">1</span>;
+            res.v = add(v, num.v);
+            <span class="hljs-keyword">if</span> (res.zero()) res.type = <span class="hljs-number">0</span>;
+        }
+        <span class="hljs-keyword">return</span> res;
+    }
+    big <span class="hljs-keyword">operator</span>-(<span class="hljs-keyword">const</span> big&amp; num) <span class="hljs-keyword">const</span> {
+        big t = num;
+        t.type *= <span class="hljs-number">-1</span>;
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span> + t;
+    }
+    big <span class="hljs-keyword">operator</span>*(<span class="hljs-keyword">const</span> big&amp; num) <span class="hljs-keyword">const</span> {
+        big res;
+        <span class="hljs-keyword">if</span> (type == <span class="hljs-number">-1</span> &amp;&amp; num.type == <span class="hljs-number">-1</span>) {
+            res.type = <span class="hljs-number">1</span>;
+            res.v = mul(v, num.v);
+            <span class="hljs-keyword">if</span> (res.zero()) res.type = <span class="hljs-number">0</span>;
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (type == <span class="hljs-number">-1</span> || num.type == <span class="hljs-number">-1</span>) {
+            res.type = <span class="hljs-number">-1</span>;
+            res.v = mul(v, num.v);
+            <span class="hljs-keyword">if</span> (res.zero()) res.type = <span class="hljs-number">0</span>;
+        }
+        <span class="hljs-keyword">else</span> {
+            res.type = <span class="hljs-number">1</span>;
+            res.v = mul(v, num.v);
+            <span class="hljs-keyword">if</span> (res.zero()) res.type = <span class="hljs-number">0</span>;
+        }
+        <span class="hljs-keyword">return</span> res;
+    }
+    big <span class="hljs-keyword">operator</span>/(ll num) <span class="hljs-keyword">const</span> {
+        big res;
+        <span class="hljs-keyword">if</span> (type &lt; <span class="hljs-number">0</span> &amp;&amp; num &lt; <span class="hljs-number">0</span>) {
+            res.type = <span class="hljs-number">1</span>;
+            res.v = div(v, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">abs</span>(num));
+            <span class="hljs-keyword">if</span> (res.zero()) res.type = <span class="hljs-number">0</span>;
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (type &lt; <span class="hljs-number">0</span> || num &lt; <span class="hljs-number">0</span>) {
+            res.type = <span class="hljs-number">-1</span>;
+            res.v = div(v, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">abs</span>(num));
+            <span class="hljs-keyword">if</span> (res.zero()) res.type = <span class="hljs-number">0</span>;
+        }
+        <span class="hljs-keyword">else</span> {
+            res.type = <span class="hljs-number">1</span>;
+            res.v = div(v, num);
+            <span class="hljs-keyword">if</span> (res.zero()) res.type = <span class="hljs-number">0</span>;
+        }
+        <span class="hljs-keyword">return</span> res;
+    }
+    big <span class="hljs-keyword">operator</span>%(ll num) <span class="hljs-keyword">const</span> {
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span> - (*<span class="hljs-keyword">this</span>) / num * num;
+    }
+    big <span class="hljs-keyword">operator</span>/(<span class="hljs-keyword">const</span> big&amp; num) <span class="hljs-keyword">const</span> {
+        big res;
+        big a = *<span class="hljs-keyword">this</span>, b = num;
+        <span class="hljs-keyword">if</span> (a &lt; <span class="hljs-number">0</span>) a *= <span class="hljs-number">-1</span>;
+        <span class="hljs-keyword">if</span> (b &lt; <span class="hljs-number">0</span>) b *= <span class="hljs-number">-1</span>;
+        res.type = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">if</span> (type &lt; <span class="hljs-number">0</span> &amp;&amp; num.type &gt;= <span class="hljs-number">0</span> || type &gt;= <span class="hljs-number">0</span> &amp;&amp; num.type &lt; <span class="hljs-number">0</span>) {
+            res.type = <span class="hljs-number">-1</span>;
+        }
+        <span class="hljs-keyword">if</span> (a &lt; b) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+        big l = big(<span class="hljs-number">0</span>), r = a, mid;
+        <span class="hljs-keyword">while</span> (l &lt; r) {
+            mid = (l + r + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;
+            <span class="hljs-keyword">if</span> (mid * b &lt;= a) l = mid;
+            <span class="hljs-keyword">else</span> r = mid - <span class="hljs-number">1</span>;
+        }
+        res.v = r.v;
+        <span class="hljs-keyword">if</span> (res.zero()) res.type = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">return</span> res;
+    }
+    big <span class="hljs-keyword">operator</span>%(<span class="hljs-keyword">const</span> big&amp; num) <span class="hljs-keyword">const</span> {
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span> - (*<span class="hljs-keyword">this</span>) / num * num;
+    }
+    big&amp; <span class="hljs-keyword">operator</span>+=(<span class="hljs-keyword">const</span> big&amp; num) {
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span> = *<span class="hljs-keyword">this</span> + num;
+    }
+    big&amp; <span class="hljs-keyword">operator</span>-=(<span class="hljs-keyword">const</span> big&amp; num) {
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span> = *<span class="hljs-keyword">this</span> - num;
+    }
+    big&amp; <span class="hljs-keyword">operator</span>*=(<span class="hljs-keyword">const</span> big&amp; num) {
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span> = *<span class="hljs-keyword">this</span> * num;
+    }
+    big&amp; <span class="hljs-keyword">operator</span>/=(<span class="hljs-keyword">const</span> big&amp; num) {
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span> = *<span class="hljs-keyword">this</span> / num;
+    }
+    big&amp; <span class="hljs-keyword">operator</span>%=(<span class="hljs-keyword">const</span> big&amp; num) {
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span> = *<span class="hljs-keyword">this</span> % num;
+    }
+    big&amp; <span class="hljs-keyword">operator</span>/=(ll num) {
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span> = *<span class="hljs-keyword">this</span> / num;
+    }
+    big&amp; <span class="hljs-keyword">operator</span>%=(ll num) {
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span> = *<span class="hljs-keyword">this</span> % num;
+    }
+};
+</div></code></pre>
+
+</body>
+</html>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });</script>

@@ -4275,7 +4275,7 @@
 <hr />
 <p>在 <code>int</code> 范围内：</p>
 <p><span class="arithmatex">\(\frac{n}{1} + \frac{n}{2} + \frac{n}{3} + \cdots + \frac{n}{n} &lt; 32 * n\)</span></p>
-<p>有时候分析时间复杂度的时候会用到，比 <span class="arithmatex">\(\log(n)\)</span> 要小一点！</p>
+<p>有时候分析时间复杂度的时候会用到，比 <span class="arithmatex">\(n\log(n)\)</span> 要小一点！</p>
 <h2 id="_29">快速幂</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">ll</span><span class="w"> </span><span class="nf">qpow</span><span class="p">(</span><span class="n">ll</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="p">;</span>
