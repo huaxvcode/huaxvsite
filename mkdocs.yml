@@ -5,6 +5,7 @@ site_name: 玉子的饼藏
 
 repo_url: https://github.com/huaxvcode/huaxvsite/tree/master
 repo_name: 花续情愫缘 / huaxvsite
+edit_uri: '#root/path/docs/'
 
 markdown_extensions:
   - markdown.extensions.toc:
