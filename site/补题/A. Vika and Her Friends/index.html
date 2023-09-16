@@ -3255,12 +3255,12 @@
   
 
 
-<h1 id="a-vika-and-her-friends"><a href="https://codeforces.com/problemset/problem/1848/A">A. Vika and Her Friends</a></h1>
-<h2 id="_1">题目大意：</h2>
+<h1 id="a-vika-and-her-friends"><a href="https://codeforces.com/problemset/problem/1848/A">A. Vika and Her Friends</a><a class="headerlink" href="#a-vika-and-her-friends" title="Permanent link">&para;</a></h1>
+<h2 id="_1">题目大意：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>有一幅 <span class="arithmatex">\(n * m\)</span> 的网格图，图上有 <span class="arithmatex">\(k\)</span> 个巡逻员和 <span class="arithmatex">\(1\)</span> 个逃课的学生，对于每一分钟逃课的学生和巡逻员都必须移动到相邻的格子上，他们都知道对方在哪一个格子，并据此选择移动路线；</p>
 <p>如果该逃课的学生与巡逻员位于同一个格子就被抓住了</p>
 <p>问该学生是否一定会被抓住？</p>
-<h2 id="_2">思路：</h2>
+<h2 id="_2">思路：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>假设经过非常多分钟后，巡逻员一定会非常的接近该名学生，但是，如果巡逻员都分布在学生的相邻格子上，则一定不会被抓住，否则就一定可以被抓住；</p>
 <p>因此可以求出每一个巡逻员与该名学生相遇时的最终状态到底是否相邻还是可以合并在同一个格子上，如果相邻则一定不会被这名巡逻员抓住</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>

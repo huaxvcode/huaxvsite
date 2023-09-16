@@ -3248,8 +3248,8 @@
   
 
 
-<h1 id="_1"><a href="https://www.luogu.com.cn/problem/U47402">树状数组 + 扫描法 + 二维偏序问题</a></h1>
-<h2 id="_2">树状数组 + 扫描法 + 二维偏序问题</h2>
+<h1 id="_1"><a href="https://www.luogu.com.cn/problem/U47402">树状数组 + 扫描法 + 二维偏序问题</a><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">树状数组 + 扫描法 + 二维偏序问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>如何查找点 <span class="arithmatex">\((x_j, y_j) &lt;= (x_i, y_i)\)</span> 的个数问题？</p>
 <p>定义：<span class="arithmatex">\((x_j, y_j) &lt;= (x_i, y_i)\)</span> 表示为 <span class="arithmatex">\(x_j &lt;= x_i 且 y_j &lt;= y_i\)</span></p>
 <p>先按照 <span class="arithmatex">\(x\)</span> 排序，那么满足条件的必定满足 <span class="arithmatex">\(x_j &lt;= x_i\)</span>，可以用扫描法，扫描一个就插入一个进去，定义树状数组维护的是 <span class="arithmatex">\(y[N]\)</span> 的权值，查找此时比 <span class="arithmatex">\(y_i\)</span> 小的个数有多少个，查完后再把当前的 <span class="arithmatex">\(y_i\)</span> 增加进数组内。</p>

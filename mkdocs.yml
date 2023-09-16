@@ -7,6 +7,10 @@ repo_url: https://github.com/huaxvcode/huaxvsite/tree/master
 repo_name: 花续情愫缘 / huaxvsite
 
 markdown_extensions:
+  - markdown.extensions.toc:
+      baselevel: 1
+      permalink: true
+      title: "SOMETITLE"
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite

@@ -3255,8 +3255,8 @@
   
 
 
-<h1 id="_1"><a href="https://www.spoj.com/problems/PT07Z/">树的直径</a></h1>
-<h2 id="_2">动态规划</h2>
+<h1 id="_1"><a href="https://www.spoj.com/problems/PT07Z/">树的直径</a><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">动态规划<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>如果知道了当前点最深的两个子节点的深度，那么以该点为 <span class="arithmatex">\(Λ\)</span> 字形顶点的最大直径长度如何求？</p>
 <p>对于这颗树的最大直径，是不是一定只存在一个点是 <span class="arithmatex">\(Λ\)</span> 字形顶点？</p>
 <p>时间复杂度：<span class="arithmatex">\(O(n)\)</span></p>
@@ -3329,7 +3329,7 @@
 <a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="dfs">两次 dfs</h2>
+<h2 id="dfs">两次 dfs<a class="headerlink" href="#dfs" title="Permanent link">&para;</a></h2>
 <p>从一个点出发，寻找距离它最远的点 <span class="arithmatex">\(u\)</span>，则 <span class="arithmatex">\(u\)</span> 是最长直径的一个端点，再从 <span class="arithmatex">\(u\)</span> 出发，寻找距离 <span class="arithmatex">\(u\)</span> 最远的点 <span class="arithmatex">\(v\)</span>，则 <span class="arithmatex">\(v\)</span> 是最长直径的又一个端点；</p>
 <p>时间复杂度：<span class="arithmatex">\(O(n)\)</span></p>
 <p><strong>优点：可以找出最长直径的路径；缺点：不能解决含有负边权的树</strong></p>

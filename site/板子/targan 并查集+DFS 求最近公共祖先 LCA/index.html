@@ -3217,7 +3217,7 @@
   
 
 
-<h1 id="targan-dfs-lca"><a href="https://www.luogu.com.cn/problem/P3379">targan 并查集+DFS 求最近公共祖先 LCA</a></h1>
+<h1 id="targan-dfs-lca"><a href="https://www.luogu.com.cn/problem/P3379">targan 并查集+DFS 求最近公共祖先 LCA</a><a class="headerlink" href="#targan-dfs-lca" title="Permanent link">&para;</a></h1>
 <p>先简化成二叉树的模型</p>
 <p>如果某子树的根节点 <span class="arithmatex">\(u\)</span>，能够作为某两点 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 的最近公共祖先，那么 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 必定分别坐落与 <span class="arithmatex">\(u\)</span> 的左子树和右子树</p>
 <p>利用 <span class="arithmatex">\(dfs\)</span> 遍历的特性，先遍历完节点 <span class="arithmatex">\(x\)</span> 后，逐渐回溯，将 <span class="arithmatex">\(u\)</span> 的左子树都归类与 <span class="arithmatex">\(u\)</span> 再去遍历右子树，如果某次询问的某个节点已经被遍历过，那么这次询问的最近公共祖先都是 <span class="arithmatex">\(u\)</span>。</p>

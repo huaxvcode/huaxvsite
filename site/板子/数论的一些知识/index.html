@@ -3525,7 +3525,7 @@
   
 
 
-<h1 id="_1"><a href="">数论的一些知识</a></h1>
+<h1 id="_1"><a href="">数论的一些知识</a><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="#数论的一些知识">数论的一些知识</a></li>
 <li><a href="#一些常识">一些常识</a></li>
@@ -3573,7 +3573,7 @@
 <li><a href="#模乘">模乘</a></li>
 <li><a href="#高精度整数运算">高精度整数运算</a></li>
 </ul>
-<h2 id="_2">一些常识</h2>
+<h2 id="_2">一些常识<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li><span class="arithmatex">\(a | c\)</span>、<span class="arithmatex">\(b | c\)</span>，且 <span class="arithmatex">\((a, b) = 1\)</span> 则 <span class="arithmatex">\(ab | c\)</span></li>
 <li><span class="arithmatex">\(a | bc\)</span> 且 <span class="arithmatex">\((a, b) = 1\)</span>，则 <span class="arithmatex">\(a | c\)</span></li>
@@ -3586,19 +3586,19 @@
 <li><span class="arithmatex">\((a, b) * [a, b] = ab\)</span></li>
 </ol>
 <hr />
-<h2 id="_3">取模然后对约数取模，或者直接对约数取模，效果一样</h2>
+<h2 id="_3">取模然后对约数取模，或者直接对约数取模，效果一样<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><span class="arithmatex">\(d | m\)</span>，判断 <span class="arithmatex">\(x \bmod m \bmod d = x \bmod d\)</span></p>
 <p>令 <span class="arithmatex">\(t = x \bmod m \bmod d\)</span>，则 <span class="arithmatex">\(x = k_1m + k_2d + t\)</span></p>
 <p>所以 <span class="arithmatex">\(x \bmod d = t\)</span></p>
 </blockquote>
 <hr />
-<h2 id="_4">最大公约数：</h2>
+<h2 id="_4">最大公约数：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">ll</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="n">ll</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_5">最小公倍数：</h2>
+<h2 id="_5">最小公倍数：<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">ll</span><span class="w"> </span><span class="n">lcm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 </code></pre></div>
 <p>如果需要求 <span class="arithmatex">\({a_1, a_2, a_3, \cdots, a_n}\)</span> 的最大公约数：</p>
@@ -3615,7 +3615,7 @@
 <li>如果 <span class="arithmatex">\(a\)</span>，<span class="arithmatex">\(b\)</span> 都是偶数，那么 <span class="arithmatex">\((a, b) = 2(a/2, b/2)\)</span></li>
 </ol>
 <hr />
-<h2 id="_6">关于整数解：</h2>
+<h2 id="_6">关于整数解：<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ol>
 <li>若 <span class="arithmatex">\((a, b) | sum\)</span>，则必定存在 <span class="arithmatex">\(ax + by = sum\)</span>，且 <span class="arithmatex">\(x\)</span>、<span class="arithmatex">\(y\)</span> 都是整数（<em>存在整数解</em>）</li>
 <li>对于方程 <span class="arithmatex">\(ax + by = c\)</span>，如果 <span class="arithmatex">\((a, b) | c\)</span> 则存在整数解，否则一定没有！</li>
@@ -3623,7 +3623,7 @@
 <li>对于方程 <span class="arithmatex">\(ax + by + cz = d\)</span>，则 <span class="arithmatex">\((a, b, c) | (ax + by + cz)\)</span>，即 <span class="arithmatex">\((a, b, c) | d\)</span></li>
 </ol>
 <hr />
-<h2 id="_7">扩展欧几里得：</h2>
+<h2 id="_7">扩展欧几里得：<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">ll</span><span class="w"> </span><span class="nf">exgcd</span><span class="p">(</span><span class="n">ll</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">ll</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">exgcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
@@ -3632,7 +3632,7 @@
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="ax-by-c">求方程 ax + by = c 的通解：</h2>
+<h2 id="ax-by-c">求方程 ax + by = c 的通解：<a class="headerlink" href="#ax-by-c" title="Permanent link">&para;</a></h2>
 <p>先求出 <span class="arithmatex">\(ax + by = (a, b)\)</span> 的一对解 <span class="arithmatex">\(\{x, y\}\)</span></p>
 <p>则特解：<span class="arithmatex">\(\{\frac{c}{(a, b)} * x, \frac{c}{(a,b)} * y\}\)</span></p>
 <p>通解为：<span class="arithmatex">\(\{\frac{c}{(a, b)} * x + \frac{b}{(a, b)} * N, \frac{c}{(a,b)} * y - \frac{a}{(a, b)} * N\}\)</span></p>
@@ -3645,7 +3645,7 @@
 <p>所以：<span class="arithmatex">\(k_1 = - \frac{b}{(a, b)} * N\)</span>, <span class="arithmatex">\(k_2 = \frac{a}{(a, b)} * N\)</span></p>
 </blockquote>
 <hr />
-<h2 id="ax-by-c_1">求一组 ax + by = c 的正整数解：</h2>
+<h2 id="ax-by-c_1">求一组 ax + by = c 的正整数解：<a class="headerlink" href="#ax-by-c_1" title="Permanent link">&para;</a></h2>
 <p>如果求出 <span class="arithmatex">\(ax + by = d\)</span> 的一组解为 <span class="arithmatex">\(x_0, y_0\)</span>，则原方程的特解为：<span class="arithmatex">\(\frac{c}{d} * x_0, \frac{c}{d} * y_0\)</span></p>
 <p>先让 <span class="arithmatex">\(x_0\)</span> 变成最小非负整数解：<span class="arithmatex">\(\frac{c}{d} * x_0 + \frac{b}{d} * N\)</span> 转变为问题：<span class="arithmatex">\(\frac{c}{d} * x_0\)</span> 需要加上或者减去多少个 <span class="arithmatex">\(\frac{b}{d}\)</span> 才会变成非负数，先求出 <span class="arithmatex">\(\frac{c}{d} * x_0\)</span> 取模 <span class="arithmatex">\(\frac{b}{d}\)</span> 的余数，如果余数是负数，则需要再加上一个 <span class="arithmatex">\(\frac{b}{d}\)</span> 这样就可以编程最小非负整数解！</p>
 <p>如果 <span class="arithmatex">\(x_0\)</span> 已经变成最小非负整数解了，那么 <span class="arithmatex">\(y_0\)</span> 如果还是负数的话，就需要减去多一个 <span class="arithmatex">\(-\frac{a}{d}\)</span>，那么平行项 <span class="arithmatex">\(x_0\)</span> 就需要减掉一个 <span class="arithmatex">\(\frac{b}{d}\)</span> 会变成负数，所以肯定不可能成立！</p>
@@ -3689,13 +3689,13 @@
 <a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="ax-mod-m">求 ax mod m 的最小值</h2>
+<h2 id="ax-mod-m">求 ax mod m 的最小值<a class="headerlink" href="#ax-mod-m" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><span class="arithmatex">\(ax (\bmod \ m)\)</span></p>
 <p><span class="arithmatex">\(ax + my (\bmod \ m)\)</span></p>
 <p><span class="arithmatex">\(t \times \gcd(a, m) (\bmod \ m)\)</span></p>
 </blockquote>
-<h2 id="ax-by-mod-m">求 (ax + by) mod m 的最小值</h2>
+<h2 id="ax-by-mod-m">求 (ax + by) mod m 的最小值<a class="headerlink" href="#ax-by-mod-m" title="Permanent link">&para;</a></h2>
 <p>答案是：<span class="arithmatex">\(0\)</span></p>
 <p>证明过程如下：</p>
 <blockquote>
@@ -3705,7 +3705,7 @@
 <p>要让 <span class="arithmatex">\(k * \gcd(a, b, m)\)</span> 最小，只需要让 <span class="arithmatex">\(k = 0\)</span> 即可</p>
 </blockquote>
 <hr />
-<h2 id="ax-by-c-mod-m">求 (ax + by + c) mod m 的最小值</h2>
+<h2 id="ax-by-c-mod-m">求 (ax + by + c) mod m 的最小值<a class="headerlink" href="#ax-by-c-mod-m" title="Permanent link">&para;</a></h2>
 <p>答案：<span class="arithmatex">\(\min\{c \bmod \gcd(a, b, m), c \bmod \gcd(a, b, m) - \gcd(a, b, m)\}\)</span></p>
 <p>证明过程如下：</p>
 <blockquote>
@@ -3721,14 +3721,14 @@
 <p>而 <span class="arithmatex">\(\gcd(a, b, m) | m\)</span>，所以 <span class="arithmatex">\(m = k\gcd(a, b, m), k \geq 1\)</span> 所以：<span class="arithmatex">\(m - \gcd(a, b, m) + k * \gcd(a, b, m) + c \geq (k - 1) * \gcd(a, b, m)\)</span> 对于 <span class="arithmatex">\(k &gt; 1\)</span> 的情况都成立，但是如果 <span class="arithmatex">\(k = 1\)</span> 呢？还是有可能的哦</p>
 </blockquote>
 <hr />
-<h2 id="ax-by-cz-d">关于方程 ax + by + cz = d 的特解：</h2>
+<h2 id="ax-by-cz-d">关于方程 ax + by + cz = d 的特解：<a class="headerlink" href="#ax-by-cz-d" title="Permanent link">&para;</a></h2>
 <ol>
 <li>首先 <span class="arithmatex">\((a, b, c) | d\)</span> 必定成立</li>
 <li>先求出 <span class="arithmatex">\(ax + by = (a, b)\)</span> 的一对特解记为 <span class="arithmatex">\(x_1, y_1\)</span></li>
 <li>再求出 <span class="arithmatex">\((a, b)t + cz = ((a, b), c)\)</span> 的一对特解，记为 <span class="arithmatex">\(t_1, z_1\)</span></li>
 <li>则 <span class="arithmatex">\(ax + by + cz = (a, b, c)\)</span> 的特解为：<span class="arithmatex">\((x_1t_1, y_1t_1, z_1)\)</span></li>
 </ol>
-<h2 id="_8">同余的一些性质</h2>
+<h2 id="_8">同余的一些性质<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>若 <span class="arithmatex">\(a \equiv b (\bmod \ m)\)</span> 且 <span class="arithmatex">\(a \equiv b (\bmod \ n)\)</span> 成立，则 <span class="arithmatex">\(a \equiv b (\bmod \ [m, n])\)</span></p>
 <blockquote>
 <p><span class="arithmatex">\(m | a - b, n | a - b\)</span> 所以 <span class="arithmatex">\([m, n] | a - b\)</span></p>
@@ -3745,7 +3745,7 @@
 <p><span class="arithmatex">\(ax + my = b\)</span></p>
 <p>用 <span class="arithmatex">\(exgcd\)</span> 求出一个特解</p>
 </blockquote>
-<h2 id="_9">容斥原理</h2>
+<h2 id="_9">容斥原理<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>假设有 <span class="arithmatex">\(n\)</span> 个集合：<span class="arithmatex">\(S_1\)</span>，<span class="arithmatex">\(S_2\)</span>，···，<span class="arithmatex">\(S_n\)</span>，求：<span class="arithmatex">\(S_1 \cup S_2 \cup \cdots \cup S_n\)</span></p>
 <p>答案：1个集合的组合 - 2个集合的组合 + 3个集合的组合 - 4个集合的组合 ··· ···</p>
 <p>题目：给定一个整数 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(m\)</span> 个整数，求 <span class="arithmatex">\(1 \sim n\)</span> 中能被这 <span class="arithmatex">\(m\)</span> 个整数的某一个整除的个数有多少个？</p>
@@ -3796,14 +3796,14 @@
 <a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_10">组合数</h2>
-<h3 id="_11">排列组合</h3>
+<h2 id="_10">组合数<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">排列组合<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>用二进制表示组合排列：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">ll</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="p">)</span>
 </code></pre></div>
 <p>用 <code>dfs</code> 求组合排列</p>
 <hr />
-<h3 id="_12">求组合数</h3>
+<h3 id="_12">求组合数<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\(C(a, b) = \frac{a!}{b!(a - b)!} = C(a - 1, b) + C(a - 1, b - 1)\)</span> 杨辉三角的推导方法推出下面一项</p>
 <hr />
 <p>如果需要求的组合数很大，并且需要对一个质数 <span class="arithmatex">\(p\)</span> 取模，可以用卢卡斯定理求：</p>
@@ -3851,7 +3851,7 @@
 <a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_13">欧拉函数</h2>
+<h2 id="_13">欧拉函数<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <p>求 <span class="arithmatex">\(1 \sim n\)</span> 范围内与 <span class="arithmatex">\(n\)</span> 互质的个数：</p>
 <p><span class="arithmatex">\(n = p_1^{a_1}p_2^{a_2} \cdots p_k^{a_k}\)</span></p>
 <p>则答案为：<span class="arithmatex">\(n * \frac{p_1 - 1}{p_1} * \frac{p_2 - 1}{p_2} * \frac{p_3 - 1}{p_3} * \cdots * \frac{p_k - 1}{p_k}\)</span></p>
@@ -3872,7 +3872,7 @@
 <a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
 <a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="p">}</span><span class="w"> </span>
 </code></pre></div>
-<h2 id="_14">欧拉定理</h2>
+<h2 id="_14">欧拉定理<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <p>欧拉函数 <span class="arithmatex">\(phi(m)\)</span> 等于比 <span class="arithmatex">\(m\)</span> 小的互质的个数；</p>
 <p>令 <span class="arithmatex">\(1 \sim m\)</span> 范围内与 <span class="arithmatex">\(m\)</span> 互质的个数为 <span class="arithmatex">\(phi(m)\)</span> (欧拉函数)，若 <span class="arithmatex">\(\gcd(a, m) \equiv 1\)</span> 则 <span class="arithmatex">\(a ^ {phi(m)} \equiv 1 (\bmod \ m)\)</span></p>
 <p>特殊情况下，若 <span class="arithmatex">\(m\)</span> 是质数，则 <span class="arithmatex">\(phi(m) = m - 1\)</span>，所以有：<span class="arithmatex">\(a^{m - 1} \equiv 1 (\bmod \ m)\)</span></p>
@@ -3891,7 +3891,7 @@
 </blockquote>
 <hr />
 <p>遇到扩展欧拉定理的题很有可能需要用到高精度:</p>
-<h2 id="_15">高精度加法</h2>
+<h2 id="_15">高精度加法<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
 <p>正整数相加</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
@@ -3905,7 +3905,7 @@
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_16">高精度减法</h2>
+<h2 id="_16">高精度减法<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <p>大 - 小</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sub</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
@@ -3930,7 +3930,7 @@
 <a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
 <a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_17">高精度乘法</h2>
+<h2 id="_17">高精度乘法<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mul</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="n">ll</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
@@ -3953,7 +3953,7 @@
 <a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
 <a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_18">高精度除以单精度</h2>
+<h2 id="_18">高精度除以单精度<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">// 高精度除法</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">ll</span><span class="w"> </span><span class="nf">div</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="n">ll</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -3968,8 +3968,8 @@
 <a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
 <a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_19">逆元</h2>
-<h3 id="_20">快速幂求逆元：</h3>
+<h2 id="_19">逆元<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<h3 id="_20">快速幂求逆元：<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">ll</span><span class="w"> </span><span class="nf">qpow</span><span class="p">(</span><span class="n">ll</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="p">;</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="n">ll</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
@@ -3987,7 +3987,7 @@
 <a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 <a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="exgcd">exgcd 求逆元：</h3>
+<h3 id="exgcd">exgcd 求逆元：<a class="headerlink" href="#exgcd" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><span class="arithmatex">\(ax \equiv 1(\bmod \ b)\)</span></p>
 <p><span class="arithmatex">\(ax + by \equiv 1\)</span></p>
@@ -4007,7 +4007,7 @@
 <a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 <a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_21">逆元递推式：</h2>
+<h2 id="_21">逆元递推式：<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
 <p>令 <span class="arithmatex">\(f(i)\)</span> 代表 <span class="arithmatex">\(i\)</span> 在 <span class="arithmatex">\(\bmod \ p\)</span> 的逆元，则：</p>
 <blockquote>
 <p><span class="arithmatex">\(f(i) = (p - p / i) * f(p \bmod i) \bmod p\)</span></p>
@@ -4041,7 +4041,7 @@
 <a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_22">借助前缀乘法求逆元</h2>
+<h2 id="_22">借助前缀乘法求逆元<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
 <p>给定一个集合 <span class="arithmatex">\(a_1, a_2, a_3, \cdots a_n\)</span> 求每一个元素的逆元：</p>
 <blockquote>
 <p>令 <span class="arithmatex">\(s_i = a_1 * a_2 * \cdots a_i\)</span> 前缀乘法</p>
@@ -4116,7 +4116,7 @@
 <a id="__codelineno-16-65" name="__codelineno-16-65" href="#__codelineno-16-65"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-16-66" name="__codelineno-16-66" href="#__codelineno-16-66"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_23">生成随机数</h2>
+<h2 id="_23">生成随机数<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kt">unsigned</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">r64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kt">unsigned</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="nf">rint</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="n">r64</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">r64</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
@@ -4139,7 +4139,7 @@
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">rll</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_24">中国剩余定理</h2>
+<h2 id="_24">中国剩余定理<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
 <p>若 <span class="arithmatex">\(m_1, m_2, \cdots, m_n\)</span> 两两互质，则同余方程：</p>
 <blockquote>
 <p><span class="arithmatex">\(x = a_1 (\bmod \ m_1)\)</span>
@@ -4201,8 +4201,8 @@
 <a id="__codelineno-20-46" name="__codelineno-20-46" href="#__codelineno-20-46"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-20-47" name="__codelineno-20-47" href="#__codelineno-20-47"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_25">筛质数</h2>
-<h3 id="_26">欧拉筛法</h3>
+<h2 id="_25">筛质数<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
+<h3 id="_26">欧拉筛法<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
 <p>时间复杂的：<span class="arithmatex">\(O(n)\)</span></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">ll</span><span class="w"> </span><span class="n">vi</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">ps</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">cnt</span><span class="p">;</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">get_prime</span><span class="p">(</span><span class="n">ll</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -4216,7 +4216,7 @@
 <a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="_27">埃式筛法</h3>
+<h3 id="_27">埃式筛法<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
 <p>时间复杂的：<span class="arithmatex">\(O(n\log(\log(n)))\)</span> 很接近常数</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">ll</span><span class="w"> </span><span class="n">vi</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">ps</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">cnt</span><span class="p">;</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">get_prime</span><span class="p">(</span><span class="n">ll</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -4233,7 +4233,7 @@
 <a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="miller-rabin"><a href="https://zhuanlan.zhihu.com/p/349360074">miller-rabin 判断素数</a></h2>
+<h2 id="miller-rabin"><a href="https://zhuanlan.zhihu.com/p/349360074">miller-rabin 判断素数</a><a class="headerlink" href="#miller-rabin" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1">// ll qmul(ll a, ll b, ll mod) {</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="c1">//     a = (a % mod + mod) % mod;</span>
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1">//     ll ans = 0;</span>
@@ -4283,7 +4283,7 @@
 <a id="__codelineno-23-47" name="__codelineno-23-47" href="#__codelineno-23-47"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <a id="__codelineno-23-48" name="__codelineno-23-48" href="#__codelineno-23-48"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_28">整数分块</h2>
+<h2 id="_28">整数分块<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
 <p>给定一个正整数 <span class="arithmatex">\(n\)</span>，求集合 <span class="arithmatex">\({\frac{n}{1}, \frac{n}{2}, \frac{n}{3}, \cdots, \frac{n}{n}}\)</span> 的元素个数和集合</p>
 <blockquote>
 <p>差不多只有 <span class="arithmatex">\(2\sqrt{n}\)</span> 种不同的取值</p>
@@ -4304,7 +4304,7 @@
 <p>在 <code>int</code> 范围内：</p>
 <p><span class="arithmatex">\(\frac{n}{1} + \frac{n}{2} + \frac{n}{3} + \cdots + \frac{n}{n} &lt; 32 * n\)</span></p>
 <p>有时候分析时间复杂度的时候会用到，比 <span class="arithmatex">\(n\log(n)\)</span> 要小一点！</p>
-<h2 id="_29">快速幂</h2>
+<h2 id="_29">快速幂<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">ll</span><span class="w"> </span><span class="nf">qpow</span><span class="p">(</span><span class="n">ll</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="p">;</span>
 <a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="n">ll</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
@@ -4316,7 +4316,7 @@
 <a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
 <a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_30">模乘</h2>
+<h2 id="_30">模乘<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">ll</span><span class="w"> </span><span class="nf">qmul</span><span class="p">(</span><span class="n">ll</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">%=</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">%=</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="n">ll</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">ll</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">m</span><span class="p">);</span>
@@ -4338,7 +4338,7 @@
 <a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
 <a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_31">高精度整数运算</h2>
+<h2 id="_31">高精度整数运算<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
 <p>不推荐使用，建议改用 <span class="arithmatex">\(java\)</span> 语言，如果 <span class="arithmatex">\(java\)</span> 超时，就只能用下面这个了，特殊地：</p>
 <p>乘法运算时间复杂的：<span class="arithmatex">\(O(n^2)\)</span></p>
 <p>除法运算时间复杂的：<span class="arithmatex">\(O(n ^ 2\log(10^n))\)</span> 很慢很慢！</p>
