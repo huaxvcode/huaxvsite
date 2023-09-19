@@ -143,6 +143,9 @@ nav:
     - vscode 配置: 配置选项/vscode 配置.md
     - cmd 小脚本: 配置选项/cmd 小脚本.md
     - vscode + markdown: 配置选项/vscode + markdown.md
+    - vscode - settings: 配置选项/vscode - settings.md
+    - vscode - keybindings: 配置选项/vscode - keybindings.md
+    - vscode - cpp.json: 配置选项/vscode - cpp.json.md
 
   - 板子:
     - 米老鼠: 板子/米老鼠.md
