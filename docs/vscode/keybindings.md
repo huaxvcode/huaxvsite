@@ -1,3 +1,5 @@
+# keybingings
+
 ```json
 // 将键绑定放在此文件中以覆盖默认值auto[]
 [
