@@ -146,6 +146,7 @@ nav:
     - markdown: vscode/markdown.md
     - keybindings: vscode/keybindings.md
     - 常用插件: vscode/常用插件.md
+    - window: vscode/window.md
 
   - 板子:
     - 米老鼠: 板子/米老鼠.md
