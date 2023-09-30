@@ -146,6 +146,7 @@ nav:
     - vscode - settings: 配置选项/vscode - settings.md
     - vscode - keybindings: 配置选项/vscode - keybindings.md
     - vscode - cpp.json: 配置选项/vscode - cpp.json.md
+    - vscode - linux: 配置选项/vscode - linux.md
 
   - 板子:
     - 米老鼠: 板子/米老鼠.md
