@@ -62,7 +62,7 @@ sudo apt install openssh-server
 ```shell
 sudo vim /etc/ssh/sshd_config
 
-Port 22
+Port 16608
 PermitRootLogin yes
 PasswordAuthentication yes
 
@@ -97,7 +97,7 @@ function ssh-copy-id([string]$userAtMachine, $args){
 ```
 
 ```shell
-ssh-copy-id huaxvcode@127.0.0.1
+ssh-copy-id -p 16608 huaxvcode@127.0.0.1
 ```
 
 ## 登陆
@@ -105,7 +105,7 @@ ssh-copy-id huaxvcode@127.0.0.1
 powershell 下运行：
 
 ```shell
-ssh huaxvcode@127.0.0.1
+ssh -p 16608 huaxvcode@127.0.0.1
 ```
 
 ## vscode 下载插件
@@ -120,6 +120,56 @@ remote explorer
 
 ![](./img/vscode连ubuntu.png)
 ![](./img/vscode-config.png)
+
+## 开启子系统自启动服务
+
+创建 `/etc/init.wsl` 文件：
+
+```shell
+sudo su
+
+vim /etc/init.wsl
+```
+
+写入内容：
+
+```shell
+#! /bin/sh
+/etc/init.d/ssh $1
+```
+
+添加执行权限：
+
+```shell
+sudo chmod +x /etc/init.wsl
+```
+
+---
+
+```shell
+sudo visudo
+```
+
+在末尾添加：
+
+```shell
+%sudo ALL=NOPASSWD: /etc/init.wsl
+```
+
+然后：`ctrl+o`、`enter`、`ctrl+x`
+
+---
+
+新建脚本：`startservice.vbs`，写入内容：
+
+```shell
+Set ws = WScript.CreateObject("WScript.Shell")
+ws.run "C:\Windows\System32\bash.exe -c 'sudo /etc/init.wsl"
+```
+
+快捷键：`win+r`，输入：`shell:startup`
+
+将 `startservice.vbs` 放进去
 
 ## 下载编译环境
 

@@ -925,13 +925,20 @@
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    下载编译环境
+    开启子系统自启动服务
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
+    下载编译环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
     测试编译环境
   </a>
   
@@ -4690,7 +4697,7 @@
 <h2 id="sshd_config">修改 sshd_config<a class="headerlink" href="#sshd_config" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/ssh/sshd_config
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Port<span class="w"> </span><span class="m">22</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Port<span class="w"> </span><span class="m">16608</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>PermitRootLogin<span class="w"> </span>yes
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>PasswordAuthentication<span class="w"> </span>yes
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
@@ -4715,11 +4722,11 @@
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="o">}</span>
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="o">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ssh-copy-id<span class="w"> </span>huaxvcode@127.0.0.1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ssh-copy-id<span class="w"> </span>-p<span class="w"> </span><span class="m">16608</span><span class="w"> </span>huaxvcode@127.0.0.1
 </code></pre></div>
 <h2 id="_5">登陆<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>powershell 下运行：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ssh<span class="w"> </span>huaxvcode@127.0.0.1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ssh<span class="w"> </span>-p<span class="w"> </span><span class="m">16608</span><span class="w"> </span>huaxvcode@127.0.0.1
 </code></pre></div>
 <h2 id="vscode">vscode 下载插件<a class="headerlink" href="#vscode" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>remote - ssh
@@ -4729,18 +4736,45 @@
 <h2 id="_6">连接<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p><a class="glightbox" href="../img/vscode%E8%BF%9Eubuntu.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/vscode%E8%BF%9Eubuntu.png" /></a>
 <a class="glightbox" href="../img/vscode-config.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/vscode-config.png" /></a></p>
-<h2 id="_7">下载编译环境<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_7">开启子系统自启动服务<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>创建 <code>/etc/init.wsl</code> 文件：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>su
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>manpages-dev<span class="w"> </span>software-properties-common<span class="w"> </span>gcc<span class="w"> </span>g++<span class="w"> </span>make<span class="w"> </span>bison<span class="w"> </span>binutils<span class="w"> </span>gcc-multilib<span class="w"> </span>flex
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openjdk-17-jre-headless
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>vim<span class="w"> </span>/etc/init.wsl
 </code></pre></div>
-<h2 id="_8">测试编译环境<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>gcc<span class="w"> </span>-v
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>g++<span class="w"> </span>-v
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>python3
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>java<span class="w"> </span>-version
+<p>写入内容：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="ch">#! /bin/sh</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>/etc/init.d/ssh<span class="w"> </span><span class="nv">$1</span>
+</code></pre></div>
+<p>添加执行权限：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/etc/init.wsl
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>visudo
+</code></pre></div>
+<p>在末尾添加：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>%sudo<span class="w"> </span><span class="nv">ALL</span><span class="o">=</span>NOPASSWD:<span class="w"> </span>/etc/init.wsl
+</code></pre></div>
+<p>然后：<code>ctrl+o</code>、<code>enter</code>、<code>ctrl+x</code></p>
+<hr />
+<p>新建脚本：<code>startservice.vbs</code>，写入内容：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Set<span class="w"> </span><span class="nv">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>WScript.CreateObject<span class="o">(</span><span class="s2">&quot;WScript.Shell&quot;</span><span class="o">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>ws.run<span class="w"> </span><span class="s2">&quot;C:\Windows\System32\bash.exe -c &#39;sudo /etc/init.wsl&quot;</span>
+</code></pre></div>
+<p>快捷键：<code>win+r</code>，输入：<code>shell:startup</code></p>
+<p>将 <code>startservice.vbs</code> 放进去</p>
+<h2 id="_8">下载编译环境<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo<span class="w"> </span>su
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>manpages-dev<span class="w"> </span>software-properties-common<span class="w"> </span>gcc<span class="w"> </span>g++<span class="w"> </span>make<span class="w"> </span>bison<span class="w"> </span>binutils<span class="w"> </span>gcc-multilib<span class="w"> </span>flex
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openjdk-17-jre-headless
+</code></pre></div>
+<h2 id="_9">测试编译环境<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>gcc<span class="w"> </span>-v
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>g++<span class="w"> </span>-v
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>python3
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>java<span class="w"> </span>-version
 </code></pre></div>
 
 
