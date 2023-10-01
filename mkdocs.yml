@@ -15,7 +15,7 @@ nav:
     - 常用插件: vscode/常用插件.md
     - window: vscode/window.md
     - git ssh: vscode/git ssh.md
-    - vscode 连接 ubuntu22.04: vscode/vscode 连接 ubuntu22.04.md
+    - vscode 连接 ubuntu20.04: vscode/vscode 连接 ubuntu20.04.md
 
   - 板子:
     - 米老鼠: 板子/米老鼠.md
