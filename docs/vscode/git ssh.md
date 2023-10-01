@@ -6,6 +6,14 @@
 
 > `ssh-keygen`
 
+默认位置：
+
+```shell
+/c/Users/13255/.ssh/id_rsa
+
+/c/Users/13255/.ssh/id_rsa.pub
+```
+
 ![](./img/git-ssh.png)
 
 ## github 添加公钥
