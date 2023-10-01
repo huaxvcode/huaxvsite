@@ -74,3 +74,72 @@ none of your business
 9. she said this is not a hat.
 ```
 
+##  I
+
+```txt
+I hate you! she said to me angrily.
+
+Last night I went to the theatre with a good friend.
+
+I got a seat on the bus to my parent's house.
+
+The play was very interesting.
+
+There are two men who are sitting in the classroom.
+
+He didn't pay any attention to the teacher. 
+
+The boy said very rudely to that old man.
+
+It isn't polite to read other's private letters. 
+
+polite 礼貌的
+```
+
+## II 
+
+```txt
+Yesterday, I wrote a letter to my brother.
+
+He looked at the man and the woman angrily.
+
+I enjoyed the play very much.
+
+A young man and a young woman were talking loudly.
+
+Last year, they built a new hospital in my hometown.
+```
+
+## III
+
+```txt
+The young man couldn't bear the bad treatment any longer.
+
+bear 忍受
+treatment 待遇
+carry 拿起、提起
+
+Don't talk with me about that again. It's none of your business.
+
+matter 问题、麻烦
+thing 事情
+none of your business 不是你的事情
+affair 公共事务
+
+She turned around to see who was sitting behind her.
+
+turn around 转头看
+turn on 打开
+turn off 关闭
+turn up 出现
+
+Last week I went to see a very interesting play in the theatre.
+
+I talked to her excitedly, but she didn't pay any attention to me. 
+
+excitedly 激动地、兴奋地
+
+I don't know why you speak so rudely to your teacher. You should be polite.
+
+When the teacher came in, John was reading a story book.
+```
