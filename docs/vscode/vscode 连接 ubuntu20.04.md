@@ -107,3 +107,16 @@ powershell 下运行：
 ```shell
 ssh huaxvcode@127.0.0.1
 ```
+
+## vscode 下载插件
+
+```
+remote - ssh
+
+remote explorer
+```
+
+## 连接
+
+![](./img/vscode连ubuntu.png)
+![](./img/vscode-config.png)
