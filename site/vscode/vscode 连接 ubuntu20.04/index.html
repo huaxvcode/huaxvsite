@@ -4737,44 +4737,37 @@
 <p><a class="glightbox" href="../img/vscode%E8%BF%9Eubuntu.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/vscode%E8%BF%9Eubuntu.png" /></a>
 <a class="glightbox" href="../img/vscode-config.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/vscode-config.png" /></a></p>
 <h2 id="_7">开启子系统自启动服务<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>创建 <code>/etc/init.wsl</code> 文件：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>su
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>vim<span class="w"> </span>/etc/init.wsl
+<p>在 c 盘下创建：<code>sshd.bat</code> 文件：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32<span class="se">\b</span>ash.exe<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;sudo /etc/init.d/ssh start&quot;</span>
 </code></pre></div>
-<p>写入内容：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="ch">#! /bin/sh</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>/etc/init.d/ssh<span class="w"> </span><span class="nv">$1</span>
-</code></pre></div>
-<p>添加执行权限：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/etc/init.wsl
-</code></pre></div>
+<p>将 <code>sshd.bat</code> 添加进任务计划程序中.</p>
 <hr />
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>visudo
-</code></pre></div>
-<p>在末尾添加：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>%sudo<span class="w"> </span><span class="nv">ALL</span><span class="o">=</span>NOPASSWD:<span class="w"> </span>/etc/init.wsl
-</code></pre></div>
-<p>然后：<code>ctrl+o</code>、<code>enter</code>、<code>ctrl+x</code></p>
-<hr />
-<p>新建脚本：<code>startservice.vbs</code>，写入内容：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Set<span class="w"> </span><span class="nv">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>WScript.CreateObject<span class="o">(</span><span class="s2">&quot;WScript.Shell&quot;</span><span class="o">)</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>ws.run<span class="w"> </span><span class="s2">&quot;C:\Windows\System32\bash.exe -c &#39;sudo /etc/init.wsl&quot;</span>
+<p>新建脚本：<code>sshd.vbs</code>，写入内容：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Set<span class="w"> </span><span class="nv">WinScriptHost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>CreateObject<span class="o">(</span><span class="s2">&quot;WScript.Shell&quot;</span><span class="o">)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>WinScriptHost.Run<span class="w"> </span>Chr<span class="o">(</span><span class="m">34</span><span class="o">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="s2">&quot;C:\sshd.bat&quot;</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Chr<span class="o">(</span><span class="m">34</span><span class="o">)</span>,<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Set<span class="w"> </span><span class="nv">WinScriptHost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Nothing
 </code></pre></div>
 <p>快捷键：<code>win+r</code>，输入：<code>shell:startup</code></p>
-<p>将 <code>startservice.vbs</code> 放进去</p>
+<p>将 <code>sshd.vbs</code> 放进去</p>
+<hr />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>visudo
+</code></pre></div>
+<p>在末尾添加：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>%sudo<span class="w"> </span><span class="nv">ALL</span><span class="o">=</span>NOPASSWD:<span class="w"> </span>/etc/init.d/ssh
+</code></pre></div>
+<p>然后：<code>ctrl+o</code>、<code>enter</code>、<code>ctrl+x</code></p>
 <h2 id="_8">下载编译环境<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo<span class="w"> </span>su
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>manpages-dev<span class="w"> </span>software-properties-common<span class="w"> </span>gcc<span class="w"> </span>g++<span class="w"> </span>make<span class="w"> </span>bison<span class="w"> </span>binutils<span class="w"> </span>gcc-multilib<span class="w"> </span>flex
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openjdk-17-jre-headless
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>su
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>manpages-dev<span class="w"> </span>software-properties-common<span class="w"> </span>gcc<span class="w"> </span>g++<span class="w"> </span>make<span class="w"> </span>bison<span class="w"> </span>binutils<span class="w"> </span>gcc-multilib<span class="w"> </span>flex
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openjdk-17-jre-headless
 </code></pre></div>
 <h2 id="_9">测试编译环境<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>gcc<span class="w"> </span>-v
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>g++<span class="w"> </span>-v
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>python3
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>java<span class="w"> </span>-version
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>gcc<span class="w"> </span>-v
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>g++<span class="w"> </span>-v
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>python3
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>java<span class="w"> </span>-version
 </code></pre></div>
 
 

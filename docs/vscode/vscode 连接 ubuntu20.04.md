@@ -123,26 +123,27 @@ remote explorer
 
 ## 开启子系统自启动服务
 
-创建 `/etc/init.wsl` 文件：
+在 c 盘下创建：`sshd.bat` 文件：
 
 ```shell
-sudo su
-
-vim /etc/init.wsl
+C:\Windows\System32\bash.exe -c "sudo /etc/init.d/ssh start"
 ```
 
-写入内容：
+将 `sshd.bat` 添加进任务计划程序中.
+
+---
+
+新建脚本：`sshd.vbs`，写入内容：
 
 ```shell
-#! /bin/sh
-/etc/init.d/ssh $1
+Set WinScriptHost = CreateObject("WScript.Shell")
+WinScriptHost.Run Chr(34) & "C:\sshd.bat" & Chr(34), 0
+Set WinScriptHost = Nothing
 ```
 
-添加执行权限：
+快捷键：`win+r`，输入：`shell:startup`
 
-```shell
-sudo chmod +x /etc/init.wsl
-```
+将 `sshd.vbs` 放进去
 
 ---
 
@@ -153,23 +154,10 @@ sudo visudo
 在末尾添加：
 
 ```shell
-%sudo ALL=NOPASSWD: /etc/init.wsl
+%sudo ALL=NOPASSWD: /etc/init.d/ssh
 ```
 
 然后：`ctrl+o`、`enter`、`ctrl+x`
-
----
-
-新建脚本：`startservice.vbs`，写入内容：
-
-```shell
-Set ws = WScript.CreateObject("WScript.Shell")
-ws.run "C:\Windows\System32\bash.exe -c 'sudo /etc/init.wsl"
-```
-
-快捷键：`win+r`，输入：`shell:startup`
-
-将 `startservice.vbs` 放进去
 
 ## 下载编译环境
 
