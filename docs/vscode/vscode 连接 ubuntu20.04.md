@@ -120,3 +120,22 @@ remote explorer
 
 ![](./img/vscode连ubuntu.png)
 ![](./img/vscode-config.png)
+
+## 下载编译环境
+
+```shell
+sudo su
+
+sudo apt install build-essential manpages-dev software-properties-common gcc g++ make bison binutils gcc-multilib flex
+
+sudo apt install openjdk-17-jre-headless
+```
+
+## 测试编译环境
+
+```shell
+gcc -v
+g++ -v
+python3
+java -version
+```

@@ -183,7 +183,7 @@ if __name__ == '__main__':
 
 ## oj.sh
 
-```sh
+```shell
 #!/bin/bash
 
 # python3 -u oj_tools.py $*
@@ -194,4 +194,19 @@ dn=${dn:0:`expr ${#dn}-5`}
 # echo $dn
 cp "${dn}/oj_tools.py" ./oj_tools.py;
 python3 -u oj_tools.py $*;
+```
+
+运行：
+
+```shell
+chmod +x oj.sh
+
+#通过修改environment文件:
+sudo vim /etc/environment
+在PATH="/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin"中加入 
+":命令行路径"
+ 
+#生效方法：系统重启
+#有效期限：永久有效
+#用户局限：对所有用户
 ```
