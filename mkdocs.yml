@@ -7,7 +7,7 @@ nav:
     - index.md
   
   - vscode:
-    - setting: vscode/setting.md
+    - settings: vscode/settings.md
     - cpp.json: vscode/cpp.json.md
     - linux: vscode/linux.md
     - markdown: vscode/markdown.md
