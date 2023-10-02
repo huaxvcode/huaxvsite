@@ -16,7 +16,7 @@ nav:
     - window: vscode/window.md
     - git ssh: vscode/git ssh.md
     - vscode 连接 ubuntu20.04: vscode/vscode 连接 ubuntu20.04.md
-    - gcc-12下载: vscode/gcc-12下载.md
+    - 导入导出子系统: vscode/导入导出子系统.md
 
   - 板子:
     - 米老鼠: 板子/米老鼠.md
