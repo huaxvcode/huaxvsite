@@ -182,4 +182,5 @@ gcc -v
 g++ -v
 python3
 java -version
+javac --version
 ```
