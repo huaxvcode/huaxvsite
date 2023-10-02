@@ -200,13 +200,15 @@ python3 -u oj_tools.py $*;
 
 ```shell
 chmod +x oj.sh
+```
 
-#通过修改environment文件:
-sudo vim /etc/environment
-在PATH="/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin"中加入 
-":命令行路径"
- 
-#生效方法：系统重启
-#有效期限：永久有效
-#用户局限：对所有用户
+## 添加环境变量
+
+```bash
+vim ~/.bashrc
+# 在最后一行加上
+export PATH=$PATH:/home/huaxvcode/huaxv/oj
+
+# 保存退出后，执行：
+source ~/.bashrc
 ```
