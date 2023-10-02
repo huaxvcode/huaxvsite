@@ -9,7 +9,7 @@
 		"prefix": "code",
 		"body": [
 			"#include <bits/stdc++.h>",
-			"typedef long long val;",
+			"typedef long long var;",
 			// "#define ull unsigned ll",
 			"typedef __int128 hh;",
 			"",
