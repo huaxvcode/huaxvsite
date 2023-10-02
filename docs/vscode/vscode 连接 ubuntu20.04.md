@@ -172,6 +172,7 @@ sudo su
 sudo apt install build-essential manpages-dev software-properties-common gcc g++ make bison binutils gcc-multilib flex
 
 sudo apt install openjdk-17-jre-headless
+sudo apt-get install default-jdk
 ```
 
 ## 测试编译环境
