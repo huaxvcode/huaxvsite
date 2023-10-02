@@ -10,6 +10,11 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
+## 查看 ubuntu 版本
+
+```bash
+lsb_release -a
+```
 
 ## 换源
 

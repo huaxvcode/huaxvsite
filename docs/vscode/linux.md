@@ -207,8 +207,17 @@ chmod +x oj.sh
 ```bash
 vim ~/.bashrc
 # 在最后一行加上
-export PATH=$PATH:/home/huaxvcode/huaxv/oj
-
+export PATH=$PATH:/home/huaxvcode/huaxv/huaxv_cmd
 # 保存退出后，执行：
 source ~/.bashrc
+
+vim /etc/profile
+# 在最后一行加上
+export PATH="$PATH:/home/huaxvcode/huaxv/huaxv_cmd"
+# 保存退出后，执行：
+source /etc/profile
 ```
+
+## 为所有用户添加环境变量
+
+
