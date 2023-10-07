@@ -150,6 +150,7 @@ nav:
     - 奇数个 1 的子串个数: 补题/奇数个 1 的子串个数.md
     - 奇数个 1 的子串的总长度: 补题/奇数个 1 的子串的总长度.md
     - D. Sum of XOR Functions: 补题/D. Sum of XOR Functions.md
+    - L. Permutation Compression: 补题/L. Permutation Compression.md
 
   - MySQL:
     - 入门命令: MySQL/入门命令.md
