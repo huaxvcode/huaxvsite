@@ -61,3 +61,38 @@ Up to now, Mr.Scott has sent a great requests for spare parts and orther urgent 
 In this way, he has begun his own private 'telephone' sevice.
 就这样，他开始了自己的私人电话业务.
 ```
+
+## sentence
+
+```
+I wrote to him last month.
+
+I bought this car last year.
+
+He came to see me this morning.
+
+I saw him ten minutes ago.
+```
+
+现在完成时，是指在过去发生的动作但是对现在仍然有影响的句子
+
+```
+The train has just left the train.
+
+I've already seen that film.
+
+He has been abroad for six months.
+
+Have you ever met him before?
+
+I have never met him before.
+
+I have not finished work yet. 
+我还没有完成工作
+
+There have been a great number of accidents lately.
+最近事故极多
+
+Up till now he has won five prizes.
+至今为止他已赢得了 5 个奖
+```
