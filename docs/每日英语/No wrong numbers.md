@@ -96,3 +96,17 @@ There have been a great number of accidents lately.
 Up till now he has won five prizes.
 至今为止他已赢得了 5 个奖
 ```
+
+```
+That's so true.
+如此真实
+
+that's so 如此
+
+That's why he has bought twelve pigeons.
+这就是为什么他买 12 只鸽子的原因
+
+That's why 这就是 ... 的原因
+
+
+```
