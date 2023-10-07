@@ -975,6 +975,66 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E6%9D%BF%E5%AD%90/%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数论的一些知识
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%BF%E5%AD%90/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字符串知识汇总
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%BF%E5%AD%90/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9D%BF%E5%AD%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据结构板子
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E6%9D%BF%E5%AD%90/OJ%20%E5%AF%B9%E6%8B%8D/" class="md-nav__link">
         
   
@@ -1200,46 +1260,6 @@
   
   <span class="md-ellipsis">
     不超过 n 的质数个数
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E6%9D%BF%E5%AD%90/%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    数论的一些知识
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E6%9D%BF%E5%AD%90/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    字符串知识汇总
   </span>
   
 
@@ -5018,27 +5038,45 @@
 <a id="__codelineno-0-168" name="__codelineno-0-168" href="#__codelineno-0-168"></a>        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
 <a id="__codelineno-0-169" name="__codelineno-0-169" href="#__codelineno-0-169"></a>            <span class="n">oj</span><span class="p">(</span><span class="n">ts</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 <a id="__codelineno-0-170" name="__codelineno-0-170" href="#__codelineno-0-170"></a>        <span class="k">elif</span> <span class="s1">&#39;.&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-<a id="__codelineno-0-171" name="__codelineno-0-171" href="#__codelineno-0-171"></a>            <span class="n">run_single</span><span class="p">(</span><span class="o">*</span><span class="n">deal_name</span><span class="p">(</span><span class="s2">&quot;Random.cpp&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>   
-<a id="__codelineno-0-172" name="__codelineno-0-172" href="#__codelineno-0-172"></a>            <span class="n">run_single</span><span class="p">(</span><span class="o">*</span><span class="n">deal_name</span><span class="p">(</span><span class="s2">&quot;Answer.cpp&quot;</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>   
-<a id="__codelineno-0-173" name="__codelineno-0-173" href="#__codelineno-0-173"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-174" name="__codelineno-0-174" href="#__codelineno-0-174"></a>            <span class="n">sub</span> <span class="o">=</span> <span class="n">deal_name</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-<a id="__codelineno-0-175" name="__codelineno-0-175" href="#__codelineno-0-175"></a>            <span class="n">out</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-0-176" name="__codelineno-0-176" href="#__codelineno-0-176"></a>            <span class="k">if</span> <span class="n">sub</span> <span class="o">==</span> <span class="s2">&quot;Answer&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-177" name="__codelineno-0-177" href="#__codelineno-0-177"></a>                <span class="n">out</span> <span class="o">=</span> <span class="mi">2</span>
-<a id="__codelineno-0-178" name="__codelineno-0-178" href="#__codelineno-0-178"></a>            <span class="k">elif</span> <span class="n">sub</span> <span class="o">==</span> <span class="s2">&quot;Random&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-179" name="__codelineno-0-179" href="#__codelineno-0-179"></a>                <span class="n">out</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-0-180" name="__codelineno-0-180" href="#__codelineno-0-180"></a>            <span class="n">run_single</span><span class="p">(</span><span class="o">*</span><span class="n">deal_name</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">out</span><span class="p">)</span>    
-<a id="__codelineno-0-181" name="__codelineno-0-181" href="#__codelineno-0-181"></a>
-<a id="__codelineno-0-182" name="__codelineno-0-182" href="#__codelineno-0-182"></a>    <span class="k">elif</span> <span class="n">argn</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-<a id="__codelineno-0-183" name="__codelineno-0-183" href="#__codelineno-0-183"></a>        <span class="n">ln</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-0-184" name="__codelineno-0-184" href="#__codelineno-0-184"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-<a id="__codelineno-0-185" name="__codelineno-0-185" href="#__codelineno-0-185"></a>            <span class="n">ln</span> <span class="o">+=</span> <span class="n">deal_name</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-0-186" name="__codelineno-0-186" href="#__codelineno-0-186"></a>        <span class="n">oj</span><span class="p">(</span><span class="o">*</span><span class="n">ln</span><span class="p">)</span>
-<a id="__codelineno-0-187" name="__codelineno-0-187" href="#__codelineno-0-187"></a>    <span class="k">elif</span> <span class="n">argn</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
-<a id="__codelineno-0-188" name="__codelineno-0-188" href="#__codelineno-0-188"></a>        <span class="n">ln</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-0-189" name="__codelineno-0-189" href="#__codelineno-0-189"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-<a id="__codelineno-0-190" name="__codelineno-0-190" href="#__codelineno-0-190"></a>            <span class="n">ln</span> <span class="o">+=</span> <span class="n">deal_name</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-0-191" name="__codelineno-0-191" href="#__codelineno-0-191"></a>        <span class="n">oj</span><span class="p">(</span><span class="o">*</span><span class="n">ln</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<a id="__codelineno-0-171" name="__codelineno-0-171" href="#__codelineno-0-171"></a>            <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-172" name="__codelineno-0-172" href="#__codelineno-0-172"></a>                <span class="n">init</span><span class="p">()</span>
+<a id="__codelineno-0-173" name="__codelineno-0-173" href="#__codelineno-0-173"></a>                <span class="n">run_single</span><span class="p">(</span><span class="o">*</span><span class="n">deal_name</span><span class="p">(</span><span class="s2">&quot;Answer.cpp&quot;</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-0-174" name="__codelineno-0-174" href="#__codelineno-0-174"></a>                <span class="n">init</span><span class="p">()</span>
+<a id="__codelineno-0-175" name="__codelineno-0-175" href="#__codelineno-0-175"></a>                <span class="n">run_single</span><span class="p">(</span><span class="o">*</span><span class="n">deal_name</span><span class="p">(</span><span class="s2">&quot;Main.cpp&quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-0-176" name="__codelineno-0-176" href="#__codelineno-0-176"></a>            <span class="k">elif</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;new&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-177" name="__codelineno-0-177" href="#__codelineno-0-177"></a>                <span class="n">system</span><span class="p">(</span><span class="s1">&#39;if test -d &quot;ts&quot;; then rm -r &quot;ts&quot;; fi; mkdir &quot;ts&quot;;&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-178" name="__codelineno-0-178" href="#__codelineno-0-178"></a>                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<a id="__codelineno-0-179" name="__codelineno-0-179" href="#__codelineno-0-179"></a>                    <span class="n">init</span><span class="p">()</span>
+<a id="__codelineno-0-180" name="__codelineno-0-180" href="#__codelineno-0-180"></a>                    <span class="n">run_single</span><span class="p">(</span><span class="o">*</span><span class="n">deal_name</span><span class="p">(</span><span class="s2">&quot;Random.cpp&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>   
+<a id="__codelineno-0-181" name="__codelineno-0-181" href="#__codelineno-0-181"></a>                    <span class="n">init</span><span class="p">()</span>
+<a id="__codelineno-0-182" name="__codelineno-0-182" href="#__codelineno-0-182"></a>                    <span class="n">run_single</span><span class="p">(</span><span class="o">*</span><span class="n">deal_name</span><span class="p">(</span><span class="s2">&quot;Answer.cpp&quot;</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> 
+<a id="__codelineno-0-183" name="__codelineno-0-183" href="#__codelineno-0-183"></a>                    <span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;touch ./ts/in_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.in ./ts/out_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.out&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-184" name="__codelineno-0-184" href="#__codelineno-0-184"></a>                    <span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;cp -p ./in.txt ./ts/in_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.in&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-185" name="__codelineno-0-185" href="#__codelineno-0-185"></a>                    <span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;cp -p ./res.txt ./ts/out_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.out&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-186" name="__codelineno-0-186" href="#__codelineno-0-186"></a>            <span class="k">else</span><span class="p">:</span>   
+<a id="__codelineno-0-187" name="__codelineno-0-187" href="#__codelineno-0-187"></a>                <span class="n">init</span><span class="p">()</span>
+<a id="__codelineno-0-188" name="__codelineno-0-188" href="#__codelineno-0-188"></a>                <span class="n">run_single</span><span class="p">(</span><span class="o">*</span><span class="n">deal_name</span><span class="p">(</span><span class="s2">&quot;Random.cpp&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span> 
+<a id="__codelineno-0-189" name="__codelineno-0-189" href="#__codelineno-0-189"></a>                <span class="n">init</span><span class="p">()</span>  
+<a id="__codelineno-0-190" name="__codelineno-0-190" href="#__codelineno-0-190"></a>                <span class="n">run_single</span><span class="p">(</span><span class="o">*</span><span class="n">deal_name</span><span class="p">(</span><span class="s2">&quot;Answer.cpp&quot;</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>   
+<a id="__codelineno-0-191" name="__codelineno-0-191" href="#__codelineno-0-191"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-192" name="__codelineno-0-192" href="#__codelineno-0-192"></a>            <span class="n">sub</span> <span class="o">=</span> <span class="n">deal_name</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-0-193" name="__codelineno-0-193" href="#__codelineno-0-193"></a>            <span class="n">out</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-0-194" name="__codelineno-0-194" href="#__codelineno-0-194"></a>            <span class="k">if</span> <span class="n">sub</span> <span class="o">==</span> <span class="s2">&quot;Answer&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-195" name="__codelineno-0-195" href="#__codelineno-0-195"></a>                <span class="n">out</span> <span class="o">=</span> <span class="mi">2</span>
+<a id="__codelineno-0-196" name="__codelineno-0-196" href="#__codelineno-0-196"></a>            <span class="k">elif</span> <span class="n">sub</span> <span class="o">==</span> <span class="s2">&quot;Random&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-197" name="__codelineno-0-197" href="#__codelineno-0-197"></a>                <span class="n">out</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-0-198" name="__codelineno-0-198" href="#__codelineno-0-198"></a>            <span class="n">run_single</span><span class="p">(</span><span class="o">*</span><span class="n">deal_name</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">out</span><span class="p">)</span>    
+<a id="__codelineno-0-199" name="__codelineno-0-199" href="#__codelineno-0-199"></a>
+<a id="__codelineno-0-200" name="__codelineno-0-200" href="#__codelineno-0-200"></a>    <span class="k">elif</span> <span class="n">argn</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+<a id="__codelineno-0-201" name="__codelineno-0-201" href="#__codelineno-0-201"></a>        <span class="n">ln</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-202" name="__codelineno-0-202" href="#__codelineno-0-202"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+<a id="__codelineno-0-203" name="__codelineno-0-203" href="#__codelineno-0-203"></a>            <span class="n">ln</span> <span class="o">+=</span> <span class="n">deal_name</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-0-204" name="__codelineno-0-204" href="#__codelineno-0-204"></a>        <span class="n">oj</span><span class="p">(</span><span class="o">*</span><span class="n">ln</span><span class="p">)</span>
+<a id="__codelineno-0-205" name="__codelineno-0-205" href="#__codelineno-0-205"></a>    <span class="k">elif</span> <span class="n">argn</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+<a id="__codelineno-0-206" name="__codelineno-0-206" href="#__codelineno-0-206"></a>        <span class="n">ln</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-207" name="__codelineno-0-207" href="#__codelineno-0-207"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+<a id="__codelineno-0-208" name="__codelineno-0-208" href="#__codelineno-0-208"></a>            <span class="n">ln</span> <span class="o">+=</span> <span class="n">deal_name</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-0-209" name="__codelineno-0-209" href="#__codelineno-0-209"></a>        <span class="n">oj</span><span class="p">(</span><span class="o">*</span><span class="n">ln</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
 </code></pre></div>
 <h2 id="ojsh">oj.sh<a class="headerlink" href="#ojsh" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>

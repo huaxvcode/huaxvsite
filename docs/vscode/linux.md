@@ -173,8 +173,26 @@ if __name__ == '__main__':
         if args[0].isdigit():
             oj(ts=int(args[0]))
         elif '.' not in args[0]:
-            run_single(*deal_name("Random.cpp"), 1)   
-            run_single(*deal_name("Answer.cpp"), 2)   
+            if args[0] == "test":
+                init()
+                run_single(*deal_name("Answer.cpp"), 2)
+                init()
+                run_single(*deal_name("Main.cpp"), 0)
+            elif args[0] == "new":
+                system('if test -d "ts"; then rm -r "ts"; fi; mkdir "ts";')
+                for i in range(1, 6):
+                    init()
+                    run_single(*deal_name("Random.cpp"), 1)   
+                    init()
+                    run_single(*deal_name("Answer.cpp"), 2) 
+                    system(f'touch ./ts/in_{i}.in ./ts/out_{i}.out')
+                    system(f'cp -p ./in.txt ./ts/in_{i}.in')
+                    system(f'cp -p ./res.txt ./ts/out_{i}.out')
+            else:   
+                init()
+                run_single(*deal_name("Random.cpp"), 1) 
+                init()  
+                run_single(*deal_name("Answer.cpp"), 2)   
         else:
             sub = deal_name(args[0])[0]
             out = 0
