@@ -37,3 +37,26 @@ call at 到 ··· 处访问，关顾
 
 stand on one's head 倒立
 ```
+
+```
+I put your book on the shelf. 
+我把你的书放在了书架上
+
+I put on my hat and left the house. 
+我戴上帽子，然后离开了屋子
+
+put on 穿上，增加
+
+Who took my umbrella? 
+谁拿走了我的伞
+
+It was very hot, so I took off my coat.
+天很热，因此我脱下了外套
+
+He always knocks off at six o'clock.
+他总是 6 点钟下班
+
+knock off 下班
+
+
+```
