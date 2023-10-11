@@ -2,8 +2,10 @@
 
 ```
 The plane was late and detectives were waiting at the airport all morning.
+飞机误点了，侦察们在机场等了整整一下午
 
 They were expecting a valuable parcel of diamonds from South Africa.
+
 
 A few hours earlier, someone had told the police that thieves would try to steal the diamonds.
 
