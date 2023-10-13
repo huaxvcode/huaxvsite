@@ -38,5 +38,17 @@ Every year I enter for the garden competition too, and I always win a little pri
 ```
 
 ```
-neat 
+neat 灵活的，整洁的
+
+neat paths 整洁的路
+
+competition 竞赛
+
+win a little prize 小奖牌
+
+the worst garden 最差的花园
+
+wooden 木制的
+
+wooden bridge over a pool 池塘上的木制桥
 ```
