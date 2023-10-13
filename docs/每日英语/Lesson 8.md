@@ -27,7 +27,7 @@ Nearly everybody enters for "The Nicest Garden Competition" each year, but Joe w
 Bill Frith's garden is larger than Joe's.
 
 Bill works harder than Joe and grows more flowers and vegetables, but Joe's garden is more interesting.
-
+ 
 He has made neat paths and has built a wooden bridge over a pool.
 他修筑了一条条整洁的小路，并在一个池塘上架了一座小木桥
 
