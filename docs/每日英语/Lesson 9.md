@@ -73,6 +73,8 @@ Hall 大厅
 
 Town Hall 市政厅
 
+strike 碰撞
+
 at five to twelve 在 5 分钟到 12 点（11:55）
 
 minute hand 分针
