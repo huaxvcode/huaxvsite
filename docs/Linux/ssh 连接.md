@@ -51,5 +51,14 @@ function ssh-copy-id([string]$userAtMachine, $args){
 ```
 
 ```bash
-ssh-copy-id -p 16610 huaxvubuntu@192.168.42.131
+ssh-copy-id -p 16610 huaxvubuntu@192.168.109.128
+```
+
+vscode：
+
+```bash
+Host 192.168.109.128
+  HostName 192.168.109.128
+  User huaxvubuntu
+  Port 16610
 ```
