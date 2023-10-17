@@ -4048,6 +4048,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ssh 连接
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4057,6 +4068,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    powershell
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4928,6 +4965,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    powershell
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4957,6 +5009,24 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>PasswordAuthentication<span class="w"> </span>yes
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>sudo<span class="w"> </span>/etc/init.d/ssh<span class="w"> </span>restart
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>apt<span class="w"> </span>install<span class="w"> </span>net-tools
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># 查看 ip 地址</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>ifconfig
+</code></pre></div>
+<h2 id="powershell">powershell<a class="headerlink" href="#powershell" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">function</span><span class="w"> </span>ssh-copy-id<span class="o">([</span>string<span class="o">]</span><span class="nv">$userAtMachine</span>,<span class="w"> </span><span class="nv">$args</span><span class="o">){</span><span class="w">   </span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nv">$publicKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ENV</span><span class="s2">:USERPROFILE&quot;</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;/.ssh/id_rsa.pub&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>!<span class="o">(</span>Test-Path<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$publicKey</span><span class="s2">&quot;</span><span class="o">)){</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span>Write-Error<span class="w"> </span><span class="s2">&quot;ERROR: failed to open ID file &#39;</span><span class="nv">$publicKey</span><span class="s2">&#39;: No such file&quot;</span><span class="w">            </span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="p">&amp;</span><span class="w"> </span>cat<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$publicKey</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>ssh<span class="w"> </span><span class="nv">$args</span><span class="w"> </span><span class="nv">$userAtMachine</span><span class="w"> </span><span class="s2">&quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys || exit 1&quot;</span><span class="w">      </span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="o">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ssh-copy-id<span class="w"> </span>-p<span class="w"> </span><span class="m">16610</span><span class="w"> </span>huaxvubuntu@192.168.42.131
 </code></pre></div>
 
 
