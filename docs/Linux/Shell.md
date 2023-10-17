@@ -108,3 +108,11 @@ ls -l dir_name
 ls -h dir_name
 ```
 
+## cat
+
+```bash
+# 显示出 f1 f2 f3 的文件内容
+cat f1 f2 f3
+```
+
+# 
