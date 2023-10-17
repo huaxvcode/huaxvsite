@@ -197,12 +197,14 @@ nav:
 
   - Linux:
     - 换清华源: Linux/换清华源.md
-    - Linux 常见基本命令: Linux/Linux 常见基本命令.md
-    - tmux 使用: Linux/tmux 使用.md
-    - vim 使用手册: Linux/vim 使用手册.md
-    - bash 使用: Linux/bash 使用.md
-    - ssh 连接 github: Linux/ssh 连接 github.md
-    - window 使用 ssh 连接 linux: Linux/window 使用 ssh 连接 linux.md
+    # - Linux 常见基本命令: Linux/Linux 常见基本命令.md
+    # - tmux 使用: Linux/tmux 使用.md
+    # - vim 使用手册: Linux/vim 使用手册.md
+    # - bash 使用: Linux/bash 使用.md
+    # - ssh 连接 github: Linux/ssh 连接 github.md
+    # - window 使用 ssh 连接 linux: Linux/window 使用 ssh 连接 linux.md
+    - ssh 连接: Linux/ssh 连接.md
+    - Shell: Linux/Shell.md
     
   - CSS 笔记:
     - 标签选择器: CSS 笔记/标签选择器.md
