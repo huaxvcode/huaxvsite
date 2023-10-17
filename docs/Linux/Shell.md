@@ -147,3 +147,11 @@ cp -r dir1 dir2 # dir2/dir1
 # 强制复制
 cp -rf dir1 dir2 
 ```
+
+## mv
+
+```bash
+# 强制移动，将 dir1 移动到 dir2 里面
+# 如果 dir2 不存在就是改名
+mv -f dir1 dir2
+```
