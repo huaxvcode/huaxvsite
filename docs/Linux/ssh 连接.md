@@ -1,5 +1,17 @@
 # ssh 连接
 
+修改 dns：
+
+```bash
+vim /etc/systemd/resolved.conf
+
+DNS=8.8.8.8 114.114.115.115
+FallbackDNS=8.8.8.8
+
+# 然后重启
+reboot
+```
+
 ```bash
 sudu su
 sudo apt install openssh-server
