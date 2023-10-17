@@ -155,3 +155,10 @@ cp -rf dir1 dir2
 # 如果 dir2 不存在就是改名
 mv -f dir1 dir2
 ```
+
+## touch 
+
+```bash
+# 创建空文件，如果文件存在不执行如何操作
+touch file
+```
