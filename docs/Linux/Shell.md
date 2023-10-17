@@ -115,4 +115,35 @@ ls -h dir_name
 cat f1 f2 f3
 ```
 
-# 
+# mkdir
+
+```bash
+# 创建文件夹
+mkdir dir
+
+# 递归创建文件夹
+mkdir dir/dir/dir
+```
+
+## rm
+
+```bash
+# 删除文件夹
+rm -r dir 
+
+# 强制删除文件夹
+rm -rf dir 
+
+# 强制删除文件
+rm -f file
+```
+
+## cp
+
+```bash
+# 递归复制目录，将 dir1 复制进 dir2 里面
+cp -r dir1 dir2 # dir2/dir1
+
+# 强制复制
+cp -rf dir1 dir2 
+```
