@@ -163,4 +163,19 @@ mv -f dir1 dir2
 touch file
 ```
 
-## 
+## find
+
+```bash
+# 在 dir 文件夹里查找权限为 777 的文件
+find dir -perm 777
+
+# 在 dir 文件夹里查找名称为 name 的文件
+# find . -name *
+find dir -name name
+
+# 按照大小查找文件
+# 查找 dir 目录下大小超过 100 MB 的文件
+# M、k、c 分别代表 MB、kB、cB
+find dir -size +100M
+find dir -size -100M
+```
