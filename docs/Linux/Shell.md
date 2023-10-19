@@ -115,7 +115,7 @@ ls -h dir_name
 cat f1 f2 f3
 ```
 
-# mkdir
+## mkdir
 
 ```bash
 # 创建文件夹
@@ -178,4 +178,23 @@ find dir -name name
 # M、k、c 分别代表 MB、kB、cB
 find dir -size +100M
 find dir -size -100M
+```
+
+## zip、unzip
+
+压缩成 zip 格式
+
+```bash
+# 不显示具体过程加：-q
+# 将文件压缩成 name.zip
+zip -r name.zip file
+
+# 将文件夹 dir 下的所有内容压缩成 name.zip
+zip -r name.zip dir
+```
+
+解压 zip 格式
+
+```bash
+
 ```
