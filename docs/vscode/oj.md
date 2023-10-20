@@ -28,6 +28,10 @@
 
 运行一次语言为 language 的代码，以 `in.in` 作为输入，`run.run` 作为输出，并于 `out.out` 文件做对比
 
+### oj lang1 lang2 lang3 1000
+
+支持对文件 `Random.lang1`、`Answer.lang2`、`Main.lang3` 对拍 1000 次
+
 ### 特殊说明
 
 如果文件为 `Random` 开头的，重定向输出到 `in.in` 文件；
