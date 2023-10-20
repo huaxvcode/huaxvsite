@@ -54,5 +54,9 @@
 # 负责文件的编译
 void compiler(language, filename);
 
-void 
+# 运行指定文件
+void run(language, filename, str="");
+
+# 创建一个线程池函数
+void threads(auto...args);
 ```
