@@ -32,6 +32,14 @@
 
 支持对文件 `Random.lang1`、`Answer.lang2`、`Main.lang3` 对拍 1000 次
 
+### oj save language code
+
+以覆盖式备份一个文件名为 `code.language` 的内容
+
+### oj get language code
+
+将之前的备份取出来放到 `code.language` 文件中
+
 ### 特殊说明
 
 如果文件为 `Random` 开头的，重定向输出到 `in.in` 文件；
