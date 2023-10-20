@@ -831,6 +831,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode/oj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    oj
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4237,8 +4257,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zipunzip" class="md-nav__link">
-    zip、unzip
+  <a href="#_7" class="md-nav__link">
+    变量
   </a>
   
 </li>
@@ -5216,8 +5236,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zipunzip" class="md-nav__link">
-    zip、unzip
+  <a href="#_7" class="md-nav__link">
+    变量
   </a>
   
 </li>
@@ -5367,17 +5387,15 @@
 <a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>find<span class="w"> </span>dir<span class="w"> </span>-size<span class="w"> </span>+100M
 <a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>find<span class="w"> </span>dir<span class="w"> </span>-size<span class="w"> </span>-100M
 </code></pre></div>
-<h2 id="zipunzip">zip、unzip<a class="headerlink" href="#zipunzip" title="Permanent link">&para;</a></h2>
-<p>压缩成 zip 格式</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># 不显示具体过程加：-q</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1"># 将文件压缩成 name.zip</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>zip<span class="w"> </span>-r<span class="w"> </span>name.zip<span class="w"> </span>file
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1"># 将文件夹 dir 下的所有内容压缩成 name.zip</span>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>zip<span class="w"> </span>-r<span class="w"> </span>name.zip<span class="w"> </span>dir
-</code></pre></div>
-<p>解压 zip 格式</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>
+<h2 id="_7">变量<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># 当前文件名</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nv">$0</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># 传入的参数个数</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nv">$#</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="c1"># 传入的参数下标从 1 开始计起一直到 $#</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="nv">$1</span>、<span class="nv">$2</span>、<span class="nv">$3</span>、...<span class="w"> </span>、<span class="si">${</span><span class="nv">$#</span><span class="si">}</span>
 </code></pre></div>
 
 

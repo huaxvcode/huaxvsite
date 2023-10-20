@@ -180,21 +180,15 @@ find dir -size +100M
 find dir -size -100M
 ```
 
-## zip、unzip
-
-压缩成 zip 格式
+## 变量
 
 ```bash
-# 不显示具体过程加：-q
-# 将文件压缩成 name.zip
-zip -r name.zip file
+# 当前文件名
+$0
 
-# 将文件夹 dir 下的所有内容压缩成 name.zip
-zip -r name.zip dir
-```
+# 传入的参数个数
+$#
 
-解压 zip 格式
-
-```bash
-
+# 传入的参数下标从 1 开始计起一直到 $#
+$1、$2、$3、... 、${$#}
 ```
