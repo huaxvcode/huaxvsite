@@ -314,3 +314,21 @@ if [ "$run" == "python3 -u main.py" ]; then
 else echo "error";
 fi;
 ```
+
+## 循环遍历
+
+输出 1 到 10：
+
+```bash
+for ((i=1; i<=10; i ++)); do
+    echo $i;
+done;
+
+for i in {1..10}; do
+    echo $i;
+done;
+
+for i in {a..z}; do
+    echo $i;
+done;
+```
