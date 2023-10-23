@@ -180,10 +180,10 @@ find dir -size +100M
 find dir -size -100M
 ```
 
-## 变量
+## 默认变量
 
 ```bash
-# 当前文件名
+# 当前文件名（包括文件所在路径）
 $0
 
 # 传入的参数个数
@@ -191,4 +191,126 @@ $#
 
 # 传入的参数下标从 1 开始计起一直到 $#
 $1、$2、$3、... 、${$#}
+
+# 进程 id
+$$
+
+# 返回命令的返回值
+$(command)
+```
+
+## 反引号变量
+
+```bash
+`command` # 返回命令 command 的返回值
+
+# 同样作用
+$(command)
+```
+
+## 只读变量
+
+```bash
+declare -r 变量
+```
+
+## 删除变量
+
+```bash
+unset 变量
+```
+
+## 临时环境变量
+
+```bash
+declare -x 变量
+
+declare +x 变量 # 变为普通变量
+```
+
+### 字符串
+
+```bash
+str="hello world"
+echo ${#str} # 11，输出字符串的长度
+
+echo ${str:1:9} # 从 1 开始，提取 9 个字符: ello worl
+```
+
+## 数组
+
+```bash
+list=('c' 'c++' 'python' 'java' 'go' 'javascript')
+
+for i in ${list[*]}; do 
+    echo ${i};
+done;
+
+echo ${list[0]}
+echo ${#list[*]}
+```
+
+## 判断语句
+
+测试参数：
+
+```bash
+# 文件、文件夹
+-e  # 判断文件是否存在
+-f  # 判断是否是文件，如果不存在也是 false
+-d  # 判断是否为目录，如果不存在都是 false
+
+-r  # 文件是否可读
+-w  # 文件是否可写
+-x  # 文件是否可执行
+-s  # 文件是否为空
+
+# 比较大小
+-eq # a -eq b 判断 a 是否等于 b
+-ne # no equal
+-gt # 大于
+-lt # 小于
+-ge # 大于等于
+-le # 小于等于
+
+# 字符串比较
+-z string       # 判断是否为空
+-n string       # 判断是否非空
+str1 == str2    # 判断字符串是否相同
+str1 != str2    # 判断字符串不相同
+```
+
+介绍 `test` 和「中括号」比较命令：
+
+```bash
+if [ `pwd` == '/home/huaxvubuntu/huaxv/.codes' ]; then 
+    echo "the path is .codes"
+fi;
+
+if test `pwd` == '/home/huaxvubuntu/huaxv/.codes'; then
+    echo "the path is .codes"
+fi;
+```
+
+经验之谈：变量最好用双引号括起来，不然容易出现空格问题
+
+```bash
+run="python3 -u main.py"
+if [ $run == "python3 -u main.py" ]; then
+    echo "accept"
+else echo "error";
+fi; # 报错
+
+# 等价于：
+if [ python3 -u main.py == "python3 -u main.py" ]; then
+    echo "accept"
+else echo "error";
+fi; # 报错
+
+# 正确写法：
+run="python3 -u main.py"
+if [ "$run" == "python3 -u main.py" ]; then
+    echo "accept"
+else echo "error";
+fi;
 ```

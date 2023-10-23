@@ -4278,7 +4278,62 @@
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    变量
+    默认变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    反引号变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    只读变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    删除变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    临时环境变量
+  </a>
+  
+    <nav class="md-nav" aria-label="临时环境变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    字符串
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    数组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    判断语句
   </a>
   
 </li>
@@ -5257,7 +5312,62 @@
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    变量
+    默认变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    反引号变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    只读变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    删除变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    临时环境变量
+  </a>
+  
+    <nav class="md-nav" aria-label="临时环境变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    字符串
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    数组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    判断语句
   </a>
   
 </li>
@@ -5407,8 +5517,8 @@
 <a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>find<span class="w"> </span>dir<span class="w"> </span>-size<span class="w"> </span>+100M
 <a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>find<span class="w"> </span>dir<span class="w"> </span>-size<span class="w"> </span>-100M
 </code></pre></div>
-<h2 id="_7">变量<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># 当前文件名</span>
+<h2 id="_7">默认变量<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># 当前文件名（包括文件所在路径）</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nv">$0</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
 <a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># 传入的参数个数</span>
@@ -5416,6 +5526,100 @@
 <a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
 <a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="c1"># 传入的参数下标从 1 开始计起一直到 $#</span>
 <a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="nv">$1</span>、<span class="nv">$2</span>、<span class="nv">$3</span>、...<span class="w"> </span>、<span class="si">${</span><span class="nv">$#</span><span class="si">}</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="c1"># 进程 id</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="nv">$$</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="c1"># 返回命令的返回值</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="k">$(</span><span class="nb">command</span><span class="k">)</span>
+</code></pre></div>
+<h2 id="_8">反引号变量<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="sb">`</span><span class="nb">command</span><span class="sb">`</span><span class="w"> </span><span class="c1"># 返回命令 command 的返回值</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="c1"># 同样作用</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="k">$(</span><span class="nb">command</span><span class="k">)</span>
+</code></pre></div>
+<h2 id="_9">只读变量<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">declare</span><span class="w"> </span>-r<span class="w"> </span>变量
+</code></pre></div>
+<h2 id="_10">删除变量<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nb">unset</span><span class="w"> </span>变量
+</code></pre></div>
+<h2 id="_11">临时环境变量<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nb">declare</span><span class="w"> </span>-x<span class="w"> </span>变量
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nb">declare</span><span class="w"> </span>+x<span class="w"> </span>变量<span class="w"> </span><span class="c1"># 变为普通变量</span>
+</code></pre></div>
+<h3 id="_12">字符串<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nv">str</span><span class="o">=</span><span class="s2">&quot;hello world&quot;</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nb">echo</span><span class="w"> </span><span class="si">${#</span><span class="nv">str</span><span class="si">}</span><span class="w"> </span><span class="c1"># 11，输出字符串的长度</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">str</span><span class="p">:</span><span class="nv">1</span><span class="p">:</span><span class="nv">9</span><span class="si">}</span><span class="w"> </span><span class="c1"># 从 1 开始，提取 9 个字符: ello worl</span>
+</code></pre></div>
+<h2 id="_13">数组<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nv">list</span><span class="o">=(</span><span class="s1">&#39;c&#39;</span><span class="w"> </span><span class="s1">&#39;c++&#39;</span><span class="w"> </span><span class="s1">&#39;python&#39;</span><span class="w"> </span><span class="s1">&#39;java&#39;</span><span class="w"> </span><span class="s1">&#39;go&#39;</span><span class="w"> </span><span class="s1">&#39;javascript&#39;</span><span class="o">)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">list</span><span class="p">[*]</span><span class="si">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="p">;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="k">done</span><span class="p">;</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">list</span><span class="p">[0]</span><span class="si">}</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="nb">echo</span><span class="w"> </span><span class="si">${#</span><span class="nv">list</span><span class="p">[*]</span><span class="si">}</span>
+</code></pre></div>
+<h2 id="_14">判断语句<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>测试参数：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># 文件、文件夹</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>-e<span class="w">  </span><span class="c1"># 判断文件是否存在</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>-f<span class="w">  </span><span class="c1"># 判断是否是文件，如果不存在也是 false</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>-d<span class="w">  </span><span class="c1"># 判断是否为目录，如果不存在都是 false</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>-r<span class="w">  </span><span class="c1"># 文件是否可读</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>-w<span class="w">  </span><span class="c1"># 文件是否可写</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>-x<span class="w">  </span><span class="c1"># 文件是否可执行</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>-s<span class="w">  </span><span class="c1"># 文件是否为空</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="c1"># 比较大小</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>-eq<span class="w"> </span><span class="c1"># a -eq b 判断 a 是否等于 b</span>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>-ne<span class="w"> </span><span class="c1"># no equal</span>
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>-gt<span class="w"> </span><span class="c1"># 大于</span>
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>-lt<span class="w"> </span><span class="c1"># 小于</span>
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>-ge<span class="w"> </span><span class="c1"># 大于等于</span>
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>-le<span class="w"> </span><span class="c1"># 小于等于</span>
+<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a><span class="c1"># 字符串比较</span>
+<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>-z<span class="w"> </span>string<span class="w">       </span><span class="c1"># 判断是否为空</span>
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>-n<span class="w"> </span>string<span class="w">       </span><span class="c1"># 判断是否非空</span>
+<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a><span class="nv">str1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>str2<span class="w">    </span><span class="c1"># 判断字符串是否相同</span>
+<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>str1<span class="w"> </span>!<span class="o">=</span><span class="w"> </span>str2<span class="w">    </span><span class="c1"># 判断字符串不相同</span>
+</code></pre></div>
+<p>介绍 <code>test</code> 和「中括号」比较命令：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;/home/huaxvubuntu/huaxv/.codes&#39;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;the path is .codes&quot;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="k">fi</span><span class="p">;</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="k">if</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;/home/huaxvubuntu/huaxv/.codes&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;the path is .codes&quot;</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="k">fi</span><span class="p">;</span>
+</code></pre></div>
+<p>经验之谈：变量最好用双引号括起来，不然容易出现空格问题</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nv">run</span><span class="o">=</span><span class="s2">&quot;python3 -u main.py&quot;</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$run</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;python3 -u main.py&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">;</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="k">fi</span><span class="p">;</span><span class="w"> </span><span class="c1"># 报错</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="c1"># 等价于：</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>python3<span class="w"> </span>-u<span class="w"> </span>main.py<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;python3 -u main.py&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">;</span>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="k">fi</span><span class="p">;</span><span class="w"> </span><span class="c1"># 报错</span>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="c1"># 正确写法：</span>
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="nv">run</span><span class="o">=</span><span class="s2">&quot;python3 -u main.py&quot;</span>
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$run</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;python3 -u main.py&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span>
+<a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">;</span>
+<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="k">fi</span><span class="p">;</span>
 </code></pre></div>
 
 
