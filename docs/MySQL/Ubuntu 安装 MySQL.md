@@ -22,4 +22,5 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'huaxvubuntu';
 
 mysql -u huaxvubuntu -p
 sudo mysql -u root -p
+GRANT ALL ON *.* TO 'huaxvubuntu'@'localhost' with GRANT OPTION;
 ```
