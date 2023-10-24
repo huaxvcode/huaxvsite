@@ -162,8 +162,8 @@ mv -f dir1 dir2
 # 创建空文件，如果文件存在不执行如何操作
 touch file
 
+# 修改文件时间
 touch -d "2017-10-05" file
-
 touch -d "YYYY-MM-DD HH:MM:SS" file
 ```
 
