@@ -30,3 +30,17 @@ Host 服务器别名
 ```bash
 ssh 别名
 ```
+
+举例：
+
+```bash
+ssh huaxvtemp@192.168.109.128 -p 16610
+
+# 或者
+sudo vim ~/.ssh/config
+
+Host huaxvtemp
+    HostName 192.168.109.128
+    User huaxvtemp
+    Port 16610
+```
