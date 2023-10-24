@@ -333,3 +333,28 @@ for i in {a..z}; do
 done;
 ```
 
+## 函数
+
+```bash
+#!/bin/bash
+
+func() {
+    for i in $(seq 1 $1); do # $1、$2、$n 代表函数传入的参数
+        for j in $(seq 1 $i); do
+            printf "%d*%d=%-2d " $j $i `expr $i \* $j`
+        done;
+        printf "\n";
+    done;
+    return 256 # 取值范围：0 ~ 255，256 -> 0
+}
+
+func 10
+
+echo $? # 捕获函数的放回值
+
+echo "$(func 10)"
+
+echo "`func 10`"
+
+# echo 双引号中的换行符才会生效
+```
