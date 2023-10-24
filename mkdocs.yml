@@ -208,6 +208,7 @@ nav:
     - ssh 连接: Linux/ssh 连接.md
     - 编译环境: Linux/编译环境.md
     - Shell: Linux/Shell.md
+    - ssh: Linux/ssh.md
     
   - CSS 笔记:
     - 标签选择器: CSS 笔记/标签选择器.md
