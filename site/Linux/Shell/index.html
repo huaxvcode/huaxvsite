@@ -4352,6 +4352,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ln" class="md-nav__link">
+    ln 软硬链接
+  </a>
+  
+    <nav class="md-nav" aria-label="ln 软硬链接">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    硬链接
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    软连接
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5460,6 +5487,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ln" class="md-nav__link">
+    ln 软硬链接
+  </a>
+  
+    <nav class="md-nav" aria-label="ln 软硬链接">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    硬链接
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    软连接
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5746,6 +5800,20 @@
 <a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a>
 <a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a><span class="c1"># echo 双引号中的换行符才会生效</span>
 </code></pre></div>
+<h2 id="ln">ln 软硬链接<a class="headerlink" href="#ln" title="Permanent link">&para;</a></h2>
+<h3 id="_17">硬链接<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>硬链接只能对文件创建一个硬链接</p>
+<p>文件名其实都是一个文件指针，其文件地址也成为文件索引，可以用命令 <code>ls -i file</code> 来查看文件地址</p>
+<p>而硬链接就是新建一个文件指针指向该索引，相当于是取了一个别名</p>
+<p>但是文件的硬链接只能保存在同等目录下</p>
+<p>如果删除了某个文件指针，文件并不会被删除，只有当所有的文件指针都被删除，文件才会被删除</p>
+<p>可以实现一个备份功能，或者取一个别名的功能</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>ln<span class="w"> </span>file<span class="w"> </span>index_file
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>ls<span class="w"> </span>-i<span class="w"> </span>linux.sh<span class="w"> </span>index_linux.sh
+</code></pre></div>
+<p><a class="glightbox" href="../img/%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%A1%AC%E9%93%BE%E6%8E%A5.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%A1%AC%E9%93%BE%E6%8E%A5.png" /></a></p>
+<h3 id="_18">软连接<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 
 
 

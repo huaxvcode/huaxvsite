@@ -77,5 +77,11 @@ ls -la
 
 ls -larF
 
+ls -i
+```
 
+为文件夹建立符号链接
+
+```bash
+ln -s dir1 dir13
 ```
