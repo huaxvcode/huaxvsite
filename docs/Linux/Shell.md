@@ -161,6 +161,10 @@ mv -f dir1 dir2
 ```bash
 # 创建空文件，如果文件存在不执行如何操作
 touch file
+
+touch -d "2017-10-05" file
+
+touch -d "YYYY-MM-DD HH:MM:SS" file
 ```
 
 ## find
@@ -385,3 +389,18 @@ ls -i linux.sh index_linux.sh
 
 ### 软连接
 
+软连接是硬链接的升级版，取消了只能在同等目录下创建的限制
+
+软连接更像是 window 系统的快捷键
+
+可以对文件、文件夹创建软连接
+
+但是，如果源文件已经被删除，那么软连接也将失效
+
+```bash
+ln -s file index_file
+
+ln -s dir index_dir
+
+ls -i dir index_dir
+```
