@@ -43,4 +43,28 @@ Host huaxvtemp
     HostName 192.168.109.128
     User huaxvtemp
     Port 16610
+    
+# 下次就可以直接用别名登陆
+ssh huaxvtemp
+```
+
+## 密钥登陆
+
+本地机创建密钥：
+
+```bash
+# 默认在 ~/.ssh/ 创建
+ssh-keygen
+
+#   id_rsa      私钥
+#   id_rsa.pub  公钥
+```
+如果想免密码登陆远程服务器，只需要将本地机的公钥传给服务器就行
+
+```bash
+# 将公钥的内容复制到
+~/.ssh/authorized_keys
+
+# 或者
+ssh-copy-id user@hostname
 ```

@@ -4198,6 +4198,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    密钥登陆
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5092,6 +5099,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    密钥登陆
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5142,6 +5156,24 @@
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span>HostName<span class="w"> </span><span class="m">192</span>.168.109.128
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span>User<span class="w"> </span>huaxvtemp
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span>Port<span class="w"> </span><span class="m">16610</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># 下次就可以直接用别名登陆</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>ssh<span class="w"> </span>huaxvtemp
+</code></pre></div>
+<h2 id="_3">密钥登陆<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>本地机创建密钥：</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 默认在 ~/.ssh/ 创建</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>ssh-keygen
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">#   id_rsa      私钥</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">#   id_rsa.pub  公钥</span>
+</code></pre></div>
+如果想免密码登陆远程服务器，只需要将本地机的公钥传给服务器就行</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 将公钥的内容复制到</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>~/.ssh/authorized_keys
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># 或者</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>ssh-copy-id<span class="w"> </span>user@hostname
 </code></pre></div>
 
 
