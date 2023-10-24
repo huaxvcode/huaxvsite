@@ -122,7 +122,7 @@ cat f1 f2 f3
 mkdir dir
 
 # 递归创建文件夹
-mkdir dir/dir/dir
+mkdir -p dir/dir/dir
 ```
 
 ## rm
@@ -195,14 +195,14 @@ $1、$2、$3、... 、${$#}
 # 进程 id
 $$
 
-# 返回命令的返回值
+# 返回 command 的 stdout
 $(command)
 ```
 
 ## 反引号变量
 
 ```bash
-`command` # 返回命令 command 的返回值
+`command` # 捕获 command 的 stdout
 
 # 同样作用
 $(command)
