@@ -31,6 +31,19 @@ amusing experience  有趣的经验
 
 amazing axperience  疯狂的经验
 
+amusing 有趣的
+
+amazing 疯狂的
+
+the joke amused me.
+这笑话把我逗乐了
+
+I am amused by the joke.
+这笑话把我逗乐了
+
+We were amused by his experience.
+我们被他的经历逗乐了
+
 village     村庄
 
 drive on to the next town   开车去下一个城镇
