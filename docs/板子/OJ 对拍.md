@@ -5,7 +5,7 @@
 #include <windows.h>
 
 using namespace std;
-set<char> st = {'\f', '\b', '\n', ' ', '\t'};
+set<char> st = {'\f', '\b', '\n', ' ', '\t', '\r'};
 
 string gss(string s) {
     string res, ts;
@@ -39,9 +39,9 @@ int check(string f1 = "out.txt", string f2 = "res.txt") {
 
 int main() {
     int N = 10;
-    system("g++ -std=c++14 Main.cpp -o Main");
-    system("g++ -std=c++14 Random.cpp -o Random");
-    system("g++ -std=c++14 Answer.cpp -o Answer");
+    system("g++ -std=c++17 Main.cpp -o Main");
+    system("g++ -std=c++17 Random.cpp -o Random");
+    system("g++ -std=c++17 Answer.cpp -o Answer");
     while (N --) {
         system("Random >in.txt && Answer <in.txt>res.txt && Main <in.txt>out.txt");
         int ln = check(); if (ln) {
