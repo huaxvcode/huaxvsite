@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>OJ 对拍.md</title>
+<title>代码壳.md</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <style>
@@ -392,66 +392,40 @@ code {
           : 'default'
     });
   </script>
-<h1 id="oj-%E5%AF%B9%E6%8B%8D">OJ 对拍</h1>
-<p>需要文件：</p>
-<ol>
-<li><code>Random.cpp</code></li>
-<li><code>Main.cpp</code></li>
-<li><code>Answer.cpp</code></li>
-<li><code>in.txt</code></li>
-<li><code>res.txt</code></li>
-<li><code>out.txt</code></li>
-</ol>
+<h1 id="%E4%BB%A3%E7%A0%81%E5%A3%B3">代码壳</h1>
 <pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;windows.h&gt;</span></span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> var;
+<span class="hljs-keyword">typedef</span> __int128 hh;
 
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
-<span class="hljs-built_in">set</span>&lt;<span class="hljs-keyword">char</span>&gt; st = {<span class="hljs-string">'\f'</span>, <span class="hljs-string">'\b'</span>, <span class="hljs-string">'\n'</span>, <span class="hljs-string">' '</span>, <span class="hljs-string">'\t'</span>, <span class="hljs-string">'\r'</span>};
+<span class="hljs-keyword">namespace</span> {
 
-<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">gss</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s)</span> </span>{
-    <span class="hljs-built_in">string</span> res, ts;
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> c : s) {
-        <span class="hljs-keyword">if</span> (st.count(c)) {
-            <span class="hljs-keyword">if</span> (ts != <span class="hljs-string">""</span>) res += ts + <span class="hljs-string">" "</span>;
-            ts = <span class="hljs-string">""</span>;
-        }
-        <span class="hljs-keyword">else</span> ts += c;
-    }
-    <span class="hljs-keyword">if</span> (ts != <span class="hljs-string">""</span>) res += ts + <span class="hljs-string">" "</span>;
-    <span class="hljs-keyword">return</span> res;
+
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; RAND_MAX &lt;&lt; <span class="hljs-string">'\n'</span>;      <span class="hljs-comment">// 2147483647</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(hh) &lt;&lt; <span class="hljs-string">'\n'</span>;    <span class="hljs-comment">// 16</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(var) &lt;&lt; <span class="hljs-string">'\n'</span>;   <span class="hljs-comment">// 8</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>) &lt;&lt; <span class="hljs-string">'\n'</span>;   <span class="hljs-comment">// 4</span>
+    <span class="hljs-keyword">auto</span> dfs = [&amp;](<span class="hljs-keyword">auto</span>&amp;&amp; f, <span class="hljs-keyword">auto</span> x) -&gt; <span class="hljs-keyword">void</span> {
+        <span class="hljs-keyword">if</span> (x == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="hljs-string">'\n'</span>;
+        f(f, x - <span class="hljs-number">1</span>);
+    };
+    dfs(dfs, <span class="hljs-number">100</span>);
 }
 
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-built_in">string</span> f1 = <span class="hljs-string">"out.txt"</span>, <span class="hljs-built_in">string</span> f2 = <span class="hljs-string">"res.txt"</span>)</span> </span>{
-    <span class="hljs-function">ifstream <span class="hljs-title">fout</span><span class="hljs-params">(f1)</span></span>;
-    <span class="hljs-function">ifstream <span class="hljs-title">fres</span><span class="hljs-params">(f2)</span></span>;
-    <span class="hljs-keyword">int</span> <span class="hljs-built_in">line</span> = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">while</span> (++ <span class="hljs-built_in">line</span>) {
-        <span class="hljs-built_in">string</span> s1, s2;
-        <span class="hljs-keyword">auto</span>&amp; x = getline(fout, s1);
-        <span class="hljs-keyword">auto</span>&amp; y = getline(fres, s2);
-        <span class="hljs-keyword">if</span> (!x &amp;&amp; !y) {
-            <span class="hljs-built_in">line</span> = <span class="hljs-number">0</span>; <span class="hljs-keyword">break</span>;
-        }
-        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (gss(s1) != gss(s2)) <span class="hljs-keyword">break</span>;
-    }
-    fout.<span class="hljs-built_in">close</span>(); fres.<span class="hljs-built_in">close</span>();
-    <span class="hljs-keyword">return</span> <span class="hljs-built_in">line</span>;
 }
 
+<span class="hljs-comment">// g++ -w -std=c++20 -O2 Main.cpp -o Main &amp;&amp; ./Main</span>
 <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">int</span> N = <span class="hljs-number">10</span>;
-    system(<span class="hljs-string">"g++ -std=c++17 Main.cpp -o Main"</span>);
-    system(<span class="hljs-string">"g++ -std=c++17 Random.cpp -o Random"</span>);
-    system(<span class="hljs-string">"g++ -std=c++17 Answer.cpp -o Answer"</span>);
-    <span class="hljs-keyword">while</span> (N --) {
-        system(<span class="hljs-string">"Random &gt;in.txt &amp;&amp; Answer &lt;in.txt&gt;res.txt &amp;&amp; Main &lt;in.txt&gt;out.txt"</span>);
-        <span class="hljs-keyword">int</span> ln = check(); <span class="hljs-keyword">if</span> (ln) {
-            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Different in line: "</span> &lt;&lt; ln &lt;&lt; <span class="hljs-string">'\n'</span>; <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-        } <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Pass\n"</span>;
-    }
-    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"All Accept\n"</span>;
+    <span class="hljs-built_in">std</span>::ios::sync_with_stdio(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>); <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>.tie(<span class="hljs-number">0</span>);
+    srand(time(<span class="hljs-number">0</span>));
+    <span class="hljs-comment">//int t; std::cin &gt;&gt; t; while (t --)</span>
+    solve();
     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 }
+
 </div></code></pre>
 
 </body>
