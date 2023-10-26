@@ -1,5 +1,14 @@
 # OJ 对拍
 
+需要文件：
+
+1. `Random.cpp`
+2. `Main.cpp`
+3. `Answer.cpp`
+4. `in.txt`
+5. `res.txt`
+6. `out.txt`
+
 ```c++
 #include <bits/stdc++.h>
 #include <windows.h>
