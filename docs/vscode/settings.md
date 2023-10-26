@@ -76,7 +76,7 @@
     "settingsSync.ignoredExtensions": [
         "ms-vsliveshare.vsliveshare"
     ],
-    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.colorTheme": "GitHub Dark High Contrast",
     // "update.mode": "none",
     "files.exclude": {
         "**/.DS_Store": true,
@@ -91,7 +91,7 @@
     "terminal.integrated.windowsEnableConpty": false,
     "cph.general.timeOut": 5000,
     "markdown-preview-enhanced.previewTheme": "atom-dark.css",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "vscode-great-icons",
     "C_Cpp.default.cppStandard": "c++20",
     "C_Cpp.default.cStandard": "c99",
     // "extensions.ignoreRecommendations": true,
@@ -220,20 +220,22 @@
     },
     "liveServer.settings.donotShowInfoMsg": true,
     "files.autoSave": "afterDelay",
-    "editor.fontFamily": "'JetBrains Mono NL', 'JetBrains Mono', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'JetBrains Mono', 'JetBrains Mono NL', Consolas, 'Courier New', monospace",
     "security.workspace.trust.untrustedFiles": "open",
-    "explorer.sortOrder": "modified",
+    // "explorer.sortOrder": "modified",
     "markdown.preview.fontFamily": "'JetBrains Mono NL', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
     "markdown-pdf.highlightStyle": "github.css",
     "markdown-pdf.displayHeaderFooter": false,
-    "markdown-preview-github-styles.darkTheme": "dark_dimmed",
     // "markdown.extension.preview.autoShowPreviewToSide": true,
     "files.insertFinalNewline": true,
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
-    "markdown-pdf.outputDirectory": "C:\\Users\\13255\\Desktop", // markdown pdf 导出到桌面
+    "markdown-pdf.outputDirectory": "C:\\Users\\13255\\Desktop",
+    "markdown-preview-github-styles.colorTheme": "dark",
+    "workbench.tree.indent": 20, // markdown pdf 导出到桌面
 }
+
 
 ```
 
