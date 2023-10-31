@@ -117,7 +117,7 @@ public class Main {
 ## Map
 
 1. `Map<Integer, Integer> st = new HashMap<>()`：哈希字典
-2. `Map<Integer> st = new TreeMap<>((x, y) -> { return x - y; })`：从小到大排序的字典
+2. `Map<Integer, Integer> st = new TreeMap<>((x, y) -> { return x - y; })`：从小到大排序的字典
 3. `Map.size()`：元素个数
 4. `Map.put(key, Integer)`：键值对插入
 5. `Map.containsKey(key)`：判断键是否存在
