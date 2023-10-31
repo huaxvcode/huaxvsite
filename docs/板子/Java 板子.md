@@ -89,7 +89,7 @@ public class Main {
 8. `Deque.peekFirst(Integer)`：左边获取元素
 9. `Deque.peekLast(Integer)`：右边获取元素
 
-# Deque -> Queue
+## Deque -> Queue
 
 用双端队列实现普通队列：
 
@@ -97,7 +97,7 @@ public class Main {
 2. `Deque.peek()`：获取元素
 3. `Deque.poll()`：拿出元素
 
-# Deque -> Stack
+## Deque -> Stack
 
 用双端队列实现普通栈：
 
