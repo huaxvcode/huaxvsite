@@ -24,3 +24,19 @@ Last year in another play, she had to wear short socks and a bright, orange-colo
 If anyone ever asks her how old she is, she always answers, "Darling, it must be terrible to be grown up!"
 如果有人问她多大岁数了，她总是这样回答：亲爱的，长成大人真可怕啊
 ```
+
+```
+must be     肯定
+
+at least    至少
+
+in spite of this    尽管如此
+
+appear on the stage 出现在舞台上
+
+be terrible to  变得很可怕的
+
+terrible    可怕的
+
+growp up    成熟的，成人的
+```
