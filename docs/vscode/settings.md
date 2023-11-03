@@ -76,7 +76,7 @@
     "settingsSync.ignoredExtensions": [
         "ms-vsliveshare.vsliveshare"
     ],
-    "workbench.colorTheme": "GitHub Dark High Contrast",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
     // "update.mode": "none",
     "files.exclude": {
         "**/.DS_Store": true,
@@ -220,7 +220,7 @@
     },
     "liveServer.settings.donotShowInfoMsg": true,
     "files.autoSave": "afterDelay",
-    "editor.fontFamily": "'JetBrains Mono', 'JetBrains Mono NL', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'Fira Code', 'JetBrains Mono', 'JetBrains Mono NL', Consolas, 'Courier New', monospace",
     "security.workspace.trust.untrustedFiles": "open",
     // "explorer.sortOrder": "modified",
     "markdown.preview.fontFamily": "'JetBrains Mono NL', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
@@ -236,7 +236,6 @@
     "workbench.tree.indent": 20, // markdown pdf 导出到桌面
 }
 
-
 ```
 
 ## vscode
@@ -244,7 +243,7 @@
 ```json
 {
     "editor.fontSize": 18,
-    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontSize": 16,
     "code-runner.executorMapByFileExtension": {
         ".yml": "./push.sh setting",
         ".md": "./push.sh $fileName",
@@ -280,7 +279,7 @@
         ".ring": "ring",
         ".sml": "cd $dir && sml $fileName"
     },
-    
+
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "code-runner.runInTerminal": true,
     "redhat.telemetry.enabled": true,
@@ -315,7 +314,7 @@
     "settingsSync.ignoredExtensions": [
         "ms-vsliveshare.vsliveshare"
     ],
-    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
     // "update.mode": "none",
     "files.exclude": {
         "**/.DS_Store": true,
@@ -323,14 +322,14 @@
         "**/.hg": true,
         "**/.svn": true,
         "**/*.exe": true,
-        "**/*.out": true,
+        // "**/*.out": true,
         "**/CVS": true,
         "**/Thumbs.db": true
     },
     "terminal.integrated.windowsEnableConpty": false,
     "cph.general.timeOut": 5000,
     "markdown-preview-enhanced.previewTheme": "atom-dark.css",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "vscode-great-icons",
     "C_Cpp.default.cppStandard": "c++20",
     "C_Cpp.default.cStandard": "c99",
     "extensions.ignoreRecommendations": true,
@@ -383,33 +382,35 @@
         "192.168.1.112": "linux",
         "192.168.87.170": "linux",
         "本地终端": "linux",
-        "huaxvcode": "linux"
+        "huaxvcode": "linux",
+        "192.168.42.131": "linux",
+        "192.168.109.128": "linux"
     },
     "code-runner.executorMap": {
-        
+
         "javascript": "node",
         "zig": "zig run",
-        
+
         // "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         // "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         // "python": "python -u",
-        
+
         // "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         // "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         // "python": "python3 -u",
-        
+
         // "java": "oj $fileNameWithoutExt.java",
         // "c": "oj $fileNameWithoutExt.c",
         // "cpp": "oj $fileNameWithoutExt.cpp",
         // "python": "oj $fileNameWithoutExt.py",
-        
-        "java": "oj.sh $fileNameWithoutExt.java",
-        "c": "oj.sh $fileNameWithoutExt.c",
-        "cpp": "oj.sh $fileNameWithoutExt.cpp",
-        "python": "oj.sh $fileNameWithoutExt.py",
-        
+
+        "java": "oj $fileNameWithoutExt.java",
+        "c": "oj $fileNameWithoutExt.c",
+        "cpp": "oj $fileNameWithoutExt.cpp",
+        "python": "oj $fileNameWithoutExt.py",
+
         "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "php": "php",
         "perl": "perl",
@@ -459,9 +460,11 @@
     },
     "liveServer.settings.donotShowInfoMsg": true,
     "files.autoSave": "afterDelay",
-    "editor.fontFamily": "'JetBrains Mono NL', 'JetBrains Mono', Consolas, 'Courier New', monospace",
     "explorer.sortOrder": "modified",
     "files.insertFinalNewline": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "workbench.tree.indent": 20,
+    "editor.fontFamily": "'Fira Code', 'JetBrains Mono', 'JetBrains Mono NL', Consolas, 'Courier New', monospace"
 }
 
 ```

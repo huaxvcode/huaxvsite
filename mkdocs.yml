@@ -211,8 +211,11 @@ nav:
     - 编译环境: Linux/编译环境.md
     - Shell: Linux/Shell.md
     - ssh: Linux/ssh.md
+    - Docker 教程: Linux/Docker 教程.md
     - 创建新用户: Linux/创建新用户.md
     - oj 评测系统: Linux/oj 评测系统.md
+    - 复习脚本: Linux/复习脚本.md
+    - oj: Linux/oj.md
     
   - CSS 笔记:
     - 标签选择器: CSS 笔记/标签选择器.md
