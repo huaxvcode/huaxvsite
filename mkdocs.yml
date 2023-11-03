@@ -212,7 +212,7 @@ nav:
     - Shell: Linux/Shell.md
     - ssh: Linux/ssh.md
     - 创建新用户: Linux/创建新用户.md
-    - linux 实验: Linux/linux 实验.md
+    - oj 评测系统: Linux/oj 评测系统.md
     
   - CSS 笔记:
     - 标签选择器: CSS 笔记/标签选择器.md
