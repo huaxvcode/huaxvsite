@@ -7,8 +7,8 @@
 ## in.txt 作为输入，run.txt 作为输出，out.txt 作为答案
 oj Main.language
 
-## 编译 Main.language 文件
-cp Main.language
+## 多线程编译文件
+cp file1.language file2.language file3.language ...
 
 ## 运行，in.txt 作为输入, run.txt 作为输出
 rn Main.language
@@ -36,6 +36,5 @@ oj one language1 language2
 ## 获取 10 个样例
 ## 样例需要放入 data 文件夹中
 ## 第 i 个样例组应该以：in_i.in、out_i.out 的格式命名
-
-
+oj get 10
 ```
