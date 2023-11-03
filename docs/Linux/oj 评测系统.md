@@ -29,5 +29,13 @@ language 后缀只能是：
     
     cpp 、java、py
     
+## 获取一次样例
+## 使用 Random.language1、Answer.language2 来获取一次样例
+oj one language1 language2
+
+## 获取 10 个样例
+## 样例需要放入 data 文件夹中
+## 第 i 个样例组应该以：in_i.in、out_i.out 的格式命名
+
 
 ```
