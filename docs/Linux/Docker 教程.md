@@ -1,30 +1,26 @@
 # Docker 教程
 
-## 安装 docker
+## 查看 docker 版本号
 
 ```bash
-sudo su
-
-apt-get remove docker docker-engine docker.io containerd runc
-
-sudo apt update && sudo apt upgrade
-
-apt-get install ca-certificates curl gnupg lsb-release
-
-curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
-
-sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
-
-apt-get install docker-ce docker-ce-cli containerd.io
-
-sudo usermod -aG docker $USER
-
-systemctl start docker
-
-apt-get -y install apt-transport-https ca-certificates curl software-properties-common
-
-service docker restart
-
-sudo docker run hello-world
+docker --version
 ```
- 
+
+## 给 docker 添加权限
+
+```bash
+sudo usermod -aG docker $USER
+sudo usermod -aG docker huaxvcode
+```
+
+## 拉取一个镜像
+
+```bash
+sudo docker pull ubuntu:22.04
+```
+
+## 列出当前所有镜像
+
+```bash
+sudo docker images
+```
