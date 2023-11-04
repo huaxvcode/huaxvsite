@@ -68,3 +68,20 @@ ssh-keygen
 # 或者
 ssh-copy-id user@hostname
 ```
+
+## scp 传文件
+
+```bash
+# 将 path1 下的文件传入到 path2 中
+scp path1 path2
+```
+
+举例
+
+```bash
+## 将文件夹 tmp 复制到 myserver:/home/acs/ 目录下
+scp -r ~/tmp myserver:/home/acs/
+
+## 将文件复制到当前目录下
+scp huaxvcode:/home/huaxvcode/huaxvubuntu-2023.11.4.tar .
+```

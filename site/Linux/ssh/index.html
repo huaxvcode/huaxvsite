@@ -4245,6 +4245,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    scp 传文件
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5326,6 +5333,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    scp 传文件
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5394,6 +5408,17 @@
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># 或者</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>ssh-copy-id<span class="w"> </span>user@hostname
+</code></pre></div>
+<h2 id="scp">scp 传文件<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 将 path1 下的文件传入到 path2 中</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>scp<span class="w"> </span>path1<span class="w"> </span>path2
+</code></pre></div>
+<p>举例</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">## 将文件夹 tmp 复制到 myserver:/home/acs/ 目录下</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>scp<span class="w"> </span>-r<span class="w"> </span>~/tmp<span class="w"> </span>myserver:/home/acs/
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">## 将文件复制到当前目录下</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>scp<span class="w"> </span>huaxvcode:/home/huaxvcode/huaxvubuntu-2023.11.4.tar<span class="w"> </span>.
 </code></pre></div>
 
 
