@@ -35,6 +35,10 @@ docker rmi ubuntu:20.04
 
 ```bash
 docker create -it ubuntu:20.04
+
+# 将容器的 22 端口映射为宿主机的 16610 端口
+# 方便后续的 ssh 连接
+docker run -p 16610:22 --name huaxvubuntu -itd ubuntu:22.04
 ```
 
 ## 查看本地所有容器
@@ -108,3 +112,5 @@ docker save -o 文件名.tar 镜像名:信息
 ```bash
 docker load -i 文件名.tar
 ```
+
+
