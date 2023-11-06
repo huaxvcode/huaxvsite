@@ -13,6 +13,9 @@ cp file1.language file2.language file3.language ...
 ## 运行，in.txt 作为输入, run.txt 作为输出
 rn Main.language
 
+## 正常运行
+rn -o Main.language
+
 ## 特殊的，无输入文件，只重定向输出到 in.txt
 oj Random.language
 
