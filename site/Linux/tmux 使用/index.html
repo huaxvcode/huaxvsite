@@ -5258,131 +5258,57 @@
       
         <li class="md-nav__item">
   <a href="#session" class="md-nav__link">
-    session
+    新建一个 session
   </a>
   
-    <nav class="md-nav" aria-label="session">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#session_1" class="md-nav__link">
-    创建 session
+    挂起一个 session
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#session_2" class="md-nav__link">
-    查看 session 列表
+    列出所有的 session
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#session_3" class="md-nav__link">
-    删除指定的 session
+    使用某 session
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#session_4" class="md-nav__link">
-    退出 session
+    删除 session
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#session_5" class="md-nav__link">
-    进入指定 session
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#window" class="md-nav__link">
-    window
-  </a>
-  
-    <nav class="md-nav" aria-label="window">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#window_1" class="md-nav__link">
-    创建 window
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#window_2" class="md-nav__link">
-    查看 window 列表
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#window_3" class="md-nav__link">
-    删除 window
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#panl" class="md-nav__link">
-    panl
-  </a>
-  
-    <nav class="md-nav" aria-label="panl">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    分左右两屏
+    左右窗口
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    上下两屏
+    上下窗口
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    关闭当前屏幕
+    关闭某窗口
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    切换屏幕
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    调整屏幕
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5404,44 +5330,31 @@
   
 
 
-<h1 id="tmux"><a href="">tmux 使用</a><a class="headerlink" href="#tmux" title="Permanent link">&para;</a></h1>
-<h2 id="session"><strong>session</strong><a class="headerlink" href="#session" title="Permanent link">&para;</a></h2>
-<h3 id="session_1">创建 <code>session</code><a class="headerlink" href="#session_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span>desktop
+<h1 id="tmux">tmux 使用<a class="headerlink" href="#tmux" title="Permanent link">&para;</a></h1>
+<h2 id="session">新建一个 session<a class="headerlink" href="#session" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span>session
 </code></pre></div>
-<h3 id="session_2">查看 <code>session</code> 列表<a class="headerlink" href="#session_2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tmux<span class="w"> </span>ls
+<h2 id="session_1">挂起一个 session<a class="headerlink" href="#session_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ctrl+b,<span class="w"> </span>d
 </code></pre></div>
-<h3 id="session_3">删除指定的 <code>session</code><a class="headerlink" href="#session_3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tmux<span class="w"> </span>kill-session<span class="w"> </span>-t<span class="w"> </span>desktop
+<h2 id="session_2">列出所有的 session<a class="headerlink" href="#session_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tmux<span class="w"> </span>ls
 </code></pre></div>
-<h3 id="session_4">退出 <code>session</code><a class="headerlink" href="#session_4" title="Permanent link">&para;</a></h3>
-<p><code>ctrl + b, d</code></p>
-<h3 id="session_5">进入指定 <code>session</code><a class="headerlink" href="#session_5" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tmux<span class="w"> </span>at<span class="w"> </span>-t<span class="w"> </span>desktop
+<h2 id="session_3">使用某 session<a class="headerlink" href="#session_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span>session
 </code></pre></div>
-<hr />
-<hr />
-<h2 id="window"><strong>window</strong><a class="headerlink" href="#window" title="Permanent link">&para;</a></h2>
-<h3 id="window_1">创建 window<a class="headerlink" href="#window_1" title="Permanent link">&para;</a></h3>
-<p><code>ctrl + b, c</code></p>
-<h3 id="window_2">查看 window 列表<a class="headerlink" href="#window_2" title="Permanent link">&para;</a></h3>
-<p><code>ctrl + b, w</code></p>
-<h3 id="window_3">删除 window<a class="headerlink" href="#window_3" title="Permanent link">&para;</a></h3>
-<p><code>ctrl + b, &amp;</code></p>
-<hr />
-<hr />
-<h2 id="panl"><strong>panl</strong><a class="headerlink" href="#panl" title="Permanent link">&para;</a></h2>
-<h3 id="_1">分左右两屏<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p><code>ctrl + b, %</code> 切分左右两屏幕</p>
-<h3 id="_2">上下两屏<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><code>ctrl + b, "</code>，切分上下两屏幕</p>
-<h3 id="_3">关闭当前屏幕<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><code>ctrl + d</code>，关闭当前屏幕</p>
-<h3 id="_4">切换屏幕<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><code>ctrl + b，方向键</code>，根据方向键切换屏幕</p>
-<h3 id="_5">调整屏幕<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><code>ctrl + (b, 方向键)</code>，根据方向键调整屏幕大小</p>
+<h2 id="session_4">删除 session<a class="headerlink" href="#session_4" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tmux<span class="w"> </span>kill-session<span class="w"> </span>-s<span class="w"> </span>session
+</code></pre></div>
+<h2 id="_1">左右窗口<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ctrl+b,<span class="w"> </span>%
+</code></pre></div>
+<h2 id="_2">上下窗口<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ctrl+b,<span class="w"> </span><span class="s2">&quot;</span>
+</code></pre></div>
+<h2 id="_3">关闭某窗口<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ctrl+d
+</code></pre></div>
 
 
 

@@ -1,76 +1,50 @@
-# [tmux 使用]()
+# tmux 使用
 
-## **session**
+## 新建一个 session
 
-### 创建 `session`
-
-```shell
-tmux new -s desktop
+```bash
+tmux new -s session
 ```
 
-### 查看 `session` 列表
+## 挂起一个 session
 
-```shell
+```bash
+ctrl+b, d
+```
+
+## 列出所有的 session
+
+```bash
 tmux ls
 ```
 
-### 删除指定的 `session`
+## 使用某 session
 
-```shell
-tmux kill-session -t desktop
+```bash
+tmux attach -t session
 ```
 
-### 退出 `session`
 
-`ctrl + b, d`
+## 删除 session
 
-### 进入指定 `session`
-
-```shell
-tmux at -t desktop
+```bash
+tmux kill-session -s session
 ```
 
----
+## 左右窗口
 
----
+```bash
+ctrl+b, %
+```
 
+## 上下窗口
 
-## **window**
+```bash
+ctrl+b, "
+```
 
-### 创建 window
+## 关闭某窗口
 
-```ctrl + b, c```
-
-### 查看 window 列表
-
-```ctrl + b, w```
-
-### 删除 window
-
-```ctrl + b, &```
-
----
-
----
-
-## **panl**
-
-### 分左右两屏
-
-`ctrl + b, %` 切分左右两屏幕
-
-### 上下两屏
-
-`ctrl + b, "`，切分上下两屏幕
-
-### 关闭当前屏幕
-
-`ctrl + d`，关闭当前屏幕
-
-### 切换屏幕
-
-`ctrl + b，方向键`，根据方向键切换屏幕
-
-### 调整屏幕
-
-`ctrl + (b, 方向键)`，根据方向键调整屏幕大小
+```bash
+ctrl+d
+```
