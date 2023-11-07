@@ -40,10 +40,14 @@ oj -s
 oj -n n lang1 lang2
 # Random.cpp Answer.cpp
 oj -n n
+# 默认 10 个
+oj -n 
 
-# 以样例组作为输入运行，并对拍
+# 以样例组中的前 n 个样例作为输入运行，并对拍
 # Main.lang
-oj -a lang
+oj -a n lang
 # Main.cpp
+oj -a n
+# 默认前 10 个样例组Main.cpp
 oj -a
 ```
