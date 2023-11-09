@@ -1,4 +1,4 @@
-# tmux 使用
+# tmux
 
 ## 新建一个 session
 
