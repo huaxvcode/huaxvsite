@@ -4248,13 +4248,20 @@
       
         <li class="md-nav__item">
   <a href="#docker_1" class="md-nav__link">
-    查看 docker 版本号
+    安装 docker
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#docker_2" class="md-nav__link">
+    查看 docker 版本号
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_3" class="md-nav__link">
     给 docker 添加权限
   </a>
   
@@ -5398,65 +5405,91 @@
 
 
 <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
-<h2 id="docker_1">查看 docker 版本号<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>--version
+<h2 id="docker_1">安装 docker<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h2>
+<p>非常不建议使用子系统 wsl 版本的 ubuntu 安装 docker，目前为止我还没有安装成功！</p>
+<p>vmware 安装好 ubuntu20.04 后分别调用下面命令（记得先提前换源）</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apt-transport-https<span class="w"> </span>ca-certificates<span class="w"> </span>curl<span class="w"> </span>gnupg-agent<span class="w"> </span>software-properties-common
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/ubuntu/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span><span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> stable&quot;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>containerd.io
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>docker
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>docker
 </code></pre></div>
-<h2 id="docker_2">给 docker 添加权限<a class="headerlink" href="#docker_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span>huaxvcode
+<h2 id="docker_2">查看 docker 版本号<a class="headerlink" href="#docker_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>--version
+</code></pre></div>
+<h2 id="docker_3">给 docker 添加权限<a class="headerlink" href="#docker_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span>huaxvcode
 </code></pre></div>
 <h2 id="_1">拉取一个镜像<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>ubuntu:22.04
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>ubuntu:22.04
 </code></pre></div>
 <h2 id="_2">列出当前所有镜像<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>images
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>images
 </code></pre></div>
 <h2 id="_3">删除某镜像<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>rmi<span class="w"> </span>ubuntu:20.04
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>rmi<span class="w"> </span>ubuntu:20.04
 </code></pre></div>
 <h2 id="_4">利用镜像创建一个容器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>create<span class="w"> </span>-it<span class="w"> </span>ubuntu:20.04
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># 将容器的 22 端口映射为宿主机的 16610 端口</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># 方便后续的 ssh 连接</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">16610</span>:22<span class="w"> </span>--name<span class="w"> </span>huaxvubuntu<span class="w"> </span>-itd<span class="w"> </span>ubuntu:22.04
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>create<span class="w"> </span>-it<span class="w"> </span>ubuntu:20.04
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># 将容器的 22 端口映射为宿主机的 16610 端口</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># 方便后续的 ssh 连接</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">16610</span>:22<span class="w"> </span>--name<span class="w"> </span>huaxvubuntu<span class="w"> </span>-itd<span class="w"> </span>ubuntu:22.04
 </code></pre></div>
 <h2 id="_5">查看本地所有容器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a
 </code></pre></div>
 <h2 id="_6">启动容器<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>start<span class="w"> </span>容器id或名字
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span>start<span class="w"> </span>容器id或名字
 </code></pre></div>
 <h2 id="_7">停止容器<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span>stop<span class="w"> </span>容器id或名字
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker<span class="w"> </span>stop<span class="w"> </span>容器id或名字
 </code></pre></div>
 <h2 id="_8">重启容器<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker<span class="w"> </span>restart<span class="w"> </span>容器id或名字
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker<span class="w"> </span>restart<span class="w"> </span>容器id或名字
 </code></pre></div>
 <h2 id="_9">进入容器<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker<span class="w"> </span>attach<span class="w"> </span>容器id或名字
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker<span class="w"> </span>attach<span class="w"> </span>容器id或名字
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ctrl<span class="w"> </span>+<span class="w"> </span>p,<span class="w"> </span>ctrl<span class="w"> </span>+<span class="w"> </span>q<span class="w"> </span>挂起容器
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>ctrl<span class="w"> </span>+<span class="w"> </span>d<span class="w"> </span>结束容器
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ctrl<span class="w"> </span>+<span class="w"> </span>p,<span class="w"> </span>ctrl<span class="w"> </span>+<span class="w"> </span>q<span class="w"> </span>挂起容器
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>ctrl<span class="w"> </span>+<span class="w"> </span>d<span class="w"> </span>结束容器
 </code></pre></div>
 <h2 id="_10">在容器中执行命令<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>容器id或名字<span class="w">  </span>命令
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>容器id或名字<span class="w">  </span>命令
 </code></pre></div>
 <h2 id="_11">删除容器<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>容器id或名字
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>容器id或名字
 </code></pre></div>
 <h2 id="_12">重命名容器<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w"> </span>rename<span class="w"> </span>容器名字<span class="w"> </span>新名字
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker<span class="w"> </span>rename<span class="w"> </span>容器名字<span class="w"> </span>新名字
 </code></pre></div>
 <h2 id="_13">以某容器为板子创建镜像<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker<span class="w"> </span>commit<span class="w"> </span>容器id或名字<span class="w"> </span>镜像名:信息
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker<span class="w"> </span>commit<span class="w"> </span>容器id或名字<span class="w"> </span>镜像名:信息
 </code></pre></div>
 <h2 id="_14">将镜像导出成文件<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </span>文件名.tar<span class="w"> </span>镜像名:信息
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docker<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </span>文件名.tar<span class="w"> </span>镜像名:信息
 </code></pre></div>
 <h2 id="_15">加载某镜像文件<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>文件名.tar
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>文件名.tar
 </code></pre></div>
 
 

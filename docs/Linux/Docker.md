@@ -1,5 +1,36 @@
 # Docker
 
+## 安装 docker
+
+非常不建议使用子系统 wsl 版本的 ubuntu 安装 docker，目前为止我还没有安装成功！
+
+vmware 安装好 ubuntu20.04 后分别调用下面命令（记得先提前换源）
+
+```bash
+sudo apt update
+
+
+sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+
+sudo apt update
+
+
+sudo apt install docker-ce docker-ce-cli containerd.io
+
+
+sudo systemctl status docker
+
+
+sudo systemctl start docker
+```
+
 ## 查看 docker 版本号
 
 ```bash
