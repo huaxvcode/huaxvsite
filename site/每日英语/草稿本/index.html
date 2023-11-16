@@ -5247,42 +5247,34 @@
 <h1 id="_1">草稿本<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>oj.cpp      处理和分析用户输入的命令
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>cp          编译单个程序文件   
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>cps         多线程编译多个文件
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>cps         多线程编译多个文件
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>equal       判断两个文本文件的内容在判题逻辑上是否相同
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>get_words   将一行字符串切割成一个一个单词的形式
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>rn          运行单个目的程序文件，并以 in.txt 作为输入，run.txt 作为输出重定向，并判断程序文件的输入是否符合预期文件 out.txt 的内容
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>check       比较两个字符串在判题逻辑上是否相同
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>rno         运行单个目的程序文件，无任何重定向要求，也不用与预期文件 out.txt 的内容相比较
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>get_content 获取某文本的内容
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>random      特殊运行用户编写的随机数据程序文件，该程序不接受任何的输入，但是输出需要重定向 in.txt 文件中
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>equal       判断两个文本文件的内容在判题逻辑上是否相同
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>answer      特殊运行用户编写的预期程序文件，该程序以 in.txt 作为程序运行时的输入，并将该程序文件运行的输出结果重定向到 out.txt 文件中
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>rn          运行单个目的程序文件，并以 in.txt 作为输入，run.txt 作为输出重定向，并判断程序文件的输入是否符合预期文件 out.txt 的内容
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>oj_single   编译并且运行单个程序文件
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>rno         运行单个目的程序文件，无任何重定向要求，也不用与预期文件 out.txt 的内容相比较
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>oj          用随机数据程序文件的输出作为预期程序文件和目的程序文件的输入，将预期程序文件的输出与目的程序文件的输出做一次逻辑比较内容是否相同
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>random      特殊运行用户编写的随机数据程序文件，该程序不接受任何的输入，但是输出需要重定向 in.txt 文件中
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>oj_one      用随机数据程序文件的输出作为预期程序文件的输入，生成随机数据点和预期结果，生成的数据点可能只有一个，分别重定向到 in.txt 和 out.txt 文件中
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>answer      特殊运行用户编写的预期程序文件，该程序以 in.txt 作为程序运行时的输入，并将该程序文件运行的输出结果重定向到 out.txt 文件中
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>oj_get      用随机数据程序文件的输出作为预期程序文件的输入，生成随机数据点和预期结果，生成的数据点可能有多个，都从 1 开始编号，存放到 datas 文件夹中
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>oj_single   编译并且运行单个程序文件
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>oj_get_run  用 datas 文件夹中的所有数据点对目的程序文件进行测试，如果测试通过输出 accept 状态，否则输出 error 状态，输出结果保存到文件夹 runs 中
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>oj          用随机数据程序文件的输出作为预期程序文件和目的程序文件的输入，将预期程序文件的输出与目的程序文件的输出做一次逻辑比较内容是否相同
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>oj_one      用随机数据程序文件的输出作为预期程序文件的输入，生成随机数据点和预期结果，生成的数据点可能只有一个，分别重定向到 in.txt 和 out.txt 文件中
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>oj_get      用随机数据程序文件的输出作为预期程序文件的输入，生成随机数据点和预期结果，生成的数据点可能有多个，都从 1 开始编号，存放到 datas 文件夹中
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>oj_get_run  用 datas 文件夹中的所有数据点对目的程序文件进行测试，如果测试通过输出 accept 状态，否则输出 error 状态，输出结果保存到文件夹 runs 中
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>deal_file   切割出「文件名」和「文件后缀名」
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>is_right    判断「文件名」和「文件后缀名」是否合适
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>main        主程序
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>deal_file   切割出「文件名」和「文件后缀名」
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>is_right    判断「文件名」和「文件后缀名」是否合适
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>main        主程序
 </code></pre></div>
 <hr />
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>oj.cpp
@@ -5326,6 +5318,32 @@
 <a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>def is_right(type_f)
 <a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
 <a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>def main()
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>主板 + cpu:    b550a吹雪 + 5700x       2246元
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>机箱:          长城隐刃h513             259元
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>机箱风扇:       利民tl-c12c             199元
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>内存条:         金士顿fury16*2+8*2      0元
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>显卡:           rx580                  0元
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>电源:           酷冷至尊g800            475元
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>固态:           致态tipro1TB           499元
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>散热器:         利民pa120              142元
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>总计:   3820元
 </code></pre></div>
 
 
