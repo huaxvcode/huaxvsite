@@ -1,3 +1,5 @@
+# cpp.json
+
 ```json
 {
     // Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
@@ -22,7 +24,7 @@
             "",
             "}",
             "",
-            "// g++ -std=c++17 $TM_FILENAME_BASE.cpp -o $TM_FILENAME_BASE",
+            "// g++ -std=c++17 Random.cpp -o Random",
             "int main() {",
             "    std::ios::sync_with_stdio(0);",
             "    std::cin.tie(0); std::cout.tie(0);",
@@ -38,7 +40,6 @@
             "    return 0;",
             "}",
             
-
         ],
         "description": "Log output to console"
     },
