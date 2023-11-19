@@ -4,8 +4,8 @@
 
 ```json
 {
-    "editor.fontSize": 18,
-    "terminal.integrated.fontSize": 18,
+    "editor.fontSize": 22,
+    "terminal.integrated.fontSize": 22,
     "code-runner.executorMapByFileExtension": {
         ".yml": "push.bat setting",
         ".md": "push.bat $fileName",
@@ -41,7 +41,7 @@
         ".ring": "ring",
         ".sml": "cd $dir && sml $fileName"
     },
-    
+
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "code-runner.runInTerminal": true,
     "redhat.telemetry.enabled": true,
@@ -76,7 +76,6 @@
     "settingsSync.ignoredExtensions": [
         "ms-vsliveshare.vsliveshare"
     ],
-    "workbench.colorTheme": "Gruvbox Dark Hard",
     // "update.mode": "none",
     "files.exclude": {
         "**/.DS_Store": true,
@@ -147,30 +146,30 @@
         "huaxvcode": "linux"
     },
     "code-runner.executorMap": {
-        
+
         "javascript": "node",
         "zig": "zig run",
-        
+
         // "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         // "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         // "python": "python -u",
-        
+
         // "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         // "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         // "python": "python3 -u",
-        
+
         // "java": "oj $fileNameWithoutExt.java",
         // "c": "oj $fileNameWithoutExt.c",
         // "cpp": "oj $fileNameWithoutExt.cpp",
         // "python": "oj $fileNameWithoutExt.py",
-        
+
         "java": "oj $fileNameWithoutExt.java",
         "c": "oj $fileNameWithoutExt.c",
         "cpp": "oj $fileNameWithoutExt.cpp",
         "python": "oj $fileNameWithoutExt.py",
-        
+
         "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "php": "php",
         "perl": "perl",
@@ -233,7 +232,12 @@
     },
     "markdown-pdf.outputDirectory": "C:\\Users\\13255\\Desktop",
     "markdown-preview-github-styles.colorTheme": "dark",
-    "workbench.tree.indent": 20, // markdown pdf 导出到桌面
+    "workbench.tree.indent": 20,
+    "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
+    "markdown-pdf.executablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "markdown.extension.preview.autoShowPreviewToSide": true,
+    "extensions.ignoreRecommendations": true,
+    "editor.unicodeHighlight.nonBasicASCII": false, // markdown pdf 导出到桌面
 }
 
 ```
@@ -242,8 +246,8 @@
 
 ```json
 {
-    "editor.fontSize": 18,
-    "terminal.integrated.fontSize": 16,
+    "editor.fontSize": 22,
+    "terminal.integrated.fontSize": 22,
     "code-runner.executorMapByFileExtension": {
         ".yml": "./push.sh setting",
         ".md": "./push.sh $fileName",
@@ -314,7 +318,6 @@
     "settingsSync.ignoredExtensions": [
         "ms-vsliveshare.vsliveshare"
     ],
-    "workbench.colorTheme": "Gruvbox Dark Hard",
     // "update.mode": "none",
     "files.exclude": {
         "**/.DS_Store": true,
@@ -333,42 +336,42 @@
     "C_Cpp.default.cppStandard": "c++20",
     "C_Cpp.default.cStandard": "c99",
     "extensions.ignoreRecommendations": true,
-    "editor.suggest.filterGraceful": false,
-    "editor.suggest.matchOnWordStartOnly": false,
-    "editor.suggest.selectionMode": "never",
-    "editor.suggest.showClasses": false,
-    "editor.suggest.showColors": false,
-    "editor.suggest.showConstants": false,
-    "editor.suggest.showConstructors": false,
-    "editor.suggest.showCustomcolors": false,
-    "editor.suggest.showDeprecated": false,
-    "editor.suggest.showEnumMembers": false,
-    "editor.suggest.showEnums": false,
-    "editor.suggest.showEvents": false,
-    "editor.suggest.showFields": false,
-    "editor.suggest.showFiles": false,
-    "editor.suggest.showFolders": false,
-    "editor.suggest.showFunctions": false,
-    "editor.suggest.showIcons": false,
-    "editor.suggest.showInlineDetails": false,
-    "editor.suggest.showInterfaces": false,
-    "editor.suggest.showIssues": false,
-    "editor.suggest.showKeywords": false,
-    "editor.suggest.showMethods": false,
-    "editor.suggest.showModules": false,
-    "editor.suggest.showOperators": false,
-    "editor.suggest.showProperties": false,
-    "editor.suggest.showReferences": false,
-    "editor.suggest.showSnippets": false,
-    "editor.suggest.showStructs": false,
-    "editor.suggest.showTypeParameters": false,
-    "editor.suggest.showUnits": false,
-    "editor.suggest.showUsers": false,
-    "editor.suggest.showValues": false,
-    "editor.suggest.showVariables": false,
-    "editor.suggest.showWords": false,
-    "editor.acceptSuggestionOnCommitCharacter": false,
-    "editor.inlineSuggest.enabled": false,
+    // "editor.suggest.filterGraceful": false,
+    // "editor.suggest.matchOnWordStartOnly": false,
+    // "editor.suggest.selectionMode": "never",
+    // "editor.suggest.showClasses": false,
+    // "editor.suggest.showColors": false,
+    // "editor.suggest.showConstants": false,
+    // "editor.suggest.showConstructors": false,
+    // "editor.suggest.showCustomcolors": false,
+    // "editor.suggest.showDeprecated": false,
+    // "editor.suggest.showEnumMembers": false,
+    // "editor.suggest.showEnums": false,
+    // "editor.suggest.showEvents": false,
+    // "editor.suggest.showFields": false,
+    // "editor.suggest.showFiles": false,
+    // "editor.suggest.showFolders": false,
+    // "editor.suggest.showFunctions": false,
+    // "editor.suggest.showIcons": false,
+    // "editor.suggest.showInlineDetails": false,
+    // "editor.suggest.showInterfaces": false,
+    // "editor.suggest.showIssues": false,
+    // "editor.suggest.showKeywords": false,
+    // "editor.suggest.showMethods": false,
+    // "editor.suggest.showModules": false,
+    // "editor.suggest.showOperators": false,
+    // "editor.suggest.showProperties": false,
+    // "editor.suggest.showReferences": false,
+    // "editor.suggest.showSnippets": false,
+    // "editor.suggest.showStructs": false,
+    // "editor.suggest.showTypeParameters": false,
+    // "editor.suggest.showUnits": false,
+    // "editor.suggest.showUsers": false,
+    // "editor.suggest.showValues": false,
+    // "editor.suggest.showVariables": false,
+    // "editor.suggest.showWords": false,
+    // "editor.acceptSuggestionOnCommitCharacter": false,
+    // "editor.inlineSuggest.enabled": false,
     "code-runner.ignoreSelection": true,
     "codesnap.backgroundColor": "",
     "git.openRepositoryInParentFolders": "always",
@@ -384,7 +387,9 @@
         "本地终端": "linux",
         "huaxvcode": "linux",
         "192.168.42.131": "linux",
-        "192.168.109.128": "linux"
+        "192.168.109.128": "linux",
+        "119.91.236.230": "linux",
+        "huaxvubuntu": "linux"
     },
     "code-runner.executorMap": {
 
@@ -406,10 +411,15 @@
         // "cpp": "oj $fileNameWithoutExt.cpp",
         // "python": "oj $fileNameWithoutExt.py",
 
-        "java": "oj $fileNameWithoutExt.java",
-        "c": "oj $fileNameWithoutExt.c",
-        "cpp": "oj $fileNameWithoutExt.cpp",
-        "python": "oj $fileNameWithoutExt.py",
+        "java": "oj -cr $fileNameWithoutExt.java",
+        "c": "oj -cr $fileNameWithoutExt.c",
+        "cpp": "oj -cr $fileNameWithoutExt.cpp",
+        "python": "oj -cr $fileNameWithoutExt.py",
+        
+        // "java": "bash test.sh",
+        // "c": "bash test.sh",
+        // "cpp": "bash test.sh",
+        // "python": "bash test.sh",
 
         "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "php": "php",
@@ -464,7 +474,8 @@
     "files.insertFinalNewline": true,
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "workbench.tree.indent": 20,
-    "editor.fontFamily": "'Fira Code', 'JetBrains Mono', 'JetBrains Mono NL', Consolas, 'Courier New', monospace"
+    "editor.fontFamily": "'Fira Code', 'JetBrains Mono', 'JetBrains Mono NL', Consolas, 'Courier New', monospace",
+    "workbench.colorTheme": "Gruvbox Dark Hard"
 }
 
 ```
