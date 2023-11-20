@@ -1,5 +1,11 @@
 # ssh 连接
 
+下载 ping 命令：
+
+```bash
+sudo apt install iputils-ping
+```
+
 修改 dns：
 
 ```bash
