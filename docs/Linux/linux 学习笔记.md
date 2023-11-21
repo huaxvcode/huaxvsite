@@ -78,3 +78,5 @@ chmod -R u+x [file folder]
 ```
 
 ![](./img/单独修改文件某一项权限.png)
+
+
