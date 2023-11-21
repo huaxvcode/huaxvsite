@@ -17,6 +17,9 @@ ls -al
 
 ```bash
 ls -l [file folder]
+
+# 或者
+ll
 ```
 
 ![](./img/linux%20查看单个文件属性.png)
@@ -123,3 +126,5 @@ chmod -R u+x [file folder]
 - `cd ..` 切换到上一级目录
 - `cd ~` 切换到当前用户的家目录
 - `cd ~用户名` 切换到某用户的家目录
+
+
