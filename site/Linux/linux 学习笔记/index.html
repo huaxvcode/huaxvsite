@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../img/头像.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fad675c6.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
@@ -4362,7 +4362,36 @@
       
         <li class="md-nav__item">
   <a href="#linux_1" class="md-nav__link">
-    查看 linux 文件属性
+    <span class="md-ellipsis">
+      查看 linux 文件属性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      改变所属群组
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      改变文件所有者
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      更改文件权限
+    </span>
   </a>
   
 </li>
@@ -5341,9 +5370,28 @@
 <li><code>b</code> 可存储设备</li>
 <li><code>c</code> 鼠标、键盘等</li>
 </ul>
-<p>第一组 <code>rwx</code> 代表文件所有者的权限，如果没有读写权限就变成了 <code>-wx</code> 用横杆代替</p>
-<p>第二组 <code>rwx</code> 代表所有者的同属组的权限</p>
-<p>第三组 <code>rwx</code> 代表其他用户所拥有的权限</p>
+<p>第一组 <code>rwx</code> 代表『文件所有者』的权限，如果没有读写权限就变成了 <code>-wx</code> 用横杆代替</p>
+<p>第二组 <code>rwx</code> 代表『同群组』的权限</p>
+<p>第三组 <code>rwx</code> 代表其『非本群组』所拥有的权限</p>
+<h2 id="_1">改变所属群组<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>chgrp<span class="w"> </span>-R<span class="w"> </span>群组名<span class="w"> </span><span class="o">[</span>file<span class="w"> </span>folder<span class="o">]</span>
+</code></pre></div>
+<h2 id="_2">改变文件所有者<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>改变文件或文件夹的所有者</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>用户名<span class="w"> </span><span class="o">[</span>file<span class="w"> </span>folder<span class="o">]</span>
+</code></pre></div>
+<p>不仅可以改变所有者，还可以改变所属群组</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>用户名:群组名<span class="w"> </span><span class="o">[</span>file<span class="w"> </span>folder<span class="o">]</span>
+</code></pre></div>
+<h2 id="_3">更改文件权限<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>假设，需要将文件权限设定为：<code>rwxrwxrwx</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span><span class="o">[</span>file<span class="w"> </span>folder<span class="o">]</span>
+</code></pre></div>
+<hr />
+<p>另外一种方法，单独修改某一项权限：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>chmod<span class="w"> </span>-R<span class="w"> </span>u+x<span class="w"> </span><span class="o">[</span>file<span class="w"> </span>folder<span class="o">]</span>
+</code></pre></div>
+<p><a class="glightbox" href="../img/%E5%8D%95%E7%8B%AC%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%9F%90%E4%B8%80%E9%A1%B9%E6%9D%83%E9%99%90.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/%E5%8D%95%E7%8B%AC%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%9F%90%E4%B8%80%E9%A1%B9%E6%9D%83%E9%99%90.png" /></a></p>
 
 
 
@@ -5393,7 +5441,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "toc.follow", "navigation.top", "content.code.annotate", "content.tabs.link", "content.code.copy", "navigation.path"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c14ae12.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
