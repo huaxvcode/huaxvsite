@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../img/头像.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fad675c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
@@ -4362,9 +4362,7 @@
       
         <li class="md-nav__item">
   <a href="#linux_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      查看 linux 文件属性
-    </span>
+    查看 linux 文件属性
   </a>
   
 </li>
@@ -5332,6 +5330,20 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls<span class="w"> </span>-l<span class="w"> </span><span class="o">[</span>file<span class="w"> </span>folder<span class="o">]</span>
 </code></pre></div>
 <p><a class="glightbox" href="../img/linux%20%E6%9F%A5%E7%9C%8B%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/linux%20%E6%9F%A5%E7%9C%8B%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.png" /></a></p>
+<hr />
+<p>文件权限图解：</p>
+<p><a class="glightbox" href="../img/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%9B%BE%E8%A7%A3.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../img/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%9B%BE%E8%A7%A3.jpg" /></a></p>
+<p>file type:</p>
+<ul>
+<li><code>d</code> 代表目录</li>
+<li><code>-</code> 代表文件</li>
+<li><code>l</code> 链接属性</li>
+<li><code>b</code> 可存储设备</li>
+<li><code>c</code> 鼠标、键盘等</li>
+</ul>
+<p>第一组 <code>rwx</code> 代表文件所有者的权限，如果没有读写权限就变成了 <code>-wx</code> 用横杆代替</p>
+<p>第二组 <code>rwx</code> 代表所有者的同属组的权限</p>
+<p>第三组 <code>rwx</code> 代表其他用户所拥有的权限</p>
 
 
 
@@ -5381,7 +5393,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "toc.follow", "navigation.top", "content.code.annotate", "content.tabs.link", "content.code.copy", "navigation.path"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
