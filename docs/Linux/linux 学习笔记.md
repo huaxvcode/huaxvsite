@@ -128,3 +128,8 @@ chmod -R u+x [file folder]
 - `cd ~用户名` 切换到某用户的家目录
 
 
+## 查找目录或文件
+
+```bash
+find -name [file folder]
+```
