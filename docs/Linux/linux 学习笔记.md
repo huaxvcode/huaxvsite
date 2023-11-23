@@ -133,3 +133,31 @@ chmod -R u+x [file folder]
 ```bash
 find -name [file folder]
 ```
+
+## tar 压缩
+
+### 打包成 .tar 文件
+
+```bash
+tar -cv -f name.tar 文件或文件夹
+```
+
+### 压缩成 .tar.gz 文件
+
+```bash
+tar -cz -f name.tar.gz 文件或文件夹
+```
+
+## tar 解压
+
+### 解包 .tar 文件
+
+```bash
+tar -xv -f name.tar
+```
+
+### 解压 .tar.gz 文件
+
+```bash
+tar -xzv -f name.tar.gz
+```
