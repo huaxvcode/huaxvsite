@@ -7,8 +7,8 @@
     "editor.fontSize": 22,
     "terminal.integrated.fontSize": 22,
     "code-runner.executorMapByFileExtension": {
-        ".yml": "push.bat setting",
-        ".md": "push.bat $fileName",
+        ".yml": "./push.bat setting",
+        ".md": "./push.bat $fileName",
         ".vb": "cd $dir && vbc /nologo $fileName && $dir$fileNameWithoutExt",
         ".vbs": "cscript //Nologo",
         ".scala": "scala",
@@ -42,7 +42,7 @@
         ".sml": "cd $dir && sml $fileName"
     },
 
-    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
     "code-runner.runInTerminal": true,
     "redhat.telemetry.enabled": true,
     "code-runner.languageIdToFileExtensionMap": {
@@ -92,7 +92,7 @@
     "markdown-preview-enhanced.previewTheme": "atom-dark.css",
     "workbench.iconTheme": "vscode-great-icons",
     "C_Cpp.default.cppStandard": "c++20",
-    "C_Cpp.default.cStandard": "c99",
+    "C_Cpp.default.cStandard": "c23",
     // "extensions.ignoreRecommendations": true,
     // "editor.suggest.filterGraceful": false,
     // "editor.suggest.matchOnWordStartOnly": false,
@@ -237,7 +237,17 @@
     "markdown-pdf.executablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
     "markdown.extension.preview.autoShowPreviewToSide": true,
     "extensions.ignoreRecommendations": true,
-    "editor.unicodeHighlight.nonBasicASCII": false, // markdown pdf 导出到桌面
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "cph.general.autoShowJudge": false,
+    "C_Cpp.default.compilerPath": "C:\\Program Files (x86)\\cpeditor\\mingw64\\bin\\gcc.exe",
+    "C_Cpp.files.exclude": {
+        
+        "**/.vscode": true,
+        "**/.vs": true
+    },
+    "cph.general.firstTime": false,
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    
 }
 
 ```
