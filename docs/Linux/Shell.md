@@ -404,3 +404,17 @@ ln -s dir index_dir
 
 ls -i dir index_dir
 ```
+
+## 进程
+
+### 查看进程 pid
+
+```bash
+ps -elf
+```
+
+### 杀掉某进程
+
+```bash
+kill 进程的pid
+```
