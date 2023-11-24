@@ -106,3 +106,17 @@ u       撤销
 ```
 v       进入选中模式
 ```
+
+## 配置文件
+
+```bash
+mkdir ~/.config/nvim
+nvim ~/.config/nvim/init.vim
+```
+
+修改键位
+
+```bash
+imap jk <Esc>
+nmap <space> :
+```
