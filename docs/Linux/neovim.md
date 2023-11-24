@@ -120,3 +120,41 @@ nvim ~/.config/nvim/init.vim
 imap jk <Esc>
 nmap <space> :
 ```
+
+## 下载插件
+
+安装 `git`
+
+```bash
+sudo apt install git-all
+```
+
+---
+
+下载 `vim plug`
+
+```bash
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+---
+
+在配置文件中加入两行：
+
+```bash
+call plug#begin()
+
+call plug#end()
+```
+
+![](./img/vim-plug-begin-end.png)
+
+
+---
+
+[插件下载网站](https://vimawesome.com/)
+
+```
+https://vimawesome.com/
+```
