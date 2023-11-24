@@ -119,6 +119,7 @@ nvim ~/.config/nvim/init.vim
 ```bash
 imap jk <Esc>
 nmap <space> :
+set number
 ```
 
 ## 下载插件
