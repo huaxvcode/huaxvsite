@@ -37,7 +37,7 @@ l       右
 ### 单词跳跃
 
 ```
-b       上一个单词，last
+b       上一个单词，last beginning
 
-w       下一个单词，next
+w       下一个单词，next word
 ```
