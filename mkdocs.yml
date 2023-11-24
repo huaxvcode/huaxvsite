@@ -203,6 +203,7 @@ nav:
     - ssh: Linux/ssh.md
     - scp: Linux/scp.md
     - Shell: Linux/Shell.md
+    - neovim: Linux/neovim.md
     - Docker: Linux/Docker.md
     - 编译环境: Linux/编译环境.md
     - 创建新用户: Linux/创建新用户.md
