@@ -46,5 +46,8 @@ ctrl+b, "
 ## 关闭某窗口
 
 ```bash
-ctrl+d, x
+ctrl + b, x
+
+
+ctrl + d
 ```
