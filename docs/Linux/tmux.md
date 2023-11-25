@@ -51,3 +51,21 @@ ctrl + b, x
 
 ctrl + d
 ```
+
+## window
+
+### 创建 window
+
+```
+ctrl + b, c
+```
+
+
+### 切换 window
+
+```
+ctrl + b, n
+
+
+ctrl + b, p
+```
