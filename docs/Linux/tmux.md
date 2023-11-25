@@ -68,4 +68,7 @@ ctrl + b, n
 
 
 ctrl + b, p
+
+
+ctrl + b, window的名字
 ```
