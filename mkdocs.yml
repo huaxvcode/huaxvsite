@@ -9,6 +9,7 @@ nav:
   - vscode:
     - settings: vscode/settings.md
     - cpp.json: vscode/cpp.json.md
+    - java.json: vscode/java.json.md
     - linux: vscode/linux.md
     - markdown: vscode/markdown.md
     - keybindings: vscode/keybindings.md
