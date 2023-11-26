@@ -121,26 +121,45 @@ from time import time, sleep
 import threading
 
 lock = threading.Lock()
+timeout = 5
+
+
+def exit_error(a):
+    a >>= 8
+    if a:
+        if a == 131:
+            print("print so much !!!")
+        elif a == 124:
+            print("time limit exceed !!!")
+        else:
+            print("other error, maybe compiler error.")
+        exit(a)
+
+ote=0
 
 ## 编译单个文件
 def cp(lang, name):
+    global ote
     start = time()
+    a=0
     if lang == 'py':
         pass
     elif lang == 'cpp':
-        system(f"g++ -w -std=c++20 -O2 {name}.cpp -o {name} -pthread")
+        a=system(f"g++ -w -std=c++17 -O2 {name}.cpp -o {name} -pthread")
     elif lang == 'java':
-        system(f"javac {name}.java")
+        a=system(f"javac {name}.java")
     elif lang == 'c':
-        system(f"gcc -w -std=c99 -O2 {name}.c -o {name}")
+        a=system(f"gcc -w -std=c99 -O2 {name}.c -o {name}")
     end = time()
     lock.acquire()
     print('cp %s.%s use %.3f s' % (name, lang, (end - start)))
+    ote=(ote if ote > (a>>8) else (a>>8))
     lock.release()
 
 
 ## 多线程运行
 def runs(ls):
+    global ote
     pools = []
     for i, j in ls:
         pools.append(threading.Thread(target=i, args=j))
@@ -148,7 +167,7 @@ def runs(ls):
         i.start()
     for i in pools:
         i.join()
-        
+    exit_error(ote << 8)
 
 ## 多线程编译多个文件    
 def cps(lns):
@@ -191,12 +210,12 @@ def check(s1, s2):
                     break
             if on:
                 break
-            
+
             s1.pop()
-            
+
     pop_emtpy_end(s1)
     pop_emtpy_end(s2)
-    
+
     if len(s1) != len(s2):
         return False
 
@@ -216,24 +235,30 @@ def equal(p1="./run.txt", p2="./out.txt"):
         return True
     return False
 
+def get_status(a):
+    return a >> 8
+
+
 ## 运行单个文件
 def rn(lang, name):
     print(f'start rn {name}.{lang}')
     start = time()
+    a=0
     if lang == 'cpp' or lang == 'c':
-        system(f'./{name} <in.txt >run.txt')
+        a=system(f'(control_safe.sh "./{name}" "in.txt" "memory_safe") >run.txt')
     elif lang == 'py':
-        system(f'python3 {name}.py <in.txt >run.txt')
+        a=system(f'(control_safe.sh "python3" "{name}.py" "in.txt" "memory_safe") >run.txt')
     elif lang == 'java':
-        system(f'java {name} <in.txt >run.txt')
+        a=system(f'(control_safe.sh "java" "{name}" "in.txt" "memory_safe") >run.txt')
     end = time()
     print('rn %s.%s use %.3f s' % (name, lang, end - start))
+    exit_error(a)
     if equal():
         print("· Accept")
     else:
         print('· Error')
 
-        
+
 ## 正常运行单个文件
 def rno(lang, name):
     print(f'start rn {name}.{lang}')
@@ -246,32 +271,36 @@ def rno(lang, name):
         system(f'java {name}')
     end = time()
     print('rn %s.%s use %.3f s' % (name, lang, end - start))
-        
+
 
 def random(lang):
     print(f'start rn Random.{lang}')
     start = time()
+    a=0
     if lang == 'cpp' or lang == 'c':
-        system(f'./Random >in.txt')
+        a=system(f'(control_safe.sh "./Random" "memory_safe") >in.txt')
     elif lang == 'py':
-        system(f'python3 Random.py >in.txt')
+        a=system(f'(control_safe.sh "python3" "Random.py" "memory_safe" "0" "1") >in.txt')
     elif lang == 'java':
-        system(f'java Random >in.txt')
+        a=system(f'(control_safe.sh "java" "Random" "memory_safe" "0" "1") >in.txt')
     end = time()
     print('rn %s.%s use %.3f s' % ('Random', lang, end - start))
+    exit_error(a)
 
 
 def answer(lang):
     print(f'start rn Answer.{lang}')
     start = time()
+    a=0
     if lang == 'cpp' or lang == 'c':
-        system('./Answer <in.txt >out.txt')
+        a=system('(control_safe.sh "./Answer" "in.txt" "memory_safe") >out.txt')
     elif lang == 'py':
-        system('python3 Answer.py <in.txt >out.txt')
+        a=system('(control_safe.sh "python3" "Answer.py" "in.txt" "memory_safe") >out.txt')
     elif lang == 'java':
-        system('java Answer <in.txt >out.txt')
+        a=system('(control_safe.sh "java" "Answer" "in.txt" "memory_safe") >out.txt')
     end = time()
     print('rn %s.%s use %.3f s' % ('Answer', lang, end - start))
+    exit_error(a)
 
 
 ## 编译并运行单个文件
@@ -340,20 +369,22 @@ def oj_get(lang_r='cpp', lang_a='cpp', nums=oj_get_nums):
         '''
         print(f'new data_{i}')
         system(cmd)
+        a=0
         if lang_r == 'cpp' or lang_r == 'c':
-            system(f'./Random >datas/in_{i}.in')
+            a=system(f'(control_safe.sh "./Random" "memory_safe") >datas/in_{i}.in')
         elif lang_r == 'py':
-            system(f'python3 -u Random.py >datas/in_{i}.in')
+            a=system(f'(control_safe.sh "python3" "Random.py" "memory_safe" "0" "1") >datas/in_{i}.in')
         elif lang_r == 'java':
-            system(f'java Random >datas/in_{i}.in')
+            a=system(f'(control_safe.sh "java" "Random" "memory_safe" "0" "1") >datas/in_{i}.in')
+        exit_error(a)
         if lang_a == 'cpp' or lang_a == 'c':
-            system(f'./Answer <datas/in_{i}.in >datas/out_{i}.out')
+            a=system(f'(control_safe.sh "./Answer" "datas/in_{i}.in" "memory_safe") >datas/out_{i}.out')
         elif lang_a == 'py':
-            system(f'python3 -u Answer.py <datas/in_{i}.in >datas/out_{i}.out')
+            a=system(f'(control_safe.sh "python3" "Answer.py" "datas/in_{i}.in" "memory_safe") >datas/out_{i}.out')
         elif lang_a == 'java':
-            system(f'java Answer <datas/in_{i}.in >datas/out_{i}.out')
-        
-            
+            a=system(f'(control_safe.sh "java" "Answer" "datas/in_{i}.in" "memory_safe") >datas/out_{i}.out')
+        exit_error(a)
+
 def oj_get_run(lang='cpp', nums=oj_get_nums):
     nums = oj_get_nums
     cp(lang, 'Main')
@@ -369,13 +400,14 @@ def oj_get_run(lang='cpp', nums=oj_get_nums):
             touch runs/run_{i}.txt
         '''
         print(f'test data_{i}')
+        a=0
         if lang == 'cpp' or lang == 'c':
-            system(f'./Main <datas/in_{i}.in >runs/run_{i}.txt')
+            a=system(f'(control_safe.sh "./Main" "datas/in_{i}.in" "memory_safe") >runs/run_{i}.txt')
         elif lang == 'py':
-            system(f'python3 -u Main.py <datas/in_{i}.in >runs/run_{i}.txt')
+            a=system(f'(control_safe.sh "python3" "Main.py" "datas/in_{i}.in" "memory_safe") >runs/run_{i}.txt')
         elif lang == 'java':
-            system(f'java Main <datas/in_{i}.in >runs/run_{i}.txt')
-        
+            a=system(f'(control_safe.sh "java" "Main" "datas/in_{i}.in" "memory_safe") >runs/run_{i}.txt')
+        exit_error(a)
         if check(get_content(f'datas/out_{i}.out'), get_content(f'runs/run_{i}.txt')):
             print(f'data_{i} Accept')
         else:
@@ -468,6 +500,7 @@ def main():
 if __name__ == '__main__':
     # print(set("hello"))
     main()
+
 ```
 
 ### oj.cpp
@@ -494,4 +527,130 @@ int main(int n, char* ss[]) {
     }
     return 0;
 }
+```
+
+### memory_safe.cpp
+
+```bash
+#include <bits/stdc++.h>
+typedef long long var;
+typedef __int128 vhh;
+
+namespace {
+
+const var N = 5e7;
+var cnt;
+char s[N + 100];
+var status;
+
+/*
+
+cd ~/huaxv/.lrq_tools/sources && g++ -std=c++17 memory_safe.cpp -o memory_safe && mv memory_safe ..
+
+*/
+
+void solve() {
+    char c;
+    while ((c = std::cin.get()) != EOF) {
+        if (cnt >= N) {
+            // std::cout << "print so much !!!\n";
+            // exit(131); 
+            status = 131;
+            // return;
+            // break;
+        }
+        else {
+            s[cnt ++] = c;
+        }
+        //std::cout << c;
+    }
+    if (!status) std::cout << s;
+    exit(status);
+}
+
+}
+
+// g++ -std=c++17 Random.cpp -o Random
+int main() {
+    //std::ios::sync_with_stdio(0);
+    //std::cin.tie(0); std::cout.tie(0);
+    std::random_device rd;
+    std::mt19937 mt(rd());
+    srand(mt());
+    int t = 1; 
+    // std::cin >> t;
+    for (int i = 1; i <= t; i ++) {
+        // std::cout << "Case #1: ";
+        solve();
+    }
+    return 0;
+}
+
+```
+
+### control_safe.sh
+
+```bash
+#!/bin/bash
+
+
+
+max_ti=10
+
+if [[ $# -eq 2 ]]; then
+    (timeout $max_ti $1) | $2
+    rs=(${PIPESTATUS[*]})
+elif [[ $# -eq 3 ]]; then
+    (timeout $max_ti $1<$2) | $3
+    rs=(${PIPESTATUS[*]})
+elif [[ $# -eq 4 ]]; then
+    (timeout $max_ti $1 $2<$3) | $4
+    rs=(${PIPESTATUS[*]})
+elif [[ $# -eq 5 ]]; then
+    (timeout $max_ti $1 $2) | $3
+    rs=(${PIPESTATUS[*]})
+else
+    exit 1
+fi;
+
+st=0
+if [[ ${rs[1]} -ne 0 ]]; then 
+    # echo "print so much !!!";
+    st=131
+elif [[ ${rs[0]} -ne 0 ]]; then
+    # echo "time limit exceed !!!"
+    st=124
+fi;
+
+exit $st
+
+
+
+# #!/bin/bash
+
+
+
+# max_ti=10
+
+# if [ $# -eq 2 ]; then
+#     (timeout $max_ti $1) | $2
+#     rs=(${PIPESTATUS[*]})
+# elif [ $# -eq 3 ]; then
+#     (timeout $max_ti $1<$2) | $3
+#     rs=(${PIPESTATUS[*]})
+# else
+#     exit 1
+# fi;
+
+# st=0
+# if [[ ${rs[1]} -ne 0 ]]; then 
+#     # echo "print so much !!!";
+#     st=131
+# elif [[ ${rs[0]} -ne 0 ]]; then
+#     # echo "time limit exceed !!!"
+#     st=124
+# fi;
+
+# exit $st
+
 ```
