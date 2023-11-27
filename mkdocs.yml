@@ -22,6 +22,7 @@ nav:
   
   - 筑基期:
     - __func__: 筑基期/__func__.md
+    - static_assert: 筑基期/static_assert.md
 
   - 板子:
     - 米老鼠: 板子/米老鼠.md
