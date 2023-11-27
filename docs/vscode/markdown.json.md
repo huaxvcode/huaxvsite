@@ -12,6 +12,9 @@
 		"body": [
 			"---",
 			"title: $TM_FILENAME_BASE",
+			"header-includes:",
+			" - \\\\usepackage{fvextra}",
+			" - \\\\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\\\\\\\\{\\\\}}",
 			"output:",
 			"  pdf_document:",
 			"    latex_engine: xelatex",
@@ -20,9 +23,11 @@
 			"    highlight: tango",
 			"    path: C:/Users/huaxv/Desktop/$TM_FILENAME_BASE.pdf",
 			"---",
-			
+			"",
+			"${0}",			
 		],
 		"description": "Log output to console"
 	}
 }
+
 ```
