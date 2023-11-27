@@ -1,6 +1,6 @@
 # static_assert
 
-使用 `assert` 会在程序运行中捕获错误
+使用 `assert` 会在程序运行时捕获错误
 
 ```cpp
 #include <bits/stdc++.h>
@@ -8,7 +8,7 @@
 template <typename T, typename U> 
 void bit_copy(T a, U b) {
     if (sizeof(a) != sizeof(b)) {
-        printf("bit_copy must have the same size!");
+        std::cout << "bit_copy must have the same size!\n";
         assert(sizeof(a) == sizeof(b));
     }
     std::memcpy(&a, &b, sizeof(b));
@@ -16,9 +16,7 @@ void bit_copy(T a, U b) {
 
 int main() {
     int a = 4; double b = 3.14;
-    printf("bit_copy start...");
     bit_copy(a, b);
-    printf("bit_copy end...");
     return 0;
 }
 ```
@@ -38,9 +36,19 @@ void bit_copy(T a, U b) {
 
 int main() {
     int a = 4; double b = 3.14;
-    printf("bit_copy start...");
     bit_copy(a, b);
-    printf("bit_copy end...");
+    return 0;
+}
+```
+
+还可以在全局区块中使用来判断预处理是否有不符合预期的地方：
+
+```cpp
+#include <bits/stdc++.h>
+
+static_assert(0 < 1, "what happened");
+
+int main() {
     return 0;
 }
 ```
