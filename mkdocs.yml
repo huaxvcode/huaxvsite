@@ -19,6 +19,9 @@ nav:
     - vscode 连接 ubuntu20.04: vscode/vscode 连接 ubuntu20.04.md
     - 导入导出子系统: vscode/导入导出子系统.md
     - oj: vscode/oj.md
+  
+  - 筑基期:
+    - __func__: 筑基期/__func__.md
 
   - 板子:
     - 米老鼠: 板子/米老鼠.md
