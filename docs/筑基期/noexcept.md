@@ -1,5 +1,8 @@
 ---
 title: noexcept
+header-includes:
+ - \usepackage{fvextra}
+ - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 output:
   pdf_document:
     latex_engine: xelatex
