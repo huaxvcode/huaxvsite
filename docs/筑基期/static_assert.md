@@ -52,3 +52,5 @@ int main() {
     return 0;
 }
 ```
+
+『注意』：`static_assert` 只能用于常量的比较，如果出现了变量就会报错！！！
