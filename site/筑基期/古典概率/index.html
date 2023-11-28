@@ -5118,12 +5118,29 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 \]</div>
 <hr />
 <p>将 <span class="arithmatex">\(n\)</span> 个不同的物件分成 <span class="arithmatex">\(k\)</span> 堆，各堆物件数分别是：<span class="arithmatex">\(r_1, r_2, \cdots, r_k\)</span>，有多少种分法？</p>
-<p><a class="glightbox" href="/assets/未命名绘图.-第%202%20页.drawio.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="未命名绘图.-第 2 页.drawio" src="/assets/未命名绘图.-第%202%20页.drawio.png" /></a></p>
+<p><a class="glightbox" href="../img/k%E5%A0%86%E5%9B%BE%E7%89%87.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="k堆图片" src="../img/k%E5%A0%86%E5%9B%BE%E7%89%87.png" /></a></p>
 <blockquote>
 <p>想象成 <span class="arithmatex">\(n\)</span> 个座位，其中第 <span class="arithmatex">\(r_i\)</span> 与 <span class="arithmatex">\(r_{i + 1}\)</span> 座位之间有隔道，那么对 <span class="arithmatex">\(n\)</span> 个学生全排列有 <span class="arithmatex">\(n!\)</span> 种排列方法，对于每一种排列方法，会产生 <span class="arithmatex">\(r_1!r_2! \cdots r_k!\)</span> 种重复，所以实际上不同的分堆种类有：</p>
 </blockquote>
 <div class="arithmatex">\[
 \frac{n!}{r_1! r_2! \cdots r_k!}
+\]</div>
+<hr />
+<p>有 <span class="arithmatex">\(N\)</span> 个产品，其中有 <span class="arithmatex">\(M\)</span> 个废品，现从中取出 <span class="arithmatex">\(n\)</span> 个，问这 <span class="arithmatex">\(n\)</span> 个中存在 <span class="arithmatex">\(m\)</span> 个废品的概率是多少？</p>
+<blockquote>
+<p>总共有 <span class="arithmatex">\(C^N_n\)</span> 种取法，取出 <span class="arithmatex">\(m\)</span> 个废品，这 <span class="arithmatex">\(m\)</span> 个废品的组合有 <span class="arithmatex">\(C^M_m\)</span> 种，剩下需要从 <span class="arithmatex">\(N - M\)</span> 中取出 <span class="arithmatex">\(n - m\)</span> 个产品，有 <span class="arithmatex">\(C^{N-M}_{n-m}\)</span> 种取法，所以答案为：</p>
+</blockquote>
+<div class="arithmatex">\[
+\frac{C^M_m C^{N-M}_{n-m}}{C^N_n}
+\]</div>
+<hr />
+<p>有 <span class="arithmatex">\(n\)</span> 双不同的鞋，现在需要你随机分成 <span class="arithmatex">\(n\)</span> 堆，每堆有 <span class="arithmatex">\(2\)</span> 个鞋子，问每一堆鞋都自成一对的概率是多少？</p>
+<blockquote>
+<p>总共有 <span class="arithmatex">\(2n\)</span> 个位置，有 <span class="arithmatex">\((2n)!\)</span> 种随机排列方法；</p>
+<p>总共有 <span class="arithmatex">\(n\)</span> 双鞋，有 <span class="arithmatex">\(n!\)</span> 种排列方法，由于每一堆都有 <span class="arithmatex">\(2!\)</span> 排列方法，所以总共有 <span class="arithmatex">\(n!2^n\)</span> 种可以自成一对的排列方法，概率为：</p>
+</blockquote>
+<div class="arithmatex">\[
+\frac{n!2^n}{(2n)!}
 \]</div>
 
 
