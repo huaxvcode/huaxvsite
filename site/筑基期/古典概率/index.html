@@ -5152,6 +5152,14 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 <div class="arithmatex">\[
 \frac{C^{n+1}_{m} * m!}{\frac{(n+m)!}{n!}}=\frac{C^{n+1}_{m}}{C^{n+m}_{m}}
 \]</div>
+<p>另外一种理解方法：</p>
+<blockquote>
+<p>先对这 <span class="arithmatex">\(n\)</span> 个男生自由排列，有 <span class="arithmatex">\(n!\)</span> 种排列方式，然后在 <span class="arithmatex">\(n + 1\)</span> 个位置中选出 <span class="arithmatex">\(m\)</span> 个位置自由排列，有 <span class="arithmatex">\(P^{n+1}_{m}\)</span> 种排列方式，所以女生互不相邻的排列方式有 <span class="arithmatex">\(n!P^{n+1}_{m}\)</span> 种</p>
+<p>事件总和为 <span class="arithmatex">\(n + m\)</span> 个孩子的自由组合，有 <span class="arithmatex">\((n+m)!\)</span> 种排列方式，所以概率为：</p>
+</blockquote>
+<div class="arithmatex">\[
+\frac{n!P^{n+1}_{m}}{(n+m)!}=\frac{C^{n+1}_{m}}{C^{n+m}_{m}}
+\]</div>
 
 
 
