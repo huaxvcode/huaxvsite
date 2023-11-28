@@ -5146,11 +5146,11 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 <p>有 <span class="arithmatex">\(n\)</span> 个男孩，<span class="arithmatex">\(m\)</span> 个女孩随机的排成一列，其中 <span class="arithmatex">\(m \leq (n + 1)\)</span>，问任意两个女孩都不相邻的概率是多少？</p>
 <blockquote>
 <p>有 <span class="arithmatex">\(n\)</span> 个男孩，就有 <span class="arithmatex">\(n + 1\)</span> 个空位，从 <span class="arithmatex">\(n + 1\)</span> 个空位中选出 <span class="arithmatex">\(m\)</span> 个给女生坐，而这 <span class="arithmatex">\(m\)</span> 个女生又可以有 <span class="arithmatex">\(m\)</span> 种不同的排列方法，所以女生总共有 <span class="arithmatex">\(C^{n + 1}_m * m!\)</span> 种坐法</p>
-<p>对 <span class="arithmatex">\(m\)</span> 个女生全排列，有 <span class="arithmatex">\(m!\)</span> 种排列方法，对于任意一个女生都可以选择 <span class="arithmatex">\(n+1\)</span> 种做法，所以总共有 <span class="arithmatex">\((n+1)^m * m!\)</span></p>
+<p>对于第一个女生可以选择 <span class="arithmatex">\(n + 1\)</span> 个座位，第二个女生可以选择 <span class="arithmatex">\(n + 2\)</span> 个座位，一直到第 <span class="arithmatex">\(m\)</span> 个女生可以选择 <span class="arithmatex">\(n + m\)</span> 个座位，所以总共有 <span class="arithmatex">\((n+1)(n+2)\cdots(n+m)=\frac{(n+m)!}{n!}\)</span> 种选法</p>
 <p>概率为：</p>
 </blockquote>
 <div class="arithmatex">\[
-\frac{C^{n+1}_{m}}{(n+1)^m}
+\frac{C^{n+1}_{m} * m!}{\frac{(n+m)!}{n!}}=\frac{C^{n+1}_{m}}{C^{n+m}_{m}}
 \]</div>
 
 
