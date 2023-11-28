@@ -5143,7 +5143,7 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 \frac{n!2^n}{(2n)!}
 \]</div>
 <hr />
-<p>有 <span class="arithmatex">\(n\)</span> 个男孩，<span class="arithmatex">\(m\)</span> 个女孩随机的排成一列，其中 <span class="arithmatex">\(m \leq (n + 1)\)</span>，问任意两个女孩都不相邻的概率是多少？</p>
+<p>有 <span class="arithmatex">\(n\)</span> 个男孩，<span class="arithmatex">\(m\)</span> 个女孩随机的<strong>排成一列</strong>，其中 <span class="arithmatex">\(m \leq (n + 1)\)</span>，问任意两个女孩都不相邻的概率是多少？</p>
 <blockquote>
 <p>有 <span class="arithmatex">\(n\)</span> 个男孩，就有 <span class="arithmatex">\(n + 1\)</span> 个空位，从 <span class="arithmatex">\(n + 1\)</span> 个空位中选出 <span class="arithmatex">\(m\)</span> 个给女生坐，而这 <span class="arithmatex">\(m\)</span> 个女生又可以有 <span class="arithmatex">\(m\)</span> 种不同的排列方法，所以女生总共有 <span class="arithmatex">\(C^{n + 1}_m * m!\)</span> 种坐法</p>
 <p>对于第一个女生可以选择 <span class="arithmatex">\(n + 1\)</span> 个座位，第二个女生可以选择 <span class="arithmatex">\(n + 2\)</span> 个座位，一直到第 <span class="arithmatex">\(m\)</span> 个女生可以选择 <span class="arithmatex">\(n + m\)</span> 个座位，所以总共有 <span class="arithmatex">\((n+1)(n+2)\cdots(n+m)=\frac{(n+m)!}{n!}\)</span> 种选法</p>
@@ -5159,6 +5159,18 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 </blockquote>
 <div class="arithmatex">\[
 \frac{n!P^{n+1}_{m}}{(n+m)!}=\frac{C^{n+1}_{m}}{C^{n+m}_{m}}
+\]</div>
+<hr />
+<p>有 <span class="arithmatex">\(n\)</span> 个男孩，<span class="arithmatex">\(m\)</span> 个女孩随机的<strong>排成一圈</strong>，其中 <span class="arithmatex">\(m \leq n\)</span>，问任意两个女孩都不相邻的概率是多少？</p>
+<blockquote>
+<p>将 <span class="arithmatex">\(n\)</span> 个不同的物品排成一列，有 <span class="arithmatex">\(n!\)</span> 种排列方法</p>
+<p>将 <span class="arithmatex">\(n\)</span> 个不同的物品排成一圈，有 <span class="arithmatex">\(\frac{n!}{n}\)</span> 种排列方法，在排成一列的基础上，每一种排列因为开头设置不同会有 <span class="arithmatex">\(n\)</span> 种开头方式导致重复，所以要除以 <span class="arithmatex">\(n\)</span></p>
+<p>回到题目，先对 <span class="arithmatex">\(n\)</span> 个男的围成一圈，有 <span class="arithmatex">\(\frac{n!}{n}\)</span> 种排列方法，从 <span class="arithmatex">\(n\)</span> 个相间位置中选取 <span class="arithmatex">\(m\)</span> 个，有 <span class="arithmatex">\(C^n_m\)</span> 种选法，女生可以对这 <span class="arithmatex">\(m\)</span> 个位置自由排列，所以满足任意两个女生不相邻的排列方式有 <span class="arithmatex">\(\frac{n!m!C^n_m}{n}\)</span> 种</p>
+<p>这 <span class="arithmatex">\(n + m\)</span> 个孩子围成一圈总共有 <span class="arithmatex">\(\frac{(n+m)!}{n+m}\)</span> 种方式</p>
+<p>概率为：</p>
+</blockquote>
+<div class="arithmatex">\[
+\frac{\frac{n!m!C^n_m}{n}}{\frac{(n+m)!}{n+m}}=\frac{C^n_m * (n+m)}{C^{n+m}_m * n}=\frac{C^n_m}{C^{n+m-1}_m}
 \]</div>
 
 
