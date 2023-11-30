@@ -5207,12 +5207,8 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 <p>『题目』甲、乙两人下棋，每局甲胜的概率为 <span class="arithmatex">\(a\)</span>，乙胜的概率为 <span class="arithmatex">\(b\)</span>，假设没有和局的情况发生这意味着 <span class="arithmatex">\(a+b=1\)</span> ，由于 <span class="arithmatex">\(a &gt; b\)</span> 为了考虑公平性，最终决定胜负规则如下：到什么时候为止，甲连胜三局则甲胜；到什么时候为止，乙连胜两局则乙胜；问甲最终胜的概率？</p>
 <blockquote>
 <p>如果到达某一轮时，是甲赢，假设此时是第 <span class="arithmatex">\(n\)</span> 轮，如果甲最终赢，则后缀一定是 "甲甲甲"，为了方便研究，记 <span class="arithmatex">\(E\)</span> 为当前轮次甲赢，记 <span class="arithmatex">\(F\)</span> 为当前轮次乙赢，则后缀一定是 <span class="arithmatex">\(EEE\)</span> 且前面 <span class="arithmatex">\(n-3\)</span> 轮不能出现 <span class="arithmatex">\(EEE\)</span> 和 <span class="arithmatex">\(FF\)</span> 且最后一个必定是 <span class="arithmatex">\(F\)</span>，这种概率是多少呢？这种概率当然用「线性dp」来解，那能不能用一条公式求解呢？仔细想想，不能出现连续的 <span class="arithmatex">\(EEE\)</span> 和 <span class="arithmatex">\(FF\)</span> 说明该序列一定是由 <span class="arithmatex">\(E\)</span>、<span class="arithmatex">\(EE\)</span>、<span class="arithmatex">\(F\)</span> 组合，且 <span class="arithmatex">\(E\)</span> 和 <span class="arithmatex">\(EE\)</span> 不能连续出现，<span class="arithmatex">\(F\)</span> 与 <span class="arithmatex">\(F\)</span> 之间也不能连续出现;</p>
-<p><span class="arithmatex">\(E\)</span> 发生的概率为 <span class="arithmatex">\(a\)</span>，<span class="arithmatex">\(EE\)</span> 发生的概率为 <span class="arithmatex">\(a^2\)</span>，<span class="arithmatex">\(F\)</span> 发生的概率为 <span class="arithmatex">\(b\)</span>，然而这样真的对吗？</p>
-<p>若 <span class="arithmatex">\(E\)</span> 有 <span class="arithmatex">\(x\)</span> 个，<span class="arithmatex">\(EE\)</span> 有 <span class="arithmatex">\(y\)</span> 个，要求甲最终胜，则乙要么有 <span class="arithmatex">\(x+y\)</span> 个，要么有 <span class="arithmatex">\(x+y+1\)</span> 个所以概率有：<span class="arithmatex">\((x+y)! * a^x * a^{2y} * b ^ {x+y} * (1 + b) * a^3\)</span> 简化后：<span class="arithmatex">\((x+y)! * a^{x + 2y + 3} * b ^ {x +y} * (1+b)\)</span>，所以有利于题目事件发生的概率为：</p>
+<p><span class="arithmatex">\(E\)</span> 发生的概率为 <span class="arithmatex">\(a\)</span>，<span class="arithmatex">\(EE\)</span> 发生的概率为 <span class="arithmatex">\(a^2\)</span>，<span class="arithmatex">\(F\)</span> 发生的概率为 <span class="arithmatex">\(b\)</span>，然而这样真的对吗？<span class="arithmatex">\(a+b=1\)</span> 则 <span class="arithmatex">\(a+b+a^2 &gt; 1\)</span> 总感觉有问题因为这些时间不是互相独立的，如果前面 <span class="arithmatex">\(F\)</span> 发生了，那么接下来要么是 <span class="arithmatex">\(E\)</span> 发生，要么就是 <span class="arithmatex">\(EE\)</span> 发生，这样子才出现了对立且独立的事件，然后接着又会是 <span class="arithmatex">\(F\)</span> 发生开始下一轮的循环</p>
 </blockquote>
-<div class="arithmatex">\[
-\sum^{+\infty}_{x=0}\sum^{+\infty}_{y=0}(x+y)! * a^{x + 2y + 3} * b ^ {x +y} * (1+b)
-\]</div>
 
 
 
