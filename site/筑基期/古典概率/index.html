@@ -5103,7 +5103,7 @@
 
 
 <h1 id="_1">古典概率<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>从 <span class="arithmatex">\(n\)</span> 个不同的物件中取 <span class="arithmatex">\(r\)</span> 个的不同排列总数是多少？</p>
+<p>『题目』从 <span class="arithmatex">\(n\)</span> 个不同的物件中取 <span class="arithmatex">\(r\)</span> 个的不同排列总数是多少？</p>
 <blockquote>
 <p>从 <span class="arithmatex">\(n\)</span> 个中取 <span class="arithmatex">\(r\)</span> 个有 <span class="arithmatex">\(C^n_r\)</span> 种取法</p>
 <p>对 <span class="arithmatex">\(r\)</span> 个进行排列有 <span class="arithmatex">\(r!\)</span> 种排列方法</p>
@@ -5112,12 +5112,12 @@
 ans=P^n_r=\frac{n!}{(n-r)!}
 \]</div>
 <hr />
-<p>从 <span class="arithmatex">\(n\)</span> 个不同的物件中选 <span class="arithmatex">\(r\)</span> 个，有多种不同的取法？</p>
+<p>『题目』从 <span class="arithmatex">\(n\)</span> 个不同的物件中选 <span class="arithmatex">\(r\)</span> 个，有多种不同的取法？</p>
 <div class="arithmatex">\[
 ans=C^n_r=\frac{n!}{r!(n - r)!}
 \]</div>
 <hr />
-<p>将 <span class="arithmatex">\(n\)</span> 个不同的物件分成 <span class="arithmatex">\(k\)</span> 堆，各堆物件数分别是：<span class="arithmatex">\(r_1, r_2, \cdots, r_k\)</span>，有多少种分法？</p>
+<p>『题目』将 <span class="arithmatex">\(n\)</span> 个不同的物件分成 <span class="arithmatex">\(k\)</span> 堆，各堆物件数分别是：<span class="arithmatex">\(r_1, r_2, \cdots, r_k\)</span>，有多少种分法？</p>
 <p><a class="glightbox" href="../img/k%E5%A0%86%E5%9B%BE%E7%89%87.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="k堆图片" src="../img/k%E5%A0%86%E5%9B%BE%E7%89%87.png" /></a></p>
 <blockquote>
 <p>想象成 <span class="arithmatex">\(n\)</span> 个座位，其中第 <span class="arithmatex">\(r_i\)</span> 与 <span class="arithmatex">\(r_{i + 1}\)</span> 座位之间有隔道，那么对 <span class="arithmatex">\(n\)</span> 个学生全排列有 <span class="arithmatex">\(n!\)</span> 种排列方法，对于每一种排列方法，会产生 <span class="arithmatex">\(r_1!r_2! \cdots r_k!\)</span> 种重复，所以实际上不同的分堆种类有：</p>
@@ -5126,7 +5126,7 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 \frac{n!}{r_1! r_2! \cdots r_k!}
 \]</div>
 <hr />
-<p>有 <span class="arithmatex">\(N\)</span> 个产品，其中有 <span class="arithmatex">\(M\)</span> 个废品，现从中取出 <span class="arithmatex">\(n\)</span> 个，问这 <span class="arithmatex">\(n\)</span> 个中存在 <span class="arithmatex">\(m\)</span> 个废品的概率是多少？</p>
+<p>『题目』有 <span class="arithmatex">\(N\)</span> 个产品，其中有 <span class="arithmatex">\(M\)</span> 个废品，现从中取出 <span class="arithmatex">\(n\)</span> 个，问这 <span class="arithmatex">\(n\)</span> 个中存在 <span class="arithmatex">\(m\)</span> 个废品的概率是多少？</p>
 <blockquote>
 <p>总共有 <span class="arithmatex">\(C^N_n\)</span> 种取法，取出 <span class="arithmatex">\(m\)</span> 个废品，这 <span class="arithmatex">\(m\)</span> 个废品的组合有 <span class="arithmatex">\(C^M_m\)</span> 种，剩下需要从 <span class="arithmatex">\(N - M\)</span> 中取出 <span class="arithmatex">\(n - m\)</span> 个产品，有 <span class="arithmatex">\(C^{N-M}_{n-m}\)</span> 种取法，所以答案为：</p>
 </blockquote>
@@ -5134,7 +5134,7 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 \frac{C^M_m C^{N-M}_{n-m}}{C^N_n}
 \]</div>
 <hr />
-<p>有 <span class="arithmatex">\(n\)</span> 双不同的鞋，现在需要你随机分成 <span class="arithmatex">\(n\)</span> 堆，每堆有 <span class="arithmatex">\(2\)</span> 个鞋子，问每一堆鞋都自成一对的概率是多少？</p>
+<p>『题目』有 <span class="arithmatex">\(n\)</span> 双不同的鞋，现在需要你随机分成 <span class="arithmatex">\(n\)</span> 堆，每堆有 <span class="arithmatex">\(2\)</span> 个鞋子，问每一堆鞋都自成一对的概率是多少？</p>
 <blockquote>
 <p>总共有 <span class="arithmatex">\(2n\)</span> 个位置，有 <span class="arithmatex">\((2n)!\)</span> 种随机排列方法；</p>
 <p>总共有 <span class="arithmatex">\(n\)</span> 双鞋，有 <span class="arithmatex">\(n!\)</span> 种排列方法，由于每一堆都有 <span class="arithmatex">\(2!\)</span> 排列方法，所以总共有 <span class="arithmatex">\(n!2^n\)</span> 种可以自成一对的排列方法，概率为：</p>
@@ -5143,7 +5143,7 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 \frac{n!2^n}{(2n)!}
 \]</div>
 <hr />
-<p>有 <span class="arithmatex">\(n\)</span> 个男孩，<span class="arithmatex">\(m\)</span> 个女孩随机的<strong>排成一列</strong>，其中 <span class="arithmatex">\(m \leq (n + 1)\)</span>，问任意两个女孩都不相邻的概率是多少？</p>
+<p>『题目』有 <span class="arithmatex">\(n\)</span> 个男孩，<span class="arithmatex">\(m\)</span> 个女孩随机的<strong>排成一列</strong>，其中 <span class="arithmatex">\(m \leq (n + 1)\)</span>，问任意两个女孩都不相邻的概率是多少？</p>
 <blockquote>
 <p>有 <span class="arithmatex">\(n\)</span> 个男孩，就有 <span class="arithmatex">\(n + 1\)</span> 个空位，从 <span class="arithmatex">\(n + 1\)</span> 个空位中选出 <span class="arithmatex">\(m\)</span> 个给女生坐，而这 <span class="arithmatex">\(m\)</span> 个女生又可以有 <span class="arithmatex">\(m\)</span> 种不同的排列方法，所以女生总共有 <span class="arithmatex">\(C^{n + 1}_m * m!\)</span> 种坐法</p>
 <p>对于第一个女生可以选择 <span class="arithmatex">\(n + 1\)</span> 个座位，第二个女生可以选择 <span class="arithmatex">\(n + 2\)</span> 个座位，一直到第 <span class="arithmatex">\(m\)</span> 个女生可以选择 <span class="arithmatex">\(n + m\)</span> 个座位，所以总共有 <span class="arithmatex">\((n+1)(n+2)\cdots(n+m)=\frac{(n+m)!}{n!}\)</span> 种选法</p>
@@ -5161,7 +5161,7 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 \frac{n!P^{n+1}_{m}}{(n+m)!}=\frac{C^{n+1}_{m}}{C^{n+m}_{m}}
 \]</div>
 <hr />
-<p>有 <span class="arithmatex">\(n\)</span> 个男孩，<span class="arithmatex">\(m\)</span> 个女孩随机的<strong>排成一圈</strong>，其中 <span class="arithmatex">\(m \leq n\)</span>，问任意两个女孩都不相邻的概率是多少？</p>
+<p>『题目』有 <span class="arithmatex">\(n\)</span> 个男孩，<span class="arithmatex">\(m\)</span> 个女孩随机的<strong>排成一圈</strong>，其中 <span class="arithmatex">\(m \leq n\)</span>，问任意两个女孩都不相邻的概率是多少？</p>
 <blockquote>
 <p>将 <span class="arithmatex">\(n\)</span> 个不同的物品排成一列，有 <span class="arithmatex">\(n!\)</span> 种排列方法</p>
 <p>将 <span class="arithmatex">\(n\)</span> 个不同的物品排成一圈，有 <span class="arithmatex">\(\frac{n!}{n}\)</span> 种排列方法，在排成一列的基础上，每一种排列因为开头设置不同会有 <span class="arithmatex">\(n\)</span> 种开头方式导致重复，所以要除以 <span class="arithmatex">\(n\)</span></p>
@@ -5173,7 +5173,7 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 \frac{\frac{n!m!C^n_m}{n}}{\frac{(n+m)!}{n+m}}=\frac{C^n_m * (n+m)}{C^{n+m}_m * n}=\frac{C^n_m}{C^{n+m-1}_m}
 \]</div>
 <hr />
-<p>一个人在口袋里放了 <span class="arithmatex">\(2\)</span> 盒火柴，每盒 <span class="arithmatex">\(n\)</span> 支，每次抽烟时从口袋随机拿出一盒（抽出甲盒或乙盒）并用掉一支烟，到某次他迟早会发现：取出的那一盒空了，问这时候另外一盒恰好有 <span class="arithmatex">\(m\)</span> 支火柴的概率是多少？</p>
+<p>『题目』一个人在口袋里放了 <span class="arithmatex">\(2\)</span> 盒火柴，每盒 <span class="arithmatex">\(n\)</span> 支，每次抽烟时从口袋随机拿出一盒（抽出甲盒或乙盒）并用掉一支烟，到某次他迟早会发现：取出的那一盒空了，问这时候另外一盒恰好有 <span class="arithmatex">\(m\)</span> 支火柴的概率是多少？</p>
 <blockquote>
 <p>每一次抽取只有等概率两种选择，要么抽甲的，要么抽乙的，抽到一定时候，会发现抽到盒子里面没有烟了，这种概率是否符合一棵超级庞大的概率树呢？</p>
 <p>由于发现某盒为空时就会停止，说明这棵概率树并不是一颗完全树，即叶子节点并不都处于同一层，但是我们可以添加虚拟节点来延长比较短的那个分支，让这棵树的叶子节点都处于同一层，计算概率时只需要统计由这个叶子节点引发的虚拟叶子节点的个数占总叶子节点的个数多少就可以求出该叶子节点引发的概率了</p>
