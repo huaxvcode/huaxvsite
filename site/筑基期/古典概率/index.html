@@ -5177,8 +5177,13 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 <blockquote>
 <p>每一次抽取只有等概率两种选择，要么抽甲的，要么抽乙的，抽到一定时候，会发现抽到盒子里面没有烟了，这种概率是否符合一棵超级庞大的概率树呢？</p>
 <p>由于发现某盒为空时就会停止，说明这棵概率树并不是一颗完全树，即叶子节点并不都处于同一层，但是我们可以添加虚拟节点来延长比较短的那个分支，让这棵树的叶子节点都处于同一层，计算概率时只需要统计由这个叶子节点引发的虚拟叶子节点的个数占总叶子节点的个数多少就可以求出该叶子节点引发的概率了</p>
-<p>回到题目，要有利于题目条件的发生，则必须要抽 <span class="arithmatex">\(2n - m + 1\)</span> 次才能发现某盒已经空了，且剩下那一盒有 <span class="arithmatex">\(m\)</span> 支烟，</p>
+<p>回到题目，要有利于题目条件的发生，则必须要抽 <span class="arithmatex">\(2n - m + 1\)</span> 次才能发现某盒已经空了，且剩下那一盒有 <span class="arithmatex">\(m\)</span> 支烟</p>
+<p>所以总共的抽取方法有 <span class="arithmatex">\(2 ^ {2n - m + 1}\)</span> 种（每一次要么抽甲要么抽乙，等概率抽取）</p>
+<p>最后一盒要么是甲空要么是乙空，所以有 <span class="arithmatex">\(2\)</span> 种镜像对称的结果，因为最后一次一定要抽取空盒，所以在 <span class="arithmatex">\(2n - m\)</span> 次中，需要分割成两份，第一份有 <span class="arithmatex">\(n\)</span> 个，第二份有 <span class="arithmatex">\(n - m\)</span> 个，有 <span class="arithmatex">\(C^{2n-m}_{n}\)</span> 种分法，有利于题目事件发生的概率为：</p>
 </blockquote>
+<div class="arithmatex">\[
+\frac{2 * C^{2n-m}_{n}}{2 ^ {2n - m + 1}}=\frac{C^{2n-m}_{n}}{2n - m + 1}
+\]</div>
 
 
 
