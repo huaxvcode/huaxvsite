@@ -5207,7 +5207,15 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 <p>『题目』甲、乙两人下棋，每局甲胜的概率为 <span class="arithmatex">\(a\)</span>，乙胜的概率为 <span class="arithmatex">\(b\)</span>，假设没有和局的情况发生这意味着 <span class="arithmatex">\(a+b=1\)</span> ，由于 <span class="arithmatex">\(a &gt; b\)</span> 为了考虑公平性，最终决定胜负规则如下：到什么时候为止，甲连胜三局则甲胜；到什么时候为止，乙连胜两局则乙胜；问甲最终胜的概率？</p>
 <blockquote>
 <p>如果到达某一轮时，是甲赢，假设此时是第 <span class="arithmatex">\(n\)</span> 轮，如果甲最终赢，则后缀一定是 "甲甲甲"，为了方便研究，记 <span class="arithmatex">\(E\)</span> 为当前轮次甲赢，记 <span class="arithmatex">\(F\)</span> 为当前轮次乙赢，则后缀一定是 <span class="arithmatex">\(EEE\)</span> 且前面 <span class="arithmatex">\(n-3\)</span> 轮不能出现 <span class="arithmatex">\(EEE\)</span> 和 <span class="arithmatex">\(FF\)</span> 且最后一个必定是 <span class="arithmatex">\(F\)</span>，这种概率是多少呢？这种概率当然用「线性dp」来解，那能不能用一条公式求解呢？仔细想想，不能出现连续的 <span class="arithmatex">\(EEE\)</span> 和 <span class="arithmatex">\(FF\)</span> 说明该序列一定是由 <span class="arithmatex">\(E\)</span>、<span class="arithmatex">\(EE\)</span>、<span class="arithmatex">\(F\)</span> 组合，且 <span class="arithmatex">\(E\)</span> 和 <span class="arithmatex">\(EE\)</span> 不能连续出现，<span class="arithmatex">\(F\)</span> 与 <span class="arithmatex">\(F\)</span> 之间也不能连续出现;</p>
-<p><span class="arithmatex">\(E\)</span> 发生的概率为 <span class="arithmatex">\(a\)</span>，<span class="arithmatex">\(EE\)</span> 发生的概率为 <span class="arithmatex">\(a^2\)</span>，<span class="arithmatex">\(F\)</span> 发生的概率为 <span class="arithmatex">\(b\)</span></p>
+<p><span class="arithmatex">\(E\)</span> 发生的概率为 <span class="arithmatex">\(a\)</span>，<span class="arithmatex">\(EE\)</span> 发生的概率为 <span class="arithmatex">\(a^2\)</span>，<span class="arithmatex">\(F\)</span> 发生的概率为 <span class="arithmatex">\(b\)</span>;</p>
+<p>若要让甲最终胜，则最后一定以 <span class="arithmatex">\(F\)</span> 结尾然后再接 <span class="arithmatex">\(EEE\)</span> </p>
+<p>一开始要么 <span class="arithmatex">\(F\)</span> 发生，要么 <span class="arithmatex">\(F\)</span> 不发生；假设一开始 <span class="arithmatex">\(F\)</span> 并没有发生，且 <span class="arithmatex">\(F\)</span> 发生了 <span class="arithmatex">\(n\)</span> 次，则对于每一个 <span class="arithmatex">\(F\)</span> 的前面，要么发生 <span class="arithmatex">\(E\)</span> 要么发生 <span class="arithmatex">\(EE\)</span>，所以对于这 <span class="arithmatex">\(n\)</span> 个位置可以发生概率总和为 <span class="arithmatex">\((a + a^2) ^ n\)</span>，有利于甲最终胜的概率为：<span class="arithmatex">\(a^3(a+a^2)^nb^n\)</span>；若一开始 <span class="arithmatex">\(F\)</span> 发生了，且后续 <span class="arithmatex">\(F\)</span> 发生了 <span class="arithmatex">\(n\)</span> 次，有利于甲最终胜的概率为：<span class="arithmatex">\(ba^3(a+a^2)^nb^n\)</span>，综上，甲最终胜的概率为：</p>
+</blockquote>
+<div class="arithmatex">\[
+\sum^{\infty}_{n=0}(1+b)a^3(a+a^2)^nb^n=(1+b)a^3\sum^{\infty}_{n=0}(ab(1+a))^n
+\]</div>
+<blockquote>
+<p>根据等比数列可化成：</p>
 </blockquote>
 
 
