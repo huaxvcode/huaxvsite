@@ -4,7 +4,7 @@
 
 ```json
 {
-    "editor.fontSize": 22,
+    "editor.fontSize": 24,
     "terminal.integrated.fontSize": 22,
     "code-runner.executorMapByFileExtension": {
         ".yml": "./push.bat setting",
@@ -56,9 +56,9 @@
     "cph.general.defaultLanguage": "cpp",
     "cph.language.cpp.Args": "-w -std=c++17 -static -O2 -Wall -Wextra -Wl,--stack=549453824",
     "cph.general.retainWebviewContext": true,
-    "update.enableWindowsBackgroundUpdates": false,
-    "update.showReleaseNotes": false,
-    "extensions.autoCheckUpdates": false,
+    // "update.enableWindowsBackgroundUpdates": false,
+    // "update.showReleaseNotes": false,
+    // "extensions.autoCheckUpdates": false,
     "editor.fontLigatures": true,
 
     // 下面三个选项是禁用代码提示功能
@@ -67,7 +67,7 @@
     "editor.quickSuggestions": {
         "other": "on"
     },
-    "update.mode": "none",
+    // "update.mode": "none",
     "editor.tabCompletion": "on",
     "editor.acceptSuggestionOnEnter": "off",
     "explorer.confirmDelete": false,
@@ -89,7 +89,7 @@
     },
     "terminal.integrated.windowsEnableConpty": false,
     "cph.general.timeOut": 5000,
-    "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+    "markdown-preview-enhanced.previewTheme": "solarized-dark.css",
     "workbench.iconTheme": "vscode-great-icons",
     "C_Cpp.default.cppStandard": "c++20",
     "C_Cpp.default.cStandard": "c23",
@@ -135,7 +135,7 @@
     "git.openRepositoryInParentFolders": "always",
     "git.enableSmartCommit": true,
     "explorer.confirmDragAndDrop": false,
-    "remote.SSH.configFile": "C:\\Users\\13255\\.ssh\\config",
+    "remote.SSH.configFile": "C:\\Users\\huaxv\\.ssh\\config",
     "remote.SSH.remotePlatform": {
         "192.168.192.85": "linux",
         "127.0.0.1": "linux",
@@ -230,12 +230,11 @@
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
-    "markdown-pdf.outputDirectory": "C:\\Users\\13255\\Desktop",
+    "markdown-pdf.outputDirectory": "C:\\Users\\huaxv\\Desktop",
     "markdown-preview-github-styles.colorTheme": "dark",
     "workbench.tree.indent": 20,
-    "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
     "markdown-pdf.executablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-    "markdown.extension.preview.autoShowPreviewToSide": true,
+    // "markdown.extension.preview.autoShowPreviewToSide": true,
     "extensions.ignoreRecommendations": true,
     "editor.unicodeHighlight.nonBasicASCII": false,
     "cph.general.autoShowJudge": false,
@@ -247,9 +246,12 @@
     },
     "cph.general.firstTime": false,
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "markdown-preview-enhanced.codeBlockTheme": "solarized-dark.css",
+    "markdown-preview-enhanced.alwaysShowBacklinksInPreview": true,
+    "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true,
+    "workbench.colorTheme": "Solarized Dark",
     
 }
-
 ```
 
 ## vscode
@@ -308,9 +310,9 @@
     "cph.general.defaultLanguage": "cpp",
     "cph.language.cpp.Args": "-w -std=c++17 -static -O2 -Wall -Wextra -Wl,--stack=549453824",
     "cph.general.retainWebviewContext": true,
-    "update.enableWindowsBackgroundUpdates": false,
-    "update.showReleaseNotes": false,
-    "extensions.autoCheckUpdates": false,
+    // "update.enableWindowsBackgroundUpdates": false,
+    // "update.showReleaseNotes": false,
+    // "extensions.autoCheckUpdates": false,
     "editor.fontLigatures": true,
 
     // 下面三个选项是禁用代码提示功能
@@ -319,7 +321,7 @@
     "editor.quickSuggestions": {
         "other": "on"
     },
-    "update.mode": "none",
+    // "update.mode": "none",
     "editor.tabCompletion": "on",
     "editor.acceptSuggestionOnEnter": "off",
     "explorer.confirmDelete": false,
@@ -387,7 +389,7 @@
     "git.openRepositoryInParentFolders": "always",
     "git.enableSmartCommit": true,
     "explorer.confirmDragAndDrop": false,
-    "remote.SSH.configFile": "C:\\Users\\13255\\.ssh\\config",
+    "remote.SSH.configFile": "C:\\Users\\huaxv\\.ssh\\config",
     "remote.SSH.remotePlatform": {
         "192.168.192.85": "linux",
         "127.0.0.1": "linux",
@@ -425,7 +427,7 @@
         "c": "oj -cr $fileNameWithoutExt.c",
         "cpp": "oj -cr $fileNameWithoutExt.cpp",
         "python": "oj -cr $fileNameWithoutExt.py",
-        
+
         // "java": "bash test.sh",
         // "c": "bash test.sh",
         // "cpp": "bash test.sh",
@@ -485,7 +487,7 @@
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "workbench.tree.indent": 20,
     "editor.fontFamily": "'Fira Code', 'JetBrains Mono', 'JetBrains Mono NL', Consolas, 'Courier New', monospace",
-    "workbench.colorTheme": "Gruvbox Dark Hard"
+    "workbench.colorTheme": "Solarized Dark",
+    "security.workspace.trust.untrustedFiles": "open"
 }
-
 ```
