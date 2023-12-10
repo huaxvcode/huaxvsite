@@ -28,6 +28,8 @@ nav:
     - __func__: 筑基期/__func__.md
     - static_assert: 筑基期/static_assert.md
     - noexcept: 筑基期/noexcept.md
+    - 类中就地初始化: 筑基期/类中就地初始化.md
+    - 获取类成员的空间大小: 筑基期/获取类成员的空间大小.md
     
     
 
