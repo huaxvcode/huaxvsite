@@ -5261,6 +5261,20 @@ ans=C^n_r=\frac{n!}{r!(n - r)!}
 <p>所以总共的抽取方法有 <span class="arithmatex">\(2 ^ {2n - m + 1}\)</span> 种（每一次要么抽甲要么抽乙，等概率抽取）</p>
 <p>最后一盒要么是甲空要么是乙空，所以有 <span class="arithmatex">\(2\)</span> 种镜像对称的结果，因为最后一次一定要抽取空盒，所以在 <span class="arithmatex">\(2n - m\)</span> 次中，需要分割成两份，第一份有 <span class="arithmatex">\(n\)</span> 个，第二份有 <span class="arithmatex">\(n - m\)</span> 个，有 <span class="arithmatex">\(C^{2n-m}_{n}\)</span> 种分法，有利于题目事件发生的概率为：</p>
 </blockquote>
+<div class="arithmatex">\[
+\frac{2 * C^{2n-m}_{n}}{2 ^ {2n - m + 1}}=\frac{C^{2n-m}_{n}}{2n - m + 1}
+\]</div>
+<hr />
+<p>『题目』有 <span class="arithmatex">\(21\)</span> 本不同的书，随机地分给 <span class="arithmatex">\(17\)</span> 个人，问 <span class="arithmatex">\(6\)</span> 个人得 <span class="arithmatex">\(0\)</span> 本，<span class="arithmatex">\(5\)</span> 个人得 <span class="arithmatex">\(1\)</span> 本，<span class="arithmatex">\(2\)</span> 人得 <span class="arithmatex">\(2\)</span> 本，<span class="arithmatex">\(4\)</span> 人得 <span class="arithmatex">\(3\)</span> 本这个事件发生的概率是多少？</p>
+<blockquote>
+<p>事件总和有 <span class="arithmatex">\(17 ^ {21}\)</span></p>
+<p>若要有利于题目事件发生，需要对 <span class="arithmatex">\(17\)</span> 分组，第一组分出 <span class="arithmatex">\(6\)</span> 人，第二组分出 <span class="arithmatex">\(5\)</span> 人，第三组分出 <span class="arithmatex">\(2\)</span> 人，第四组分出 <span class="arithmatex">\(4\)</span> 人，有 <span class="arithmatex">\(\frac{17!}{6!5!2!4!}\)</span> 种分法；要将 <span class="arithmatex">\(21\)</span> 本书分成 <span class="arithmatex">\(3\)</span> 组，每组分别有 <span class="arithmatex">\(\{5, 4, 12\}\)</span> 本书，有 <span class="arithmatex">\(\frac{21!}{5!4!12!}\)</span> 种分法，对于第一组 <span class="arithmatex">\(5\)</span> 需要按个数 <span class="arithmatex">\(1\)</span> 排列有 <span class="arithmatex">\(5!\)</span> 种排列方法，对于第二组 <span class="arithmatex">\(4\)</span> 需要按照个数 <span class="arithmatex">\(2\)</span> 排列有 <span class="arithmatex">\(\frac{4!}{2!2!}\)</span> 种排列方法，对与第三组 <span class="arithmatex">\(12\)</span> 需要按照个数 <span class="arithmatex">\(3\)</span> 排列有 <span class="arithmatex">\(\frac{12!}{3!3!3!3!}\)</span> 种排列方法</p>
+<p>有利于题目事件发生的概率为：</p>
+</blockquote>
+<div class="arithmatex">\[
+\frac{\frac{17!}{6!5!2!4!} * \frac{21!}{5!4!12!} * 5! * \frac{4!}{2!2!} * \frac{12!}{3!3!3!3!}}{17 ^ {21}}=\frac{17!21!}{{2!}^3 {3!}^4 4! 5! 6! 17^{21}}
+\]</div>
+<hr />
 
 
 
